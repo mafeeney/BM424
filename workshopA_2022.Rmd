@@ -49,6 +49,10 @@ You should submit 3-5 specific actions to control the pandemic, using the worksh
 
 You are the provost of `r city_name`, elected in `r sample(2012:2021, size=1)`. 
 
+```{r city, echo=FALSE, fig.cap="Photograph of Inverkeld city centre. Image credit: DALL-E"}
+knitr::include_graphics(rep("images/Inverkeld.png"))
+```
+
 The current population of `r city_name` (as of December 2022) is `r sample(150000:170000, size=1)`. The demographic data for the city is shown below.
 
 ```{r A1, fig.show="hold", out.width="50%", echo=FALSE, fig.cap="Inverkeld demographics (Source: Office for National Statistics)"}
@@ -306,7 +310,13 @@ Cameron, R L et al. “Comparison of Legionella longbeachae and Legionella pneum
 
 ## Information Packet A4
 
-You are the director of `r city_name`'s main hospital, the `r hospital_name`, which has 500 beds across 8 different wards and 10 operating theatres. The annual operating budget for financial year 2021-2022 was £1.3 million, and average expenditures are shown by category in the figure below. 
+You are the director of `r city_name`'s main hospital, the `r hospital_name`, which has 500 beds across 8 different wards and 10 operating theatres. 
+
+```{r hospital, echo=FALSE, fig.cap="The Queen Rose hospital in Inverkeld. Image credit: [DALL-E"}
+knitr::include_graphics(rep("images/Queen-Rose.png"))
+```
+
+The annual operating budget for financial year 2021-2022 was £1.3 million, and average expenditures are shown by category in the figure below. 
 
 ```{r A5, fig.cap="Hospital expenditures by category for financial year 2021-2022 (Source: NHS Scotland)", echo=FALSE}
 
