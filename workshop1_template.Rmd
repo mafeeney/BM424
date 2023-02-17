@@ -20,11 +20,15 @@ city_name <- "CITYNAME" ##replace all instances of "CITYNAME" with new scenario 
 hospital_name <- "HOSPNAME" ##replace all instances of "HOSPNAME" with new scenario name
 ```
 
-## Scenario B
+## Scenario X
 
 Disaster has struck - hard on the heels of the COVID-19 pandemic, another disease outbreak has hit your fair city, `r city_name`. Residents are outraged and worried. There have already been `r outbreak_deaths` deaths.
 
 The cause of the outbreak appears to be DIS-NAME. (Please refer to the [WHO DIS-NAME Fact Sheet](add link here) for more information about the pathogen.)
+
+```{r DISEASE, out.width="50%", out.height="50%", echo=FALSE, fig.cap="as appropriate. Image credit: [CDC](link)"}
+knitr::include_graphics(rep("images/DIS-NAME.jpg"))
+```
 
 Each member of your group will play one of the following roles as you attempt to tackle the disease outbreak and save your city:
 
@@ -228,6 +232,8 @@ I have just learned that my `r sample(rel1, 1)` has passed away due to the new p
 `r sample(name1, 1)` 
 
 ***
+
+As Provost of `r city_name`, you are of course familiar with the work of the [Standing Committee on Pandemic Preparedness](https://www.gov.scot/groups/standing-committee-on-pandemic-preparedness/), the [UK Pandemic Preparedness plan](https://www.gov.uk/government/publications/uk-pandemic-preparedness/uk-pandemic-preparedness), and the latest [COVID-19 health protection guidance](https://publichealthscotland.scot/our-areas-of-work/conditions-and-diseases/covid-19/covid-19-health-protection-guidance/#section-1) released by Public Health Scotland. 
 
 ***
 

@@ -26,6 +26,10 @@ Disaster has struck - hard on the heels of the COVID-19 pandemic, another diseas
 
 The cause of the outbreak appears to be <i>Legionella pneumophila</i>. (Please refer to the [Legionnaire's Disease Fact Sheet](https://www.cdc.gov/legionella/downloads/fs-legionnaires.pdf) for more information about the pathogen.)
 
+```{r Legionella, out.width="50%", out.height="50%", echo=FALSE, fig.cap="False-coloured scanning electron microscopy (SEM) image of a group of Legionella pneumophila cells. Image credit: [CDC](https://phil.cdc.gov/details.aspx?pid=11152)"}
+knitr::include_graphics(rep("images/Legionella.jpg"))
+```
+
 Each member of your group will play one of the following roles as you attempt to tackle the disease outbreak and save your city:
 
 1.	Provost (head of the city council)
@@ -228,6 +232,8 @@ I have just learned that my `r sample(rel1, 1)` has passed away due to the new p
 
 ***
 
+As Provost of `r city_name`, you are of course familiar with the work of the [Standing Committee on Pandemic Preparedness](https://www.gov.scot/groups/standing-committee-on-pandemic-preparedness/), the [UK Pandemic Preparedness plan](https://www.gov.uk/government/publications/uk-pandemic-preparedness/uk-pandemic-preparedness), and the latest [COVID-19 health protection guidance](https://publichealthscotland.scot/our-areas-of-work/conditions-and-diseases/covid-19/covid-19-health-protection-guidance/#section-1) released by Public Health Scotland. 
+
 ***
 
 ## Information Packet A2
@@ -411,6 +417,8 @@ ggplot(hosKPIs, aes(x = KPI, y = percent)) +
 
 There are currently `r sample(43:80, size=1)` patients in the `r hospital_name` with confirmed or suspected Legionnaire's disease, with `r sample(5:17, size=1)` of these patients currently in the ICU. 
 
+The hospital follows the guidelines set out in the [National Infection Prevention and Control Manual](https://www.nipcm.hps.scot.nhs.uk/).
+
 ***
 
 ## Information Packet A5
@@ -497,7 +505,7 @@ You are a microbiologist working in the bacteriology department at the Greater `
 
 You are familiar with the culture requirements for growth of <i>Legionella pneumophila</i>, and the UK SMI for <i>Legionella</i> identification (see documents below).
 
-```{r Legionella, echo=FALSE, fig.cap="Legionella grown on BCYE agar. Image credit: [CDC](https://www.cdc.gov/legionella/resources/materials.html)"}
+```{r Legionella-agar, out.width="50%", out.height="50%", echo=FALSE, fig.cap="Legionella grown on BCYE agar. Image credit: [CDC](https://www.cdc.gov/legionella/resources/materials.html)"}
 knitr::include_graphics(rep("images/Legionella-BCYE.jpg"))
 ```
 
