@@ -423,6 +423,14 @@ There are currently `r sample(143:180, size=1)` patients in the `r hospital_name
 
 The hospital follows the guidelines set out in the [National Infection Prevention and Control Manual](https://www.nipcm.hps.scot.nhs.uk/).
 
+As a hospital director, you are familiar with the literature surrounding hospital pandemic preparedness, and regularly read papers such as:
+
+Mer, Mervyn et al. “Critical Care Pandemic Preparation: Considerations and Lessons Learned from COVID-19.” Critical care clinics vol. 38,4 (2022): 761-774. 
+
+Tacconelli, Evelina et al. “Challenges of data sharing in European Covid-19 projects: A learning opportunity for advancing pandemic preparedness and response.” The Lancet regional health. Europe vol. 21 (2022): 100467. 
+
+Adelaja, I., Sayma, M., Walton, H., McLachlan, G., de Boisanger, J., Bartlett-Pestell, S., Roche, E., Gandhi, V., Wilson, G. J., Brookes, Z., Yeen Fung, C., Macfarlane, H., Navaratnam, A., James, C., Scolding, P., & Sara, H. (2020). A comprehensive hospital agile preparedness (CHAPs) tool for pandemic preparedness, based on the COVID-19 experience. Future healthcare journal, 7(2), 165–168. 
+
 ***
 
 ## Information Packet C5
@@ -509,7 +517,19 @@ Giulieri SG, Tong SYC, Williamson DA. Using genomics to understand meticillin- a
 
 ## Information Packet C7
 
-You are a public communications expert, often employed by the `r city_name` city council to manage the PR response to different initiatives or crises. You have assembled the following information/resources for this meeting:
+You are a public communications expert, often employed by the `r city_name` city council to manage the PR response to different initiatives or crises. 
+
+As a public communications expert, you are familiar with the literature surrounding science communication in a pandemic, including papers such as: 
+
+Matta, G. Science communication as a preventative tool in the COVID19 pandemic. Humanit Soc Sci Commun 7, 159 (2020).
+
+Abdool Karim, Salim S. “Public understanding of science: Communicating in the midst of a pandemic.” Public understanding of science (Bristol, England) vol. 31,3 (2022): 282-287.
+
+Royan, Regina et al. “Use of Twitter Amplifiers by Medical Professionals to Combat Misinformation During the COVID-19 Pandemic.” Journal of medical Internet research vol. 24,7 e38324. 22 Jul. 2022, doi:10.2196/38324
+
+Tait, Margaret E et al. “Serving the public? A content analysis of COVID-19 public service announcements airing from March - December of 2020 in the U.S.” Preventive medicine reports vol. 29 (2022): 101971. 
+
+You have assembled the following information/resources for this meeting:
 
 Dickmann P, Keeping S, Döring N, Schmidt AE, Binder C, Ariño-Blasco S, Gil J. Communicating the Risk of MRSA: The Role of Clinical Practice, Regulation and Other Policies in Five European Countries. Front Public Health. 2017 Mar 17;5:44. 
 
