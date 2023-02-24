@@ -1,7 +1,7 @@
 ---
 title: 'BM424 workshop: infectious disease outbreak control'
 author: "Morgan Feeney"
-date: "06/12/2022"
+date: "24/02/2023"
 output: 
   bookdown::html_document2:
     toc: true
@@ -41,11 +41,11 @@ Each member of your group will play one of the following roles as you attempt to
 7.	Public communications expert (past and current sci comm campaigns)
 8.  Doctor at a major surgery in `r city_name`
 
-You must work together, using the information that has been provided for you in the attached information packets, and decide what action(s) should be taken to control the measles outbreak currently plaguing your city, `r city_name`. Your actions should be evidence-based – use the peer-reviewed literature to decide on measures that will stop the pandemic in your scenario.
+You must work together, using the information that has been provided for you in the attached information packets, and decide what action(s) should be taken to control the outbreak currently plaguing your city, `r city_name`. Your actions should be evidence-based – use the peer-reviewed literature to decide on measures that will stop the pandemic in your scenario.
 
 Your action points may include directives to gather more information (e.g., contact tracing of current cases, microbiological testing of food/water, etc.), or specific directives (e.g. public health measures, non-pharmaceutical interventions, etc.). Use the data/expertise of all group members. Be clear, concise, and specific.
 
-You should submit 3-5 specific actions to control the pandemic, using the workshop 3 pro forma (available on MyPlace). Submit this by noon, Friday March 10th, via the submission link on MyPlace. 
+You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 10th, via the submission link on MyPlace. 
 
 ***
 
@@ -233,7 +233,20 @@ I have just learned that my `r sample(rel1, 1)` has passed away due to the new p
 
 ***
 
-As Provost of `r city_name`, you are of course familiar with the work of the [Standing Committee on Pandemic Preparedness](https://www.gov.scot/groups/standing-committee-on-pandemic-preparedness/), the [UK Pandemic Preparedness plan](https://www.gov.uk/government/publications/uk-pandemic-preparedness/uk-pandemic-preparedness), and the latest [COVID-19 health protection guidance](https://publichealthscotland.scot/our-areas-of-work/conditions-and-diseases/covid-19/covid-19-health-protection-guidance/#section-1) released by Public Health Scotland. 
+
+As Provost of `r city_name`, you are of course familiar with the work of the [Standing Committee on Pandemic Preparedness](https://www.gov.scot/groups/standing-committee-on-pandemic-preparedness/). You are also familiar with:
+
+* The [UK Pandemic Preparedness plan](https://www.gov.uk/government/publications/uk-pandemic-preparedness/uk-pandemic-preparedness)
+
+* The latest [COVID-19 health protection guidance](https://publichealthscotland.scot/our-areas-of-work/conditions-and-diseases/covid-19/covid-19-health-protection-guidance/#section-1) released by Public Health Scotland
+
+* [Tackling antimicrobial resistance 2019–2024: The UK’s five-year national action plan](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1070263/UK_AMR_5_year_national_action_plan.pdf)
+
+* The [UK One Health Report - Joint report on antibiotic use and antibiotic resistance, 2013–2017 ](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/921039/Ted_Final_version__1318703-v45-One_Health_Report_2019_FINAL-accessible.pdf)
+
+* [Communicating risk in public health emergencies: A WHO guideline for emergency risk communication (ERC) policy and practice](https://apps.who.int/iris/bitstream/handle/10665/259807/9789241550208-eng.pdf?sequence=2&isAllowed=y)
+
+
 
 ***
 
@@ -243,13 +256,13 @@ You are a representative from Public Health Scotland, sent to `r city_name` to h
 
 Your briefing packet includes the following documents: 
 
-[Public Health Scotland Influenza A-Z](https://www.hps.scot.nhs.uk/a-to-z-of-topics/influenza/) 
+* [Public Health Scotland Influenza A-Z](https://www.hps.scot.nhs.uk/a-to-z-of-topics/influenza/) 
 
-Uyeki, Timothy M et al. “Influenza.” Lancet (London, England) vol. 400,10353 (2022): 693-706.
+* Uyeki, Timothy M et al. “Influenza.” Lancet (London, England) vol. 400,10353 (2022): 693-706.
 
-Tyrrell CS, Allen JLY, Gkrania-Klotsas E. Influenza: epidemiology and hospital management. Medicine (Abingdon). 2021 Dec;49(12):797-804. doi: 10.1016/j.mpmed.2021.09.015. 
+* Tyrrell CS, Allen JLY, Gkrania-Klotsas E. Influenza: epidemiology and hospital management. Medicine (Abingdon). 2021 Dec;49(12):797-804. doi: 10.1016/j.mpmed.2021.09.015. 
 
-Kassianos, George et al. “Implementation of the United Kingdom's childhood influenza national vaccination programme: A review of clinical impact and lessons learned over six influenza seasons.” Vaccine vol. 38,36 (2020): 5747-5758. doi:10.1016/j.vaccine.2020.06.065
+* Kassianos, George et al. “Implementation of the United Kingdom's childhood influenza national vaccination programme: A review of clinical impact and lessons learned over six influenza seasons.” Vaccine vol. 38,36 (2020): 5747-5758. doi:10.1016/j.vaccine.2020.06.065
 
 
 
@@ -257,9 +270,9 @@ Kassianos, George et al. “Implementation of the United Kingdom's childhood inf
 
 ## Information Packet B3
 
-You are an epidemiologist working for Public Health Scotland, sent to `r city_name` to help with the measles outbreak.
+You are an epidemiologist working for Public Health Scotland, sent to `r city_name` to help with the influenza outbreak.
 
-REPLACE THIS TEXT and TABLE - A team of scientists working together have in a PHS lab have isolated and cultured influenza virus (using a standard tissue culture model) from a number of patient samples taken during this outbreak; isolated influenza RNA from these cultures; reverse-transcribed this to DNA and sequenced this DNA using an Illumina MiSeq platform; assembled the short paired-end reads; and compared these assemblies to the extant influenza sequences available in the NCBI databases. The results of these experiments are summarised in the table below. 
+A team of scientists working together have in a PHS lab have isolated and cultured influenza virus (using a standard tissue culture model) from a number of patient samples taken during this outbreak; isolated influenza RNA from these cultures; reverse-transcribed this to DNA, and sequenced this DNA using an Illumina MiSeq platform; assembled the short paired-end reads; and compared these assemblies to the extant influenza sequences available in the NCBI databases. The results of these experiments are summarised in the table below. 
 
 <table>
 <table border="1">
@@ -311,9 +324,15 @@ REPLACE THIS TEXT and TABLE - A team of scientists working together have in a PH
 <br><br>
 Your briefing packet also includes the following documents: 
 
-Lean, Fabian Z X et al. “Gross pathology of high pathogenicity avian influenza virus H5N1 2021-2022 epizootic in naturally infected birds in the United Kingdom.” One health (Amsterdam, Netherlands) vol. 14 100392. 27 Apr. 2022, doi:10.1016/j.onehlt.2022.100392
+* Lean, Fabian Z X et al. “Gross pathology of high pathogenicity avian influenza virus H5N1 2021-2022 epizootic in naturally infected birds in the United Kingdom.” One health (Amsterdam, Netherlands) vol. 14 100392. 27 Apr. 2022, doi:10.1016/j.onehlt.2022.100392
 
-[Weekly National Flu Reports (UKHSA)](https://www.gov.uk/government/collections/weekly-national-flu-reports)
+* Wolken, Madeline et al. “Wastewater surveillance of SARS-CoV-2 and influenza in preK-12 schools shows school, community, and citywide infections.” Water research vol. 231 (2023): 119648. doi:10.1016/j.watres.2023.119648
+
+* Chen, Kuang-Yu et al. “High-throughput droplet-based analysis of influenza A virus genetic reassortment by single-virus RNA sequencing.” Proceedings of the National Academy of Sciences of the United States of America vol. 120,6 (2023): e2211098120. doi:10.1073/pnas.2211098120
+
+* Smyk, Julia M et al. “Evolution of Influenza Viruses-Drug Resistance, Treatment Options, and Prospects.” International journal of molecular sciences vol. 23,20 12244. 13 Oct. 2022, doi:10.3390/ijms232012244
+
+* [Weekly National Flu Reports (UKHSA)](https://www.gov.uk/government/collections/weekly-national-flu-reports)
 
 ***
 
@@ -425,11 +444,11 @@ The hospital follows the guidelines set out in the [National Infection Preventio
 
 As a hospital director, you are familiar with the literature surrounding hospital pandemic preparedness, and regularly read papers such as:
 
-Mer, Mervyn et al. “Critical Care Pandemic Preparation: Considerations and Lessons Learned from COVID-19.” Critical care clinics vol. 38,4 (2022): 761-774. 
+* Mer, Mervyn et al. “Critical Care Pandemic Preparation: Considerations and Lessons Learned from COVID-19.” Critical care clinics vol. 38,4 (2022): 761-774. 
 
-Tacconelli, Evelina et al. “Challenges of data sharing in European Covid-19 projects: A learning opportunity for advancing pandemic preparedness and response.” The Lancet regional health. Europe vol. 21 (2022): 100467. 
+* Tacconelli, Evelina et al. “Challenges of data sharing in European Covid-19 projects: A learning opportunity for advancing pandemic preparedness and response.” The Lancet regional health. Europe vol. 21 (2022): 100467. 
 
-Adelaja, I., Sayma, M., Walton, H., McLachlan, G., de Boisanger, J., Bartlett-Pestell, S., Roche, E., Gandhi, V., Wilson, G. J., Brookes, Z., Yeen Fung, C., Macfarlane, H., Navaratnam, A., James, C., Scolding, P., & Sara, H. (2020). A comprehensive hospital agile preparedness (CHAPs) tool for pandemic preparedness, based on the COVID-19 experience. Future healthcare journal, 7(2), 165–168. 
+* Adelaja, I., Sayma, M., Walton, H., McLachlan, G., de Boisanger, J., Bartlett-Pestell, S., Roche, E., Gandhi, V., Wilson, G. J., Brookes, Z., Yeen Fung, C., Macfarlane, H., Navaratnam, A., James, C., Scolding, P., & Sara, H. (2020). A comprehensive hospital agile preparedness (CHAPs) tool for pandemic preparedness, based on the COVID-19 experience. Future healthcare journal, 7(2), 165–168. 
 
 ***
 
@@ -447,7 +466,7 @@ Some of the key `r city_name` facts and figures at a glance are summarized in th
   </tr>
   <tr>
     <td>Schools</td>
-    <td>4 primary schools, 2 secondary school, 1 college</td>
+    <td>`r sample(4:10, size=1)` primary schools, `r sample(2:6, size=1)` secondary schools, 1 college</td>
   </tr>
   <tr>
     <td>Care Homes</td>
@@ -487,19 +506,19 @@ Some of the key `r city_name` facts and figures at a glance are summarized in th
 
 Your briefing packet on influenza includes the following information.
 
-[Pandemic Flu: A Scottish Framework for Responding to an Influenza Pandemic](https://www.gov.scot/binaries/content/documents/govscot/publications/strategy-plan/2007/11/pandemic-flu-scottish-framework-responding-influenza-pandemic/documents/0054442-pdf/0054442-pdf/govscot%3Adocument/0054442.pdf)
+* [Pandemic Flu: A Scottish Framework for Responding to an Influenza Pandemic](https://www.gov.scot/binaries/content/documents/govscot/publications/strategy-plan/2007/11/pandemic-flu-scottish-framework-responding-influenza-pandemic/documents/0054442-pdf/0054442-pdf/govscot%3Adocument/0054442.pdf)
 
-[NatureScot: Highly pathogenic avian influenza (bird flu) - Guidance for site managers](https://www.nature.scot/doc/highly-pathogenic-avian-influenza-bird-flu-guidance-site-managers)
+* [NatureScot: Highly pathogenic avian influenza (bird flu) - Guidance for site managers](https://www.nature.scot/doc/highly-pathogenic-avian-influenza-bird-flu-guidance-site-managers)
 
-[Guidelines for PHE health protection teams on the management of outbreaks of influenza-like illness (ILI) in care homes](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/932991/Guidelines_for_the_management_of_outbreaks_of_influenza-like_illness_in_care_homes_05_11_2020.pdf)
+* [Guidelines for PHE health protection teams on the management of outbreaks of influenza-like illness (ILI) in care homes](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/932991/Guidelines_for_the_management_of_outbreaks_of_influenza-like_illness_in_care_homes_05_11_2020.pdf)
 
-[Investigation and management of outbreaks of suspected acute viral respiratory infection in schools: guidance for health protection teams](https://www.gov.uk/government/publications/influenza-like-illness-ili-managing-outbreaks-in-schools/investigation-and-management-of-outbreaks-of-suspected-acute-viral-respiratory-infection-in-schools-guidance-for-health-protection-teams)
+* [Investigation and management of outbreaks of suspected acute viral respiratory infection in schools: guidance for health protection teams](https://www.gov.uk/government/publications/influenza-like-illness-ili-managing-outbreaks-in-schools/investigation-and-management-of-outbreaks-of-suspected-acute-viral-respiratory-infection-in-schools-guidance-for-health-protection-teams)
 
 ***
 
 ## Information Packet B6
 
-You are a microbiologist working in the virology department at the Greater `r city_name` Clinical Laboratory. Your laboratory is equipped to handle a range of culture samples (including anaerobic and microaerobic bacteria, as well as viruses), and you routinely process`r sample(1500:2000, size=1)` samples monthly. 
+You are a microbiologist working in the virology department at the Greater `r city_name` Clinical Laboratory. Your laboratory is equipped to handle a range of culture samples (including anaerobic and microaerobic bacteria, as well as viruses), and you routinely process `r sample(1500:2000, size=1)` samples monthly. 
 
 You are familiar with the culture requirements for growth of influenza viruses in tissue culture, and the range of [influenza virus testing methods](https://www.cdc.gov/flu/professionals/diagnosis/table-testing-methods.htm).
 
@@ -507,11 +526,13 @@ You are familiar with the culture requirements for growth of influenza viruses i
 knitr::include_graphics(rep("images/influenza-plaqueassay.jpg"))
 ```
 
-Morehouse, Zachary P et al. “A narrative review of nine commercial point of care influenza tests: an overview of methods, benefits, and drawbacks to rapid influenza diagnostic testing.” Journal of osteopathic medicine vol. 123,1 39-47. 19 Aug. 2022.
+You are also familiar with the literature surrounding influenza virus identification, and often read papers such as: 
 
-Ison MG, Hayden FG, Hay AJ, Gubareva LV, Govorkova EA, Takashita E, McKimm-Breschkin JL. Influenza polymerase inhibitor resistance: Assessment of the current state of the art - A report of the isirv Antiviral group. Antiviral Res. 2021 Oct;194:105158. 
+* Morehouse, Zachary P et al. “A narrative review of nine commercial point of care influenza tests: an overview of methods, benefits, and drawbacks to rapid influenza diagnostic testing.” Journal of osteopathic medicine vol. 123,1 39-47. 19 Aug. 2022.
 
-Van Poelvoorde, Laura A E et al. “Next-Generation Sequencing: An Eye-Opener for the Surveillance of Antiviral Resistance in Influenza.” Trends in biotechnology vol. 38,4 (2020): 360-367.
+* Ison MG, Hayden FG, Hay AJ, Gubareva LV, Govorkova EA, Takashita E, McKimm-Breschkin JL. Influenza polymerase inhibitor resistance: Assessment of the current state of the art - A report of the isirv Antiviral group. Antiviral Res. 2021 Oct;194:105158. 
+
+* Van Poelvoorde, Laura A E et al. “Next-Generation Sequencing: An Eye-Opener for the Surveillance of Antiviral Resistance in Influenza.” Trends in biotechnology vol. 38,4 (2020): 360-367.
 
 
 ***
@@ -522,21 +543,21 @@ You are a public communications expert, often employed by the `r city_name` city
 
 As a public communications expert, you are familiar with the literature surrounding science communication in a pandemic, including papers such as: 
 
-Matta, G. Science communication as a preventative tool in the COVID19 pandemic. Humanit Soc Sci Commun 7, 159 (2020).
+* Matta, G. Science communication as a preventative tool in the COVID19 pandemic. Humanit Soc Sci Commun 7, 159 (2020).
 
-Abdool Karim, Salim S. “Public understanding of science: Communicating in the midst of a pandemic.” Public understanding of science (Bristol, England) vol. 31,3 (2022): 282-287.
+* Abdool Karim, Salim S. “Public understanding of science: Communicating in the midst of a pandemic.” Public understanding of science (Bristol, England) vol. 31,3 (2022): 282-287.
 
-Royan, Regina et al. “Use of Twitter Amplifiers by Medical Professionals to Combat Misinformation During the COVID-19 Pandemic.” Journal of medical Internet research vol. 24,7 e38324. 22 Jul. 2022, doi:10.2196/38324
+* Royan, Regina et al. “Use of Twitter Amplifiers by Medical Professionals to Combat Misinformation During the COVID-19 Pandemic.” Journal of medical Internet research vol. 24,7 e38324. 22 Jul. 2022, doi:10.2196/38324
 
-Tait, Margaret E et al. “Serving the public? A content analysis of COVID-19 public service announcements airing from March - December of 2020 in the U.S.” Preventive medicine reports vol. 29 (2022): 101971. 
+* Tait, Margaret E et al. “Serving the public? A content analysis of COVID-19 public service announcements airing from March - December of 2020 in the U.S.” Preventive medicine reports vol. 29 (2022): 101971. 
 
 You have assembled the following information/resources for this meeting:
 
-[Influenza Pandemic Communication and Public Outreach (CDC)](https://www.cdc.gov/flu/pandemic-resources/planning-preparedness/communication-public-outreach.htm)
+* [Influenza Pandemic Communication and Public Outreach (CDC)](https://www.cdc.gov/flu/pandemic-resources/planning-preparedness/communication-public-outreach.htm)
 
-Lawes-Wickwar, Sadie et al. “A Rapid Systematic Review of Public Responses to Health Messages Encouraging Vaccination against Infectious Diseases in a Pandemic or Epidemic.” Vaccines vol. 9,2 72. 20 Jan. 2021, doi:10.3390/vaccines9020072
+* Lawes-Wickwar, Sadie et al. “A Rapid Systematic Review of Public Responses to Health Messages Encouraging Vaccination against Infectious Diseases in a Pandemic or Epidemic.” Vaccines vol. 9,2 72. 20 Jan. 2021, doi:10.3390/vaccines9020072
 
-Bielecki, K et al. “Impact of an influenza information pamphlet on vaccination uptake among Polish pupils in Edinburgh, Scotland and the role of social media in parental decision making.” BMC public health vol. 20,1 1381. 10 Sep. 2020, doi:10.1186/s12889-020-09481-z
+* Bielecki, K et al. “Impact of an influenza information pamphlet on vaccination uptake among Polish pupils in Edinburgh, Scotland and the role of social media in parental decision making.” BMC public health vol. 20,1 1381. 10 Sep. 2020, doi:10.1186/s12889-020-09481-z
 
 ***
 
@@ -544,18 +565,18 @@ Bielecki, K et al. “Impact of an influenza information pamphlet on vaccination
 
 You are one of the doctors at the largest surgery in `r city_name`. In the past fortnight, `r sample(50:100, size=1)` of your patients have recently presented to the surgery with symptoms consistent with influenza. You have therefore recently been familiarising yourself with the relevant literature:
 
-[Weekly national respiratory infection and COVID-19 statistical report (PHS)](https://publichealthscotland.scot/publications/weekly-national-respiratory-infection-and-covid-19-statistical-report/weekly-national-respiratory-infection-and-covid-19-statistical-report-18-january-2023/)
+* [Weekly national respiratory infection and COVID-19 statistical report (PHS)](https://publichealthscotland.scot/publications/weekly-national-respiratory-infection-and-covid-19-statistical-report/weekly-national-respiratory-infection-and-covid-19-statistical-report-18-january-2023/)
 
-[Guidance on use of antiviral agents for the treatment and prophylaxis of seasonal influenza(UKHSA)](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1058443/ukhsa-guidance-antivirals-influenza-11v4.pdf)
+* [Guidance on use of antiviral agents for the treatment and prophylaxis of seasonal influenza(UKHSA)](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1058443/ukhsa-guidance-antivirals-influenza-11v4.pdf)
 
-[Surveillance and Laboratory Testing of Influenza Neuraminidase Inhibitor Resistance](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/757445/surveillance_and_laboratory_testing_of_influenza_neuraminidase_inhibitor_resistance.pdf) 
+* [Surveillance and Laboratory Testing of Influenza Neuraminidase Inhibitor Resistance](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/757445/surveillance_and_laboratory_testing_of_influenza_neuraminidase_inhibitor_resistance.pdf) 
 
-[Information for Clinicians on Influenza Virus Testing (CDC)](https://www.cdc.gov/flu/professionals/diagnosis/index.htm)
+* [Information for Clinicians on Influenza Virus Testing (CDC)](https://www.cdc.gov/flu/professionals/diagnosis/index.htm)
 
-Jiang, Chao et al. “Comparative review of respiratory diseases caused by coronaviruses and influenza A viruses during epidemic season.” Microbes and infection vol. 22,6-7 (2020): 236-244.
+* Jiang, Chao et al. “Comparative review of respiratory diseases caused by coronaviruses and influenza A viruses during epidemic season.” Microbes and infection vol. 22,6-7 (2020): 236-244.
 
-Clark, Tristan W et al. “Clinical impact of a routine, molecular, point-of-care, test-and-treat strategy for influenza in adults admitted to hospital (FluPOC): a multicentre, open-label, randomised controlled trial.” The Lancet. Respiratory medicine vol. 9,4 (2021): 419-429. 
+* Clark, Tristan W et al. “Clinical impact of a routine, molecular, point-of-care, test-and-treat strategy for influenza in adults admitted to hospital (FluPOC): a multicentre, open-label, randomised controlled trial.” The Lancet. Respiratory medicine vol. 9,4 (2021): 419-429. 
 
-Okiyama, Sho et al. “Examining the Use of an Artificial Intelligence Model to Diagnose Influenza: Development and Validation Study.” Journal of medical Internet research vol. 24,12 e38751. 23 Dec. 2022.
+* Okiyama, Sho et al. “Examining the Use of an Artificial Intelligence Model to Diagnose Influenza: Development and Validation Study.” Journal of medical Internet research vol. 24,12 e38751. 23 Dec. 2022.
 
 

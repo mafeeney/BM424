@@ -41,11 +41,11 @@ Each member of your group will play one of the following roles as you attempt to
 7.	Public communications expert (past and current sci comm campaigns)
 8.  Doctor at a major surgery in `r city_name`
 
-You must work together, using the information that has been provided for you in the attached information packets, and decide what action(s) should be taken to control the measles outbreak currently plaguing your city, `r city_name`. Your actions should be evidence-based – use the peer-reviewed literature to decide on measures that will stop the pandemic in your scenario.
+You must work together, using the information that has been provided for you in the attached information packets, and decide what action(s) should be taken to control the outbreak currently plaguing your city, `r city_name`. Your actions should be evidence-based – use the peer-reviewed literature to decide on measures that will stop the pandemic in your scenario.
 
 Your action points may include directives to gather more information (e.g., contact tracing of current cases, microbiological testing of food/water, etc.), or specific directives (e.g. public health measures, non-pharmaceutical interventions, etc.). Use the data/expertise of all group members. Be clear, concise, and specific.
 
-You should submit 3-5 specific actions to control the pandemic, using the workshop 3 pro forma (available on MyPlace). Submit this by noon, Friday March 10th, via the submission link on MyPlace. 
+You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 10th, via the submission link on MyPlace. 
 
 ***
 

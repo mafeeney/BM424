@@ -16,18 +16,18 @@ library(ggplot2)
 library(knitr)
 
 outbreak_deaths <- floor(runif(1, min = 10, max = 30))
-city_name <- "CITYNAME" ##replace all instances of "CITYNAME" with new scenario name
-hospital_name <- "HOSPNAME" ##replace all instances of "HOSPNAME" with new scenario name
+city_name <- "Dalessie" 
+hospital_name <- "Fairview" ##replace all instances of "Fairview" with new scenario name
 ```
 
-## Scenario X
+## Scenario H
 
 Disaster has struck - hard on the heels of the COVID-19 pandemic, another disease outbreak has hit your fair city, `r city_name`. Residents are outraged and worried. There have already been `r outbreak_deaths` deaths.
 
-The cause of the outbreak appears to be DIS-NAME. (Please refer to the [WHO DIS-NAME Fact Sheet](add link here) for more information about the pathogen.)
+The cause of the outbreak appears to be Group A Streptococcus (<i>Streptococcus pyogenes</i>). (Please refer to the [CDC Group A Streptococcus resources](https://www.cdc.gov/groupastrep/index.html) for more information about the pathogen and the diseases it causes.)
 
-```{r DISEASE, out.width="50%", out.height="50%", echo=FALSE, fig.cap="as appropriate. Image credit: [CDC](link)"}
-knitr::include_graphics(rep("images/DIS-NAME.jpg"))
+```{r DISEASE, out.width="50%", out.height="50%", echo=FALSE, fig.cap="Scanning electron micrograph of Group A Streptococcus cells on a human neutrophil. Image credit: [CDC](https://phil.cdc.gov/Details.aspx?pid=18257)"}
+knitr::include_graphics(rep("images/GAS.jpg"))
 ```
 
 Each member of your group will play one of the following roles as you attempt to tackle the disease outbreak and save your city:
@@ -40,27 +40,28 @@ Each member of your group will play one of the following roles as you attempt to
 6.	Microbiologist (working in one of the NHS Scotland clinical labs)
 7.	Public communications expert (past and current sci comm campaigns)
 8.  Doctor at a major surgery in `r city_name`
+9.  Epidemiologist from the local university, an expert on <i>Streptococcus pyogenes</i> transmission
 
-You must work together, using the information that has been provided for you in the attached information packets, and decide what action(s) should be taken to control the measles outbreak currently plaguing your city, `r city_name`. Your actions should be evidence-based – use the peer-reviewed literature to decide on measures that will stop the pandemic in your scenario.
+You must work together, using the information that has been provided for you in the attached information packets, and decide what action(s) should be taken to control the outbreak currently plaguing your city, `r city_name`. Your actions should be evidence-based – use the peer-reviewed literature to decide on measures that will stop the pandemic in your scenario.
 
 Your action points may include directives to gather more information (e.g., contact tracing of current cases, microbiological testing of food/water, etc.), or specific directives (e.g. public health measures, non-pharmaceutical interventions, etc.). Use the data/expertise of all group members. Be clear, concise, and specific.
 
-You should submit 3-5 specific actions to control the pandemic, using the workshop 3 pro forma (available on MyPlace). Submit this by noon, Friday March 10th, via the submission link on MyPlace. 
+You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 10th, via the submission link on MyPlace. 
 
 ***
 
-## Information Packet X1
+## Information Packet H1
 
 You are the provost of `r city_name`, elected in `r sample(2012:2021, size=1)`. 
 
-```{r city, echo=FALSE, fig.cap="Photograph of CITYNAME city centre. Image credit: DALL-E"}
-knitr::include_graphics(rep("images/CITYNAME.png"))
+```{r city, echo=FALSE, fig.cap="Photograph of Dalessie city centre. Image credit: DALL-E"}
+knitr::include_graphics(rep("images/Dalessie.png"))
 ```
 
 
 The current population of `r city_name` (as of December 2022) is `r sample(150000:170000, size=1)`. The demographic data for the city is shown below.
 
-```{r A1, fig.show="hold", out.width="50%", echo=FALSE, fig.cap="CITYNAME demographics (Source: Office for National Statistics)"}
+```{r A1, fig.show="hold", out.width="50%", echo=FALSE, fig.cap="Dalessie demographics (Source: Office for National Statistics)"}
 
 Pop <- c(sample(150000:170000, size=3, replace=TRUE), sample(170000:180000, size=3, replace=TRUE), sample(190000:170000, size=2, replace=TRUE), sample(150000:170000, size=2, replace=TRUE))
 PopYears <- c(2012:2021)
@@ -68,7 +69,7 @@ population <- data.frame(Pop, PopYears)
 ggplot(data = population, aes(x=PopYears, y=Pop)) + 
   geom_point() +
   geom_line() +
-  labs(y = "Number of CITYNAME residents (estimated)", x = "Year") +
+  labs(y = "Number of Dalessie residents (estimated)", x = "Year") +
   scale_y_continuous(limits=c(0, 200000)) + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 
@@ -80,16 +81,16 @@ birthdeath <- data.frame(Demog, Num, DemogYears)
 ggplot(data = birthdeath, aes(x=DemogYears, y=Num, group=Demog, colour=Demog)) + 
   geom_point() +
   geom_line() +
-  labs(y = "Number of births and deaths in CITYNAME (estimated)", x = "Year", colour = "Demographics") +
+  labs(y = "Number of births and deaths in Dalessie (estimated)", x = "Year", colour = "Demographics") +
   scale_y_continuous(limits=c(0, 5500)) + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + 
   scale_color_discrete(name="")
 ```
-You were elected as a member of the popular "PARTY3" party and made a number of election promises regarding a "Green New Deal" for `r city_name`.
+You were elected as a member of the popular "Unity First" party and made a number of election promises regarding a "Green New Deal" for `r city_name`.
 
-```{r A2, fig.cap="Voting intention by CITYNAME residents (Source: YouGov polling)", echo=FALSE}
+```{r A2, fig.cap="Voting intention by Dalessie residents (Source: YouGov polling)", echo=FALSE}
 
-Party <- c((rep("PARTY1", 10)), (rep("PARTY2", 10)), (rep("PARTY3", 10)), (rep("PARTY4", 10)), (rep("PARTY5", 10)))
+Party <- c((rep("National Renovation", 10)), (rep("Progressive Rights", 10)), (rep("Unity First", 10)), (rep("Maroon", 10)), (rep("United Future", 10)))
 Polls <- c(sample(1:3, size=10, replace=TRUE), sample(8:14, size=10, replace=TRUE), sample(15:20, size=10, replace=TRUE), sample(5:10, size=10, replace=TRUE), sample(1:2, size=10, replace=TRUE))
 PolYears <- c(rep(2012:2021, 5))
 politics <- data.frame(Party, Polls, PolYears)
@@ -107,7 +108,7 @@ There are currently `r Councillors` elected councillors, representing the 5 main
 ```{r A3, echo=FALSE}
 
 pol2021 <- (politics[politics$PolYears>2020, 2])
-Parties <- c("PARTY1", "PARTY2", "PARTY3", "PARTY4", "PARTY5")
+Parties <- c("National Renovation", "Progressive Rights", "Unity First", "Maroon", "United Future")
 
 Councillors <- data.frame(Parties, pol2021)
 
@@ -119,7 +120,7 @@ kable(x = Councillors,
 <br><br>
 The overall budget (expenditures) for the 2021-2022 financial year is £`r sample(400000000:600000000, size=1)`. A summary of expeditures by category for this financial year is shown below. 
 
-```{r A4, fig.cap="Public expenditures by category for the 2021-2022 financial year (Source: CITYNAME City Council)", echo=FALSE}
+```{r A4, fig.cap="Public expenditures by category for the 2021-2022 financial year (Source: Dalessie City Council)", echo=FALSE}
 
 expenses <- data.frame(
   Category=c("Education", "Industry and Agriculture", "Social Care", "Transport", "Public order and safety", "Healthcare", "Housing", "Other"),
@@ -146,7 +147,7 @@ time1 <- c("immediately", "very soon", "at once", "as soon as possible")
 name1 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
 verb1 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
 business1 <- c("small coffee shop", "coffee shop", "cafe", "restaurant", "bookshop", "boutique clothing store", "records shop", "used bookstore", "toy store", "sweet shop")
-business2 <- c("The CITYNAME Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
+business2 <- c("The Dalessie Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
 adj2 <- c("nearly", "almost", "virtually", "almost literally", "practically")
 conseq1 <- c("lost my business due to those pandemic lockdowns", "had to close because of all the draconian lockdowns", "went out of business", "went bankrupt", "had to shut our doors during COVID")
 sent2 <- c("I hope you realise how costly the last pandemic was for millions of people across the country, and that we can't afford another one.", "You should be ashamed to think of all the businesses that have had to close because of the coronavirus measures this city took, and all of the people who lost their jobs.", "Businesses must be free to operate, not prosecuted by some nanny state.", "Things are bad enough already with the cost of living crisis, war in Ukraine, and Brexit, we can't afford another pandemic.", "I hope you realise that you need to put businesses first now - we were unfairly forced to bear the costs of the last pandemic.", "I hope you realise how much business we have all lost in recent years, and how much businesses in this city are struggling financially.")
@@ -233,29 +234,44 @@ I have just learned that my `r sample(rel1, 1)` has passed away due to the new p
 
 ***
 
-As Provost of `r city_name`, you are of course familiar with the work of the [Standing Committee on Pandemic Preparedness](https://www.gov.scot/groups/standing-committee-on-pandemic-preparedness/), the [UK Pandemic Preparedness plan](https://www.gov.uk/government/publications/uk-pandemic-preparedness/uk-pandemic-preparedness), and the latest [COVID-19 health protection guidance](https://publichealthscotland.scot/our-areas-of-work/conditions-and-diseases/covid-19/covid-19-health-protection-guidance/#section-1) released by Public Health Scotland. 
+As Provost of `r city_name`, you are of course familiar with the work of the [Standing Committee on Pandemic Preparedness](https://www.gov.scot/groups/standing-committee-on-pandemic-preparedness/). You are also familiar with:
+
+* The [UK Pandemic Preparedness plan](https://www.gov.uk/government/publications/uk-pandemic-preparedness/uk-pandemic-preparedness)
+
+* The latest [COVID-19 health protection guidance](https://publichealthscotland.scot/our-areas-of-work/conditions-and-diseases/covid-19/covid-19-health-protection-guidance/#section-1) released by Public Health Scotland
+
+* [Tackling antimicrobial resistance 2019–2024: The UK’s five-year national action plan](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1070263/UK_AMR_5_year_national_action_plan.pdf)
+
+* The [UK One Health Report - Joint report on antibiotic use and antibiotic resistance, 2013–2017 ](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/921039/Ted_Final_version__1318703-v45-One_Health_Report_2019_FINAL-accessible.pdf)
+
+* [Communicating risk in public health emergencies: A WHO guideline for emergency risk communication (ERC) policy and practice](https://apps.who.int/iris/bitstream/handle/10665/259807/9789241550208-eng.pdf?sequence=2&isAllowed=y)
+
 
 ***
 
-## Information Packet X2
+## Information Packet H2
 
-You are a representative from Public Health Scotland, sent to `r city_name` to help with the DIS-NAME outbreak. 
+You are a representative from Public Health Scotland, sent to `r city_name` to help with the Group A Streptococcus outbreak. 
 
 Your briefing packet includes the following documents: 
 
-[name](link) or paper citation - x4 total
+* [Group A Streptococcal Infections (PHS)](https://www.hps.scot.nhs.uk/a-to-z-of-topics/streptococcal-infections/group-a-streptococcal-infections/)
 
+* [Group A streptococcal infections: activity during the 2022 to 2023 season (UKHSA)](https://www.gov.uk/government/publications/group-a-streptococcal-infections-activity-during-the-2022-to-2023-season)
 
+* Miller, Kate M et al. “The global burden of sore throat and group A Streptococcus pharyngitis: A systematic review and meta-analysis.” EClinicalMedicine vol. 48 101458. 20 May. 2022, doi:10.1016/j.eclinm.2022.101458
+
+* Moore, Hannah C et al. “Harmonizing Surveillance Methodologies for Group A Streptococcal Diseases.” Open forum infectious diseases vol. 9,Suppl 1 S1-S4. 15 Sep. 2022, doi:10.1093/ofid/ofac210
 
 
 
 ***
 
-## Information Packet X3
+## Information Packet H3
 
 You are an epidemiologist working for Public Health Scotland, sent to `r city_name` to help with the measles outbreak.
 
-REPLACE THIS TEXT and TABLE - A team of scientists working together have in a PHS lab have isolated and cultured DIS-NAME virus (using a standard tissue culture model) from a number of patient samples taken during this outbreak; isolated DIS-NAME RNA from these cultures; reverse-transcribed this to DNA and sequenced this DNA using an Illumina MiSeq platform; assembled the short paired-end reads; and compared these assemblies to the extant DIS-NAME sequences available in the NCBI databases. The results of these experiments are summarised in the table below. 
+A team of scientists working together have in a PHS lab have isolated and cultured Group A Streptococcus species (following standard protocols) from a number of patient samples taken during this outbreak; isolated DNA from these cultures; sequenced this DNA using an Illumina MiSeq platform; assembled the short paired-end reads; and compared these assemblies to the extant Group A Streptococcus sequences available in the NCBI databases. The results of these experiments are summarised in the table below. 
 
 <table>
 <table border="1">
@@ -265,59 +281,64 @@ REPLACE THIS TEXT and TABLE - A team of scientists working together have in a PH
   </tr>
   <tr>
     <td>1</td>
-    <td>acc.no.here</td>
+    <td>GCA_028370295.1</td>
   </tr>
   <tr>
     <td>2</td>
-    <td>acc.no.here</td>
+    <td>GCA_028370295.1</td>
   </tr>
   <tr>
     <td>3</td>
-    <td>acc.no.here</td>
+    <td>GCA_028370195.1</td>
   </tr>
   <tr>
     <td>4</td>
-    <td>acc.no.here</td>
+    <td>GCA_028370195.1</td>
   </tr>
   <tr>
     <td>5</td>
-    <td>acc.no.here</td>
+    <td>GCA_028370295.1</td>
   </tr>
   <tr>
     <td>6</td>
-    <td>acc.no.here</td>
+    <td>GCA_028370295.1</td>
   </tr>
     <tr>
     <td>7</td>
-    <td>acc.no.here</td>
+    <td>GCA_028370295.1</td>
   </tr>
   <tr>
     <td>8</td>
-    <td>acc.no.here</td>
+    <td>GCA_028370195.1</td>
   </tr>
   <tr>
     <td>9</td>
-    <td>acc.no.here</td>
+    <td>GCA_028370195.1</td>
   </tr>
     <tr>
     <td>10</td>
-    <td>acc.no.here</td>
+    <td>GCA_028370195.1</td>
   </tr>
 </table>  
 <br><br>
 Your briefing packet also includes the following documents: 
 
+* Chochua, Sopio et al. “Population and Whole Genome Sequence Based Characterization of Invasive Group A Streptococci Recovered in the United States during 2015.” mBio vol. 8,5 e01422-17. 19 Sep. 2017, doi:10.1128/mBio.01422-17
 
-[text](link) x1, citation x1
+* [<i>Streptococcus pyogenes</i> pubMLST](https://pubmlst.org/organisms/streptococcus-pyogenes)
+
+* Cordery, Rebecca et al. “Frequency of transmission, asymptomatic shedding, and airborne spread of <i>Streptococcus pyogenes</i> in schoolchildren exposed to scarlet fever: a prospective, longitudinal, multicohort, molecular epidemiological, contact-tracing study in England, UK.” The Lancet. Microbe vol. 3,5 (2022): e366-e375. doi:10.1016/S2666-5247(21)00332-3
+
+* Pagnossin, Davide et al. “Complete Genome Sequences of Three Invasive Strains of <i>Streptococcus pyogenes</i> Subtype emm5.23 Isolated in Scotland.” Microbiology resource announcements vol. 10,15 e00101-21. 15 Apr. 2021, doi:10.1128/MRA.00101-21
 
 ***
 
-## Information Packet X4
+## Information Packet H4
 
 You are the director of `r city_name`'s main hospital, the `r hospital_name`, which has 550 beds across 9 different wards and 10 operating theatres. 
 
 
-```{r hospital, echo=FALSE, fig.cap="The HOSPNAME hospital in CITYNAME. Image credit: [DALL-E"}
+```{r hospital, echo=FALSE, fig.cap="The Fairview hospital in Dalessie. Image credit: [DALL-E"}
 knitr::include_graphics(rep("images/Queens-College.png"))
 ```
 
@@ -342,7 +363,7 @@ The `r hospital_name` has units specialising in coronary care; maternity care; d
 There are currently 25 ICU beds (with ventilators) available, an increase from the 14 ICU beds in the `r hospital_name` in November 2019. Average ICU bed occupancy before and during the COVID-19 pandemic is in the figure below. 
 
 
-```{r A6, fig.cap="ICU bed occupancy for the CITYNAME HOSPNAME hospital (Source: NHS Scotland)", echo=FALSE}
+```{r A6, fig.cap="ICU bed occupancy for the Dalessie Fairview hospital (Source: NHS Scotland)", echo=FALSE}
 
 ICU <- c(sample(10:15, size=16, replace=TRUE), sample(23:25, size=4, replace=TRUE), sample(17:20, size=4, replace=TRUE), sample(22:25, size=4, replace=TRUE), sample(15:20, size=5, replace=TRUE), sample(22:25, size=3, replace=TRUE), sample(15:20, size=4, replace=TRUE), sample(22:25, size=4, replace=TRUE), sample(17:21, size=4, replace=TRUE))
 ICUdates <- c("1/2019", "2/2019", "3/2019", "4/2019", "5/2019", "6/2019", "7/2019", "8/2019", "9/2019", "10/2019", "11/2019", "12/2019", "1/2020", "2/2020", "3/2020", "4/2020", "5/2020", "6/2020", "7/2020", "8/2020", "9/2020", "10/2020", "11/2020", "12/2020", "1/2021", "2/2021", "3/2021", "4/2021", "5/2021", "6/2021", "7/2021", "8/2021", "9/2021", "10/2021", "11/2021", "12/2021","1/2022", "2/2022", "3/2022", "4/2022", "5/2022", "6/2022", "7/2022", "8/2022", "9/2022", "10/2022", "11/2022", "12/2022")
@@ -353,7 +374,7 @@ ICUstats <- data.frame(ICU, ICUdates)
 ggplot(data = ICUstats, aes(x=ICUdates, y=ICU, group = 1)) + 
   geom_point() +
   geom_line() +
-  labs(y = "Average HOSPNAME ICU bed occupancy/month", x = "Month") +
+  labs(y = "Average Fairview ICU bed occupancy/month", x = "Month") +
   scale_y_continuous(limits=c(0, 25)) + 
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
@@ -362,7 +383,7 @@ ggplot(data = ICUstats, aes(x=ICUdates, y=ICU, group = 1)) +
 
 There are approximately 1.3m admissions to the `r hospital_name` hospital annually, the majority of these being to the emergency (A&E) department.
 
-```{r A7, fig.cap="Admissions to the CITYNAME HOSPNAME hospital by category (Source: NHS Scotland)", echo=FALSE}
+```{r A7, fig.cap="Admissions to the Dalessie Fairview hospital by category (Source: NHS Scotland)", echo=FALSE}
 
 admissions <- data.frame(
   Category=c("Elective Inpatient", "A&E", "Day case"),
@@ -379,7 +400,7 @@ ggplot(admissions, aes(x="", y=value, fill=Category)) +
 
 A&E waiting times have been called "disastrously high" in recent months, both by the press and by tthe hospital ombudsman.
 
-```{r A8, fig.cap="ICU waiting times for the CITYNAME HOSPNAME hospital (Source: NHS Scotland)", echo=FALSE}
+```{r A8, fig.cap="ICU waiting times for the Dalessie Fairview hospital (Source: NHS Scotland)", echo=FALSE}
 
 WaitTimes <- c(sample(1:2, size=16, replace=TRUE), sample(1:2, size=4, replace=TRUE), sample(2:4, size=4, replace=TRUE), sample(2:5, size=4, replace=TRUE), sample(1:5, size=5, replace=TRUE), sample(2:5, size=3, replace=TRUE), sample(3:5, size=4, replace=TRUE), sample(2:5, size=4, replace=TRUE), sample(5:6, size=4, replace=TRUE))
 AEdates <- c("1/2019", "2/2019", "3/2019", "4/2019", "5/2019", "6/2019", "7/2019", "8/2019", "9/2019", "10/2019", "11/2019", "12/2019", "1/2020", "2/2020", "3/2020", "4/2020", "5/2020", "6/2020", "7/2020", "8/2020", "9/2020", "10/2020", "11/2020", "12/2020", "1/2021", "2/2021", "3/2021", "4/2021", "5/2021", "6/2021", "7/2021", "8/2021", "9/2021", "10/2021", "11/2021", "12/2021","1/2022", "2/2022", "3/2022", "4/2022", "5/2022", "6/2022", "7/2022", "8/2022", "9/2022", "10/2022", "11/2022", "12/2022")
@@ -399,7 +420,7 @@ ggplot(data = AEwaits, aes(x=AEdates, y=WaitTimes, group = 1)) +
 
 The `r hospital_name` has been set a goal of 25% reduction in sepsis mortality (compared to past years)and 50% reduction in the nosocomial transmission of superbugs such as methicillin-resistant <i>Staphylococcus aureus</i> (MRSA), <i>Clostridiodes difficile</i> (C. diff), and <i>Candida auris</i> (C. auris). 
 
-```{r A9, fig.cap="Key Performance Indicators (KPIs) related to infectious diseases for the CITYNAME HOSPNAME hospital (Source: NHS Scotland)", echo=FALSE}
+```{r A9, fig.cap="Key Performance Indicators (KPIs) related to infectious diseases for the Dalessie Fairview hospital (Source: NHS Scotland)", echo=FALSE}
 
 hosKPIs <- data.frame(
   KPI=c("Reduction in MRSA cases", "Reduction in C diff cases", "Reduction in sepsis mortality", "Reduction in C auris cases"),
@@ -414,21 +435,21 @@ ggplot(hosKPIs, aes(x = KPI, y = percent)) +
 
 ```
 
-There are currently `r sample(143:180, size=1)` patients in the `r hospital_name` with confirmed or suspected DIS-NAME, with `r sample(15:17, size=1)` of these patients currently in the ICU. 
+There are currently `r sample(143:180, size=1)` patients in the `r hospital_name` with confirmed or suspected Group A Streptococcus infections, with `r sample(15:17, size=1)` of these patients currently in the ICU. 
 
 The hospital follows the guidelines set out in the [National Infection Prevention and Control Manual](https://www.nipcm.hps.scot.nhs.uk/).
 
 As a hospital director, you are familiar with the literature surrounding hospital pandemic preparedness, and regularly read papers such as:
 
-Mer, Mervyn et al. “Critical Care Pandemic Preparation: Considerations and Lessons Learned from COVID-19.” Critical care clinics vol. 38,4 (2022): 761-774. 
+* Mer, Mervyn et al. “Critical Care Pandemic Preparation: Considerations and Lessons Learned from COVID-19.” Critical care clinics vol. 38,4 (2022): 761-774. 
 
-Tacconelli, Evelina et al. “Challenges of data sharing in European Covid-19 projects: A learning opportunity for advancing pandemic preparedness and response.” The Lancet regional health. Europe vol. 21 (2022): 100467. 
+* Tacconelli, Evelina et al. “Challenges of data sharing in European Covid-19 projects: A learning opportunity for advancing pandemic preparedness and response.” The Lancet regional health. Europe vol. 21 (2022): 100467. 
 
-Adelaja, I., Sayma, M., Walton, H., McLachlan, G., de Boisanger, J., Bartlett-Pestell, S., Roche, E., Gandhi, V., Wilson, G. J., Brookes, Z., Yeen Fung, C., Macfarlane, H., Navaratnam, A., James, C., Scolding, P., & Sara, H. (2020). A comprehensive hospital agile preparedness (CHAPs) tool for pandemic preparedness, based on the COVID-19 experience. Future healthcare journal, 7(2), 165–168. 
+* Adelaja, I., Sayma, M., Walton, H., McLachlan, G., de Boisanger, J., Bartlett-Pestell, S., Roche, E., Gandhi, V., Wilson, G. J., Brookes, Z., Yeen Fung, C., Macfarlane, H., Navaratnam, A., James, C., Scolding, P., & Sara, H. (2020). A comprehensive hospital agile preparedness (CHAPs) tool for pandemic preparedness, based on the COVID-19 experience. Future healthcare journal, 7(2), 165–168. 
 
 ***
 
-## Information Packet X5
+## Information Packet H5
 
 You are a civil servant working in `r city_name`, working closely with the provost, city council and various agencies including the NHS, the UK Health Security Agency (UKHSA), and the Scottish Environment Protection Agency (SEPA).  
 
@@ -480,54 +501,98 @@ Some of the key `r city_name` facts and figures at a glance are summarized in th
 <br><br>
 
 
-Your briefing packet on DIS-NAME includes the following information.
+Your briefing packet on Group A Streptococcus includes the following information.
 
-[text](link) x4
+* [UK guidelines for the management of contacts of invasive group A streptococcus (iGAS) infection in community settings (UKHSA)](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1124985/management-of-contacts-of-invasive-group-a-streptococcus.pdf)
 
+* [Guidelines for the public health management of scarlet fever outbreaks in schools, nurseries and other childcare settings (UKHSA)](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1131109/guidelines-for-public-health-management-scarlet-fever-outbreaks-january-2023_.pdf)
 
+* Steer, Jane A et al. “Guidelines for prevention and control of group A streptococcal infection in acute healthcare and maternity settings in the UK.” The Journal of infection vol. 64,1 (2012): 1-18. doi:10.1016/j.jinf.2011.11.001
+
+* Avire, Nelly Janira et al. “A Review of <i>Streptococcus pyogenes</i>: Public Health Risk Factors, Prevention and Control.” Pathogens (Basel, Switzerland) vol. 10,2 248. 22 Feb. 2021, doi:10.3390/pathogens10020248
 
 ***
 
-## Information Packet X6
+## Information Packet H6
 
-EDIT/REPLACE AS NEEDED You are a microbiologist working in the virology department at the Greater `r city_name` Clinical Laboratory. Your laboratory is equipped to handle a range of culture samples (including anaerobic and microaerobic bacteria, as well as viruses), and you routinely process`r sample(1500:2000, size=1)` samples monthly. 
+You are a microbiologist working in the virology department at the Greater `r city_name` Clinical Laboratory. Your laboratory is equipped to handle a range of culture samples (including anaerobic and microaerobic bacteria, as well as viruses), and you routinely process`r sample(1500:2000, size=1)` samples monthly. 
 
-You are familiar with the culture requirements for growth of DIS-NAME viruses in tissue culture, and the range of [ testing methods](link).
+You are familiar with the culture requirements for growth of Group A Streptococci, and the [UK Standards for Microbiology Investigations (UK SMI): Identification of Streptococcus species, Enterococcus species and morphologically similar organisms](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1019677/ID_4i4.pdf).
 
-```{r DIS-NAME, echo=FALSE, fig.cap="AS NEEDED Image credit: [CDC](link)"}
-knitr::include_graphics(rep("images/DIS-NAME.jpg"))
+```{r DIS-NAME, echo=FALSE, fig.cap="Group A Streptococci grown on sheep's blood agar. Image credit: [CDC](https://phil.cdc.gov/details.aspx?pid=8170)"}
+knitr::include_graphics(rep("images/GAS-BloodAgar.jpg"))
 ```
 
-3x citations or links
+You are also familiar with the literature surrounding <i>Streptococcus pyogenes</i> identification, and often read papers such as:
+
+* Robberts, F J Lourens et al. “Rapid, Low-Complexity, Simultaneous Bacterial Group Identification and Antimicrobial Susceptibility Testing Performed Directly on Positive Blood Culture Bottles Using Chromogenic Agar.” The American journal of tropical medicine and hygiene vol. 107,6 1302-1307. 14 Nov. 2022, doi:10.4269/ajtmh.22-0278
+
+* Velusamy, Srinivasan et al. “Sequential Quadriplex Real-Time PCR for Identifying 20 Common emm Types of Group A Streptococcus.” Journal of clinical microbiology vol. 59,1 e01764-20. 17 Dec. 2020, doi:10.1128/JCM.01764-20
+
+* Wang, Jie et al. “Identification and cluster analysis of <i>Streptococcus pyogenes</i> by MALDI-TOF mass spectrometry.” PloS one vol. 7,11 (2012): e47152. doi:10.1371/journal.pone.0047152
+
 
 ***
 
-## Information Packet X7
+## Information Packet H7
 
 You are a public communications expert, often employed by the `r city_name` city council to manage the PR response to different initiatives or crises. 
 
 As a public communications expert, you are familiar with the literature surrounding science communication in a pandemic, including papers such as: 
 
-Matta, G. Science communication as a preventative tool in the COVID19 pandemic. Humanit Soc Sci Commun 7, 159 (2020).
+* Matta, G. Science communication as a preventative tool in the COVID19 pandemic. Humanit Soc Sci Commun 7, 159 (2020).
 
-Abdool Karim, Salim S. “Public understanding of science: Communicating in the midst of a pandemic.” Public understanding of science (Bristol, England) vol. 31,3 (2022): 282-287.
+* Abdool Karim, Salim S. “Public understanding of science: Communicating in the midst of a pandemic.” Public understanding of science (Bristol, England) vol. 31,3 (2022): 282-287.
 
-Royan, Regina et al. “Use of Twitter Amplifiers by Medical Professionals to Combat Misinformation During the COVID-19 Pandemic.” Journal of medical Internet research vol. 24,7 e38324. 22 Jul. 2022, doi:10.2196/38324
+* Royan, Regina et al. “Use of Twitter Amplifiers by Medical Professionals to Combat Misinformation During the COVID-19 Pandemic.” Journal of medical Internet research vol. 24,7 e38324. 22 Jul. 2022, doi:10.2196/38324
 
-Tait, Margaret E et al. “Serving the public? A content analysis of COVID-19 public service announcements airing from March - December of 2020 in the U.S.” Preventive medicine reports vol. 29 (2022): 101971. 
+* Tait, Margaret E et al. “Serving the public? A content analysis of COVID-19 public service announcements airing from March - December of 2020 in the U.S.” Preventive medicine reports vol. 29 (2022): 101971. 
 
 You have assembled the following information/resources for this meeting:
 
-3x citations or links
+* [UKHSA Group A streptococcus Communications Support Pack](https://www.nenc-healthiertogether.nhs.uk/application/files/8516/7033/9986/UKHSA_iGAS_stakeholder_communications_support_pack_v_1.2.pdf)
+
+* Huttner, Benedikt et al. “Characteristics and outcomes of public campaigns aimed at improving the use of antibiotics in outpatients in high-income countries.” The Lancet. Infectious diseases vol. 10,1 (2010): 17-31. doi:10.1016/S1473-3099(09)70305-6
+
+* Veys, Koen et al. “The effect of hand hygiene promotion programs during epidemics and pandemics of respiratory droplet-transmissible infections on health outcomes: a rapid systematic review.” BMC public health vol. 21,1 1745. 25 Sep. 2021, doi:10.1186/s12889-021-11815-4
+
+* Hay, Alastair D. “The group A strep crisis: can we do better?.” BMJ (Clinical research ed.) vol. 380 58. 10 Jan. 2023, doi:10.1136/bmj.p58
 
 ***
 
-## Information Packet X8
+## Information Packet H8
 
-You are one of the doctors at the largest surgery in `r city_name`. In the past fortnight, `r sample(50:100, size=1)` of your patients have recently presented to the surgery with symptoms consistent with DIS-NAME. You have therefore recently been familiarising yourself with the relevant literature:
+You are one of the doctors at the largest surgery in `r city_name`. In the past fortnight, `r sample(50:100, size=1)` of your patients have recently presented to the surgery with symptoms consistent with Group A Streptococcus infections. You have therefore recently been familiarising yourself with the relevant literature:
 
-[text](link) x4
+* [BMJ Best Practice - Toxic Shock Syndrome](https://bestpractice.bmj.com/topics/en-gb/329)
 
-citations x3
+* [BMJ Best Practice - Necrotising Fasciitis](https://bestpractice.bmj.com/topics/en-gb/3000241)
+
+* [Group A Streptococcal Disease - For Clinicians (CDC)](https://www.cdc.gov/groupastrep/diseases-hcp/index.html)
+
+* [Rapid tests for group A streptococcal infections in people with a sore throat (NICE)](https://www.nice.org.uk/guidance/dg38)
+
+* Nguyen, Andrew D K et al. “The efficacy and safety of a shortened duration of antimicrobial therapy for group A Streptococcus bacteremia.” International journal of infectious diseases : IJID : official publication of the International Society for Infectious Diseases vol. 128 (2023): 11-19. doi:10.1016/j.ijid.2022.12.015
+
+* Primera, Gabriella et al. “Aortic valve infective endocarditis due to <i>Streptococcus pyogenes</i> : A case report.” IDCases vol. 31 e01697. 16 Jan. 2023, doi:10.1016/j.idcr.2023.e01697
+
+* Silva, José Miguel et al. “Streptococcal Toxic Shock Syndrome: A Case Report.” Cureus vol. 14,12 e32539. 14 Dec. 2022, doi:10.7759/cureus.32539
 
 
+***
+
+## Information Packet H9
+
+You are an epidemiologist working at the University of `r city_name`, and have been studying <i>Streptococcus pyogenes</i> transmission dynamics for the past `r sample(2:10, size=1)` years. As such, you are very familiar with the relevant literature, including papers such as: 
+
+* Friães, A et al. “Annotated Whole-Genome Multilocus Sequence Typing Schema for Scalable High-Resolution Typing of <i>Streptococcus pyogenes</i>.” Journal of clinical microbiology vol. 60,6 (2022): e0031522. doi:10.1128/jcm.00315-22
+
+* Jespersen, Magnus G et al. “Global genomic epidemiology of <i>Streptococcus pyogenes</i>.” Infection, genetics and evolution : journal of molecular epidemiology and evolutionary genetics in infectious diseases vol. 86 (2020): 104609. doi:10.1016/j.meegid.2020.104609
+
+* Latronico, Francesca et al. “Genomic Characteristics Behind the Spread of Bacteremic Group A Streptococcus Type emm89 in Finland, 2004-2014.” The Journal of infectious diseases vol. 214,12 (2016): 1987-1995. doi:10.1093/infdis/jiw468
+
+* Hayes, Andrew et al. “Restricted Sequence Variation in <i>Streptococcus pyogenes</i> Penicillin Binding Proteins.” mSphere vol. 5,2 e00090-20. 29 Apr. 2020, doi:10.1128/mSphere.00090-20
+
+* Tagini, F et al. “Importance of whole genome sequencing for the assessment of outbreaks in diagnostic laboratories: analysis of a case series of invasive <i>Streptococcus pyogenes</i> infections.” European journal of clinical microbiology & infectious diseases : official publication of the European Society of Clinical Microbiology vol. 36,7 (2017): 1173-1180. doi:10.1007/s10096-017-2905-z
+
+* Turner, Claire E et al. “Community outbreaks of group A Streptococcus revealed by genome sequencing.” Scientific reports vol. 7,1 8554. 17 Aug. 2017, doi:10.1038/s41598-017-08914-x

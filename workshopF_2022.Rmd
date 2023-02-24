@@ -16,18 +16,18 @@ library(ggplot2)
 library(knitr)
 
 outbreak_deaths <- floor(runif(1, min = 10, max = 30))
-city_name <- "CITYNAME" ##replace all instances of "CITYNAME" with new scenario name
-hospital_name <- "HOSPNAME" ##replace all instances of "HOSPNAME" with new scenario name
+city_name <- "Glenmarigg" 
+hospital_name <- "Royal Jubilee" 
 ```
 
-## Scenario X
+## Scenario F
 
 Disaster has struck - hard on the heels of the COVID-19 pandemic, another disease outbreak has hit your fair city, `r city_name`. Residents are outraged and worried. There have already been `r outbreak_deaths` deaths.
 
-The cause of the outbreak appears to be <i>Borrelia burgdorferi</i>. (Please refer to the [WHO DIS-NAME Fact Sheet](add link here) for more information about the pathogen.)
+The cause of the outbreak appears to be <i>Neisseria meningitidis</i>. (Please refer to the [CDC Meningococcal Disease Fact Sheet](https://www.cdc.gov/meningococcal/downloads/17-275138A-MeningococcalDis-FS.pdf) for more information about the disease.)
 
-```{r DISEASE, out.width="50%", out.height="50%", echo=FALSE, fig.cap="as appropriate. Image credit: [CDC](link)"}
-knitr::include_graphics(rep("images/DIS-NAME.jpg"))
+```{r Neisseria, out.width="50%", out.height="50%", echo=FALSE, fig.cap="Photomicrograph of Neisseria meningitidis diplococci. Image credit: [CDC](https://phil.cdc.gov/details.aspx?pid=6423)"}
+knitr::include_graphics(rep("images/Neisseria.jpg"))
 ```
 
 Each member of your group will play one of the following roles as you attempt to tackle the disease outbreak and save your city:
@@ -41,26 +41,26 @@ Each member of your group will play one of the following roles as you attempt to
 7.	Public communications expert (past and current sci comm campaigns)
 8.  Doctor at a major surgery in `r city_name`
 
-You must work together, using the information that has been provided for you in the attached information packets, and decide what action(s) should be taken to control the measles outbreak currently plaguing your city, `r city_name`. Your actions should be evidence-based – use the peer-reviewed literature to decide on measures that will stop the pandemic in your scenario.
+You must work together, using the information that has been provided for you in the attached information packets, and decide what action(s) should be taken to control the outbreak currently plaguing your city, `r city_name`. Your actions should be evidence-based – use the peer-reviewed literature to decide on measures that will stop the pandemic in your scenario.
 
 Your action points may include directives to gather more information (e.g., contact tracing of current cases, microbiological testing of food/water, etc.), or specific directives (e.g. public health measures, non-pharmaceutical interventions, etc.). Use the data/expertise of all group members. Be clear, concise, and specific.
 
-You should submit 3-5 specific actions to control the pandemic, using the workshop 3 pro forma (available on MyPlace). Submit this by noon, Friday March 10th, via the submission link on MyPlace. 
+You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 10th, via the submission link on MyPlace. 
 
 ***
 
-## Information Packet X1
+## Information Packet F1
 
 You are the provost of `r city_name`, elected in `r sample(2012:2021, size=1)`. 
 
-```{r city, echo=FALSE, fig.cap="Photograph of CITYNAME city centre. Image credit: DALL-E"}
-knitr::include_graphics(rep("images/CITYNAME.png"))
+```{r city, echo=FALSE, fig.cap="Photograph of Glenmarigg city centre. Image credit: DALL-E"}
+knitr::include_graphics(rep("images/Glenmarigg.png"))
 ```
 
 
 The current population of `r city_name` (as of December 2022) is `r sample(150000:170000, size=1)`. The demographic data for the city is shown below.
 
-```{r A1, fig.show="hold", out.width="50%", echo=FALSE, fig.cap="CITYNAME demographics (Source: Office for National Statistics)"}
+```{r A1, fig.show="hold", out.width="50%", echo=FALSE, fig.cap="Glenmarigg demographics (Source: Office for National Statistics)"}
 
 Pop <- c(sample(150000:170000, size=3, replace=TRUE), sample(170000:180000, size=3, replace=TRUE), sample(190000:170000, size=2, replace=TRUE), sample(150000:170000, size=2, replace=TRUE))
 PopYears <- c(2012:2021)
@@ -68,7 +68,7 @@ population <- data.frame(Pop, PopYears)
 ggplot(data = population, aes(x=PopYears, y=Pop)) + 
   geom_point() +
   geom_line() +
-  labs(y = "Number of CITYNAME residents (estimated)", x = "Year") +
+  labs(y = "Number of Glenmarigg residents (estimated)", x = "Year") +
   scale_y_continuous(limits=c(0, 200000)) + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 
@@ -80,16 +80,16 @@ birthdeath <- data.frame(Demog, Num, DemogYears)
 ggplot(data = birthdeath, aes(x=DemogYears, y=Num, group=Demog, colour=Demog)) + 
   geom_point() +
   geom_line() +
-  labs(y = "Number of births and deaths in CITYNAME (estimated)", x = "Year", colour = "Demographics") +
+  labs(y = "Number of births and deaths in Glenmarigg (estimated)", x = "Year", colour = "Demographics") +
   scale_y_continuous(limits=c(0, 5500)) + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + 
   scale_color_discrete(name="")
 ```
-You were elected as a member of the popular "PARTY3" party and made a number of election promises regarding a "Green New Deal" for `r city_name`.
+You were elected as a member of the popular "Community Change" party and made a number of election promises regarding a "Green New Deal" for `r city_name`.
 
-```{r A2, fig.cap="Voting intention by CITYNAME residents (Source: YouGov polling)", echo=FALSE}
+```{r A2, fig.cap="Voting intention by Glenmarigg residents (Source: YouGov polling)", echo=FALSE}
 
-Party <- c((rep("PARTY1", 10)), (rep("PARTY2", 10)), (rep("PARTY3", 10)), (rep("PARTY4", 10)), (rep("PARTY5", 10)))
+Party <- c((rep("Moderate", 10)), (rep("Progress and Peace", 10)), (rep("Community Change", 10)), (rep("Aquamarine", 10)), (rep("Modern Union", 10)))
 Polls <- c(sample(1:3, size=10, replace=TRUE), sample(8:14, size=10, replace=TRUE), sample(15:20, size=10, replace=TRUE), sample(5:10, size=10, replace=TRUE), sample(1:2, size=10, replace=TRUE))
 PolYears <- c(rep(2012:2021, 5))
 politics <- data.frame(Party, Polls, PolYears)
@@ -107,7 +107,7 @@ There are currently `r Councillors` elected councillors, representing the 5 main
 ```{r A3, echo=FALSE}
 
 pol2021 <- (politics[politics$PolYears>2020, 2])
-Parties <- c("PARTY1", "PARTY2", "PARTY3", "PARTY4", "PARTY5")
+Parties <- c("Moderate", "Progress and Peace", "Community Change", "Aquamarine", "Modern Union")
 
 Councillors <- data.frame(Parties, pol2021)
 
@@ -119,7 +119,7 @@ kable(x = Councillors,
 <br><br>
 The overall budget (expenditures) for the 2021-2022 financial year is £`r sample(400000000:600000000, size=1)`. A summary of expeditures by category for this financial year is shown below. 
 
-```{r A4, fig.cap="Public expenditures by category for the 2021-2022 financial year (Source: CITYNAME City Council)", echo=FALSE}
+```{r A4, fig.cap="Public expenditures by category for the 2021-2022 financial year (Source: Glenmarigg City Council)", echo=FALSE}
 
 expenses <- data.frame(
   Category=c("Education", "Industry and Agriculture", "Social Care", "Transport", "Public order and safety", "Healthcare", "Housing", "Other"),
@@ -146,7 +146,7 @@ time1 <- c("immediately", "very soon", "at once", "as soon as possible")
 name1 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
 verb1 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
 business1 <- c("small coffee shop", "coffee shop", "cafe", "restaurant", "bookshop", "boutique clothing store", "records shop", "used bookstore", "toy store", "sweet shop")
-business2 <- c("The CITYNAME Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
+business2 <- c("The Glenmarigg Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
 adj2 <- c("nearly", "almost", "virtually", "almost literally", "practically")
 conseq1 <- c("lost my business due to those pandemic lockdowns", "had to close because of all the draconian lockdowns", "went out of business", "went bankrupt", "had to shut our doors during COVID")
 sent2 <- c("I hope you realise how costly the last pandemic was for millions of people across the country, and that we can't afford another one.", "You should be ashamed to think of all the businesses that have had to close because of the coronavirus measures this city took, and all of the people who lost their jobs.", "Businesses must be free to operate, not prosecuted by some nanny state.", "Things are bad enough already with the cost of living crisis, war in Ukraine, and Brexit, we can't afford another pandemic.", "I hope you realise that you need to put businesses first now - we were unfairly forced to bear the costs of the last pandemic.", "I hope you realise how much business we have all lost in recent years, and how much businesses in this city are struggling financially.")
@@ -233,29 +233,46 @@ I have just learned that my `r sample(rel1, 1)` has passed away due to the new p
 
 ***
 
-As Provost of `r city_name`, you are of course familiar with the work of the [Standing Committee on Pandemic Preparedness](https://www.gov.scot/groups/standing-committee-on-pandemic-preparedness/), the [UK Pandemic Preparedness plan](https://www.gov.uk/government/publications/uk-pandemic-preparedness/uk-pandemic-preparedness), and the latest [COVID-19 health protection guidance](https://publichealthscotland.scot/our-areas-of-work/conditions-and-diseases/covid-19/covid-19-health-protection-guidance/#section-1) released by Public Health Scotland. 
+
+As Provost of `r city_name`, you are of course familiar with the work of the [Standing Committee on Pandemic Preparedness](https://www.gov.scot/groups/standing-committee-on-pandemic-preparedness/). You are also familiar with:
+
+* The [UK Pandemic Preparedness plan](https://www.gov.uk/government/publications/uk-pandemic-preparedness/uk-pandemic-preparedness)
+
+* The latest [COVID-19 health protection guidance](https://publichealthscotland.scot/our-areas-of-work/conditions-and-diseases/covid-19/covid-19-health-protection-guidance/#section-1) released by Public Health Scotland
+
+* [Tackling antimicrobial resistance 2019–2024: The UK’s five-year national action plan](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1070263/UK_AMR_5_year_national_action_plan.pdf)
+
+* The [UK One Health Report - Joint report on antibiotic use and antibiotic resistance, 2013–2017 ](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/921039/Ted_Final_version__1318703-v45-One_Health_Report_2019_FINAL-accessible.pdf)
+
+* [Communicating risk in public health emergencies: A WHO guideline for emergency risk communication (ERC) policy and practice](https://apps.who.int/iris/bitstream/handle/10665/259807/9789241550208-eng.pdf?sequence=2&isAllowed=y)
+
+
 
 ***
 
-## Information Packet X2
+## Information Packet F2
 
-You are a representative from Public Health Scotland, sent to `r city_name` to help with the DIS-NAME outbreak. 
+You are a representative from Public Health Scotland, sent to `r city_name` to help with the <i>Neisseria</i> outbreak. 
 
 Your briefing packet includes the following documents: 
 
-[name](link) or paper citation - x4 total
+* [Guidance for public health management of meningococcal disease in the UK](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/829326/PHE_meningo_disease_guideline.pdf)
 
+* [Meningococcal ACWY vaccine surveillance and data - Public Health Scotland](https://publichealthscotland.scot/our-areas-of-work/immunisations/immunisations-by-vaccine/meningococcal-acwy-vaccine-men-acwy/surveillance-and-data/)
 
+* [National enhanced surveillance of vaccination programmes targeting invasive meningococcal disease in England (UKHSA)](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1124997/UKHSA-meningococcal-surveillance-december-2022.pdf)
 
+* Alderson, Mark R et al. “Surveillance and control of meningococcal disease in the COVID-19 era: A Global Meningococcal Initiative review.” The Journal of infection vol. 84,3 (2022): 289-296. doi:10.1016/j.jinf.2021.11.016
 
+* Muttalif, Abdul Razak et al. “Incidence and Prevention of Invasive Meningococcal Disease in Global Mass Gathering Events.” Infectious diseases and therapy vol. 8,4 (2019): 569-579. doi:10.1007/s40121-019-00262-9
 
 ***
 
-## Information Packet X3
+## Information Packet F3
 
-You are an epidemiologist working for Public Health Scotland, sent to `r city_name` to help with the measles outbreak.
+You are an epidemiologist working for Public Health Scotland, sent to `r city_name` to help with the <i>Neisseria</i> outbreak.
 
-REPLACE THIS TEXT and TABLE - A team of scientists working together have in a PHS lab have isolated and cultured DIS-NAME virus (using a standard tissue culture model) from a number of patient samples taken during this outbreak; isolated DIS-NAME RNA from these cultures; reverse-transcribed this to DNA and sequenced this DNA using an Illumina MiSeq platform; assembled the short paired-end reads; and compared these assemblies to the extant DIS-NAME sequences available in the NCBI databases. The results of these experiments are summarised in the table below. 
+A team of scientists working together have in a PHS lab have isolated and cultured <i>Neisseria</i> (following standard procedures) from a number of patient samples taken during this outbreak; isolated DNA from these cultures; sequenced this DNA using an Illumina MiSeq platform; assembled the short paired-end reads; and compared these assemblies to the extant <i>Neisseria</i> sequences available in the NCBI databases. The results of these experiments are summarised in the table below. 
 
 <table>
 <table border="1">
@@ -265,59 +282,64 @@ REPLACE THIS TEXT and TABLE - A team of scientists working together have in a PH
   </tr>
   <tr>
     <td>1</td>
-    <td>acc.no.here</td>
+    <td>GCA_003496325.1</td>
   </tr>
   <tr>
     <td>2</td>
-    <td>acc.no.here</td>
+    <td>GCA_003977735.1</td>
   </tr>
   <tr>
     <td>3</td>
-    <td>acc.no.here</td>
+    <td>GCA_003496325.1</td>
   </tr>
   <tr>
     <td>4</td>
-    <td>acc.no.here</td>
+    <td>GCA_003496325.1</td>
   </tr>
   <tr>
     <td>5</td>
-    <td>acc.no.here</td>
+    <td>GCA_003496325.1</td>
   </tr>
   <tr>
     <td>6</td>
-    <td>acc.no.here</td>
+    <td>GCA_003496325.1</td>
   </tr>
     <tr>
     <td>7</td>
-    <td>acc.no.here</td>
+    <td>GCA_003496325.1</td>
   </tr>
   <tr>
     <td>8</td>
-    <td>acc.no.here</td>
+    <td>GCA_003496325.1</td>
   </tr>
   <tr>
     <td>9</td>
-    <td>acc.no.here</td>
+    <td>GCA_003977745.1</td>
   </tr>
     <tr>
     <td>10</td>
-    <td>acc.no.here</td>
+    <td>GCA_003496325.1</td>
   </tr>
 </table>  
 <br><br>
 Your briefing packet also includes the following documents: 
 
+* [<i>Neisseria</i> spp. pubMLST](https://pubmlst.org/organisms/neisseria-spp)
 
-[text](link) x1, citation x1
+* Schoen, Christoph et al. “Whole-genome comparison of disease and carriage strains provides insights into virulence evolution in <i>Neisseria meningitidis</i>.” Proceedings of the National Academy of Sciences of the United States of America vol. 105,9 (2008): 3473-8. doi:10.1073/pnas.0800151105
+
+* Itsko, Mark et al. “Enhancing Meningococcal Genomic Surveillance in the Meningitis Belt Using High-Resolution Culture-Free Whole-Genome Sequencing.” The Journal of infectious diseases vol. 226,4 (2022): 729-737. doi:10.1093/infdis/jiac104
+
+* de Souza Santos, Debora Ribeiro et al. “High-Resolution Melting (HRM) for rapid MLST analysis of <i>Neisseria meningitidis</i>.” Journal of microbiological methods vol. 200 (2022): 106557. doi:10.1016/j.mimet.2022.106557
 
 ***
 
-## Information Packet X4
+## Information Packet F4
 
 You are the director of `r city_name`'s main hospital, the `r hospital_name`, which has 550 beds across 9 different wards and 10 operating theatres. 
 
 
-```{r hospital, echo=FALSE, fig.cap="The HOSPNAME hospital in CITYNAME. Image credit: [DALL-E"}
+```{r hospital, echo=FALSE, fig.cap="The Royal Jubilee hospital in Glenmarigg. Image credit: [DALL-E"}
 knitr::include_graphics(rep("images/Queens-College.png"))
 ```
 
@@ -342,7 +364,7 @@ The `r hospital_name` has units specialising in coronary care; maternity care; d
 There are currently 25 ICU beds (with ventilators) available, an increase from the 14 ICU beds in the `r hospital_name` in November 2019. Average ICU bed occupancy before and during the COVID-19 pandemic is in the figure below. 
 
 
-```{r A6, fig.cap="ICU bed occupancy for the CITYNAME HOSPNAME hospital (Source: NHS Scotland)", echo=FALSE}
+```{r A6, fig.cap="ICU bed occupancy for the Glenmarigg Royal Jubilee hospital (Source: NHS Scotland)", echo=FALSE}
 
 ICU <- c(sample(10:15, size=16, replace=TRUE), sample(23:25, size=4, replace=TRUE), sample(17:20, size=4, replace=TRUE), sample(22:25, size=4, replace=TRUE), sample(15:20, size=5, replace=TRUE), sample(22:25, size=3, replace=TRUE), sample(15:20, size=4, replace=TRUE), sample(22:25, size=4, replace=TRUE), sample(17:21, size=4, replace=TRUE))
 ICUdates <- c("1/2019", "2/2019", "3/2019", "4/2019", "5/2019", "6/2019", "7/2019", "8/2019", "9/2019", "10/2019", "11/2019", "12/2019", "1/2020", "2/2020", "3/2020", "4/2020", "5/2020", "6/2020", "7/2020", "8/2020", "9/2020", "10/2020", "11/2020", "12/2020", "1/2021", "2/2021", "3/2021", "4/2021", "5/2021", "6/2021", "7/2021", "8/2021", "9/2021", "10/2021", "11/2021", "12/2021","1/2022", "2/2022", "3/2022", "4/2022", "5/2022", "6/2022", "7/2022", "8/2022", "9/2022", "10/2022", "11/2022", "12/2022")
@@ -353,7 +375,7 @@ ICUstats <- data.frame(ICU, ICUdates)
 ggplot(data = ICUstats, aes(x=ICUdates, y=ICU, group = 1)) + 
   geom_point() +
   geom_line() +
-  labs(y = "Average HOSPNAME ICU bed occupancy/month", x = "Month") +
+  labs(y = "Average Royal Jubilee ICU bed occupancy/month", x = "Month") +
   scale_y_continuous(limits=c(0, 25)) + 
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
@@ -362,7 +384,7 @@ ggplot(data = ICUstats, aes(x=ICUdates, y=ICU, group = 1)) +
 
 There are approximately 1.3m admissions to the `r hospital_name` hospital annually, the majority of these being to the emergency (A&E) department.
 
-```{r A7, fig.cap="Admissions to the CITYNAME HOSPNAME hospital by category (Source: NHS Scotland)", echo=FALSE}
+```{r A7, fig.cap="Admissions to the Glenmarigg Royal Jubilee hospital by category (Source: NHS Scotland)", echo=FALSE}
 
 admissions <- data.frame(
   Category=c("Elective Inpatient", "A&E", "Day case"),
@@ -379,7 +401,7 @@ ggplot(admissions, aes(x="", y=value, fill=Category)) +
 
 A&E waiting times have been called "disastrously high" in recent months, both by the press and by tthe hospital ombudsman.
 
-```{r A8, fig.cap="ICU waiting times for the CITYNAME HOSPNAME hospital (Source: NHS Scotland)", echo=FALSE}
+```{r A8, fig.cap="ICU waiting times for the Glenmarigg Royal Jubilee hospital (Source: NHS Scotland)", echo=FALSE}
 
 WaitTimes <- c(sample(1:2, size=16, replace=TRUE), sample(1:2, size=4, replace=TRUE), sample(2:4, size=4, replace=TRUE), sample(2:5, size=4, replace=TRUE), sample(1:5, size=5, replace=TRUE), sample(2:5, size=3, replace=TRUE), sample(3:5, size=4, replace=TRUE), sample(2:5, size=4, replace=TRUE), sample(5:6, size=4, replace=TRUE))
 AEdates <- c("1/2019", "2/2019", "3/2019", "4/2019", "5/2019", "6/2019", "7/2019", "8/2019", "9/2019", "10/2019", "11/2019", "12/2019", "1/2020", "2/2020", "3/2020", "4/2020", "5/2020", "6/2020", "7/2020", "8/2020", "9/2020", "10/2020", "11/2020", "12/2020", "1/2021", "2/2021", "3/2021", "4/2021", "5/2021", "6/2021", "7/2021", "8/2021", "9/2021", "10/2021", "11/2021", "12/2021","1/2022", "2/2022", "3/2022", "4/2022", "5/2022", "6/2022", "7/2022", "8/2022", "9/2022", "10/2022", "11/2022", "12/2022")
@@ -399,7 +421,7 @@ ggplot(data = AEwaits, aes(x=AEdates, y=WaitTimes, group = 1)) +
 
 The `r hospital_name` has been set a goal of 25% reduction in sepsis mortality (compared to past years)and 50% reduction in the nosocomial transmission of superbugs such as methicillin-resistant <i>Staphylococcus aureus</i> (MRSA), <i>Clostridiodes difficile</i> (C. diff), and <i>Candida auris</i> (C. auris). 
 
-```{r A9, fig.cap="Key Performance Indicators (KPIs) related to infectious diseases for the CITYNAME HOSPNAME hospital (Source: NHS Scotland)", echo=FALSE}
+```{r A9, fig.cap="Key Performance Indicators (KPIs) related to infectious diseases for the Glenmarigg Royal Jubilee hospital (Source: NHS Scotland)", echo=FALSE}
 
 hosKPIs <- data.frame(
   KPI=c("Reduction in MRSA cases", "Reduction in C diff cases", "Reduction in sepsis mortality", "Reduction in C auris cases"),
@@ -414,21 +436,21 @@ ggplot(hosKPIs, aes(x = KPI, y = percent)) +
 
 ```
 
-There are currently `r sample(143:180, size=1)` patients in the `r hospital_name` with confirmed or suspected DIS-NAME, with `r sample(15:17, size=1)` of these patients currently in the ICU. 
+There are currently `r sample(143:180, size=1)` patients in the `r hospital_name` with confirmed or suspected meningococcal disease, with `r sample(15:17, size=1)` of these patients currently in the ICU. 
 
 The hospital follows the guidelines set out in the [National Infection Prevention and Control Manual](https://www.nipcm.hps.scot.nhs.uk/).
 
 As a hospital director, you are familiar with the literature surrounding hospital pandemic preparedness, and regularly read papers such as:
 
-Mer, Mervyn et al. “Critical Care Pandemic Preparation: Considerations and Lessons Learned from COVID-19.” Critical care clinics vol. 38,4 (2022): 761-774. 
+* Mer, Mervyn et al. “Critical Care Pandemic Preparation: Considerations and Lessons Learned from COVID-19.” Critical care clinics vol. 38,4 (2022): 761-774. 
 
-Tacconelli, Evelina et al. “Challenges of data sharing in European Covid-19 projects: A learning opportunity for advancing pandemic preparedness and response.” The Lancet regional health. Europe vol. 21 (2022): 100467. 
+* Tacconelli, Evelina et al. “Challenges of data sharing in European Covid-19 projects: A learning opportunity for advancing pandemic preparedness and response.” The Lancet regional health. Europe vol. 21 (2022): 100467. 
 
-Adelaja, I., Sayma, M., Walton, H., McLachlan, G., de Boisanger, J., Bartlett-Pestell, S., Roche, E., Gandhi, V., Wilson, G. J., Brookes, Z., Yeen Fung, C., Macfarlane, H., Navaratnam, A., James, C., Scolding, P., & Sara, H. (2020). A comprehensive hospital agile preparedness (CHAPs) tool for pandemic preparedness, based on the COVID-19 experience. Future healthcare journal, 7(2), 165–168. 
+* Adelaja, I., Sayma, M., Walton, H., McLachlan, G., de Boisanger, J., Bartlett-Pestell, S., Roche, E., Gandhi, V., Wilson, G. J., Brookes, Z., Yeen Fung, C., Macfarlane, H., Navaratnam, A., James, C., Scolding, P., & Sara, H. (2020). A comprehensive hospital agile preparedness (CHAPs) tool for pandemic preparedness, based on the COVID-19 experience. Future healthcare journal, 7(2), 165–168. 
 
 ***
 
-## Information Packet X5
+## Information Packet F5
 
 You are a civil servant working in `r city_name`, working closely with the provost, city council and various agencies including the NHS, the UK Health Security Agency (UKHSA), and the Scottish Environment Protection Agency (SEPA).  
 
@@ -442,7 +464,7 @@ Some of the key `r city_name` facts and figures at a glance are summarized in th
   </tr>
   <tr>
     <td>Schools</td>
-    <td>`r sample(2:8, size=1)` primary schools, `r sample(2:5, size=1)` secondary schools, 1 college</td>
+    <td>`r sample(2:8, size=1)` primary schools, `r sample(2:5, size=1)` secondary schools, 2 universities</td>
   </tr>
   <tr>
     <td>Care Homes</td>
@@ -480,54 +502,84 @@ Some of the key `r city_name` facts and figures at a glance are summarized in th
 <br><br>
 
 
-Your briefing packet on DIS-NAME includes the following information.
+Your briefing packet on <i>Neisseria</i> includes the following information.
 
-[text](link) x4
+* [Meningococcal Disease Risk Factors](https://www.cdc.gov/meningococcal/about/risk-factors.html)
 
+* [Meningitis and septicaemia: prevention and management in higher education institutions](https://www.gov.uk/government/publications/meningitis-and-septicaemia-prevention-and-management-in-higher-education-institutions)
 
+* Sulis, Giorgia et al. “A comparison of national vaccination policies to prevent serogroup B meningococcal disease.” Vaccine vol. 40,26 (2022): 3647-3654.
+
+* Taha, Muhamed-Kheir et al. “Equity in vaccination policies to overcome social deprivation as a risk factor for invasive meningococcal disease.” Expert review of vaccines vol. 21,5 (2022): 659-674. doi:10.1080/14760584.2022.2052048
+
+* Martinón-Torres, Federico et al. “Evolving strategies for meningococcal vaccination in Europe: Overview and key determinants for current and future considerations.” Pathogens and global health vol. 116,2 (2022): 85-98. doi:10.1080/20477724.2021.1972663
 
 ***
 
-## Information Packet X6
+## Information Packet F6
 
-EDIT/REPLACE AS NEEDED You are a microbiologist working in the virology department at the Greater `r city_name` Clinical Laboratory. Your laboratory is equipped to handle a range of culture samples (including anaerobic and microaerobic bacteria, as well as viruses), and you routinely process`r sample(1500:2000, size=1)` samples monthly. 
+You are a microbiologist working in the microbiology department at the Greater `r city_name` Clinical Laboratory. Your laboratory is equipped to handle a range of culture samples (including anaerobic and microaerobic bacteria, as well as viruses), and you routinely process`r sample(1500:2000, size=1)` samples monthly. 
 
-You are familiar with the culture requirements for growth of DIS-NAME viruses in tissue culture, and the range of [ testing methods](link).
+You are familiar with the culture requirements for growth of <i>Neisseria</i> spp. in culture, and the range of [UK Standards for Microbiology Investigations (UK SMI) for Screening for <i>Neisseria</i>](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/343978/B_51i2.pdf).
 
-```{r DIS-NAME, echo=FALSE, fig.cap="AS NEEDED Image credit: [CDC](link)"}
-knitr::include_graphics(rep("images/DIS-NAME.jpg"))
+```{r Neisseria-plate, echo=FALSE, fig.cap="Neisseria meningiditis colonies on a Blood Agar plate. Image credit: [CDC](https://www.cdc.gov/meningitis/lab-manual/chpt07-id-characterization-nm.html)"}
+knitr::include_graphics(rep("images/Neisseria-BloodAgar.gif"))
 ```
 
-3x citations or links
+You are also familiar with the literature surrounding <i>Neisseria meningitidis</i> identification, and often read papers such as:
+
+* [Identification and Characterization of <i>Neisseria meningitidis</i> (CDC)](https://www.cdc.gov/meningitis/lab-manual/chpt07-id-characterization-nm.html)
+
+* Morsli, Madjid et al. “Real-time metagenomics-based diagnosis of community-acquired meningitis: A prospective series, southern France.” EBioMedicine vol. 84 (2022): 104247.
+
+* Sharma, Nupur et al. “Clinical use of multiplex-PCR for the diagnosis of acute bacterial meningitis.” Journal of family medicine and primary care vol. 11,2 (2022): 593-598.
+
+
 
 ***
 
-## Information Packet X7
+## Information Packet F7
 
 You are a public communications expert, often employed by the `r city_name` city council to manage the PR response to different initiatives or crises. 
 
 As a public communications expert, you are familiar with the literature surrounding science communication in a pandemic, including papers such as: 
 
-Matta, G. Science communication as a preventative tool in the COVID19 pandemic. Humanit Soc Sci Commun 7, 159 (2020).
+* Matta, G. Science communication as a preventative tool in the COVID19 pandemic. Humanit Soc Sci Commun 7, 159 (2020).
 
-Abdool Karim, Salim S. “Public understanding of science: Communicating in the midst of a pandemic.” Public understanding of science (Bristol, England) vol. 31,3 (2022): 282-287.
+* Abdool Karim, Salim S. “Public understanding of science: Communicating in the midst of a pandemic.” Public understanding of science (Bristol, England) vol. 31,3 (2022): 282-287.
 
-Royan, Regina et al. “Use of Twitter Amplifiers by Medical Professionals to Combat Misinformation During the COVID-19 Pandemic.” Journal of medical Internet research vol. 24,7 e38324. 22 Jul. 2022, doi:10.2196/38324
+* Royan, Regina et al. “Use of Twitter Amplifiers by Medical Professionals to Combat Misinformation During the COVID-19 Pandemic.” Journal of medical Internet research vol. 24,7 e38324. 22 Jul. 2022, doi:10.2196/38324
 
-Tait, Margaret E et al. “Serving the public? A content analysis of COVID-19 public service announcements airing from March - December of 2020 in the U.S.” Preventive medicine reports vol. 29 (2022): 101971. 
+* Tait, Margaret E et al. “Serving the public? A content analysis of COVID-19 public service announcements airing from March - December of 2020 in the U.S.” Preventive medicine reports vol. 29 (2022): 101971. 
 
 You have assembled the following information/resources for this meeting:
 
-3x citations or links
+* [WHO Initiative: Defeating Meningitis by 2030](https://www.who.int/initiatives/defeating-meningitis-by-2030)
+
+* [Meningitis Now Resources](https://www.meningitisnow.org/how-we-help/resources/)
+
+* [Meningitis Research Foundation: Help and Support Resources](https://www.meningitis.org/get-support/help-and-support-resources)
+
+* Webb, Adam et al. “Cross-Sectional Study of University Students' Attitudes to 'On Campus' Delivery of COVID-19, MenACWY and MMR Vaccines and Future-Proofing Vaccine Roll-Out Strategies.” Vaccines vol. 10,8 1287. 10 Aug. 2022, doi:10.3390/vaccines10081287
 
 ***
 
-## Information Packet X8
+## Information Packet F8
 
-You are one of the doctors at the largest surgery in `r city_name`. In the past fortnight, `r sample(50:100, size=1)` of your patients have recently presented to the surgery with symptoms consistent with DIS-NAME. You have therefore recently been familiarising yourself with the relevant literature:
+You are one of the doctors at the largest surgery in `r city_name`. In the past fortnight, `r sample(50:100, size=1)` of your patients have recently presented to the surgery with symptoms consistent with meningiditis. You have therefore recently been familiarising yourself with the relevant literature:
 
-[text](link) x4
+* [Meningococcal Disease: Clinical Info (CDC)](https://www.cdc.gov/meningococcal/clinical-info.html)
 
-citations x3
+* [BMJ Best Practice - Bacterial Meningitis in Adults](https://bestpractice.bmj.com/topics/en-gb/3000104)
+
+* [Meningitis (bacterial) and meningococcal septicaemia in under 16s: recognition, diagnosis and management (NICE)](https://www.nice.org.uk/guidance/cg102)
+
+* [Meningococcal Disease: Infection Control in Healthcare Personnel: Epidemiology and Control of Selected Infections Transmitted Among Healthcare Personnel and Patients](https://www.cdc.gov/infectioncontrol/guidelines/healthcare-personnel/selected-infections/meningococcal-disease.html)
+
+* Hasbun, Rodrigo. “Progress and Challenges in Bacterial Meningitis: A Review.” JAMA vol. 328,21 (2022): 2147-2154. doi:10.1001/jama.2022.20521
+
+* McNamara, Lucy A et al. “Mass chemoprophylaxis for control of outbreaks of meningococcal disease.” The Lancet. Infectious diseases vol. 18,9 (2018): e272-e281.
+
+* Davis, L C et al. “Meningococcal disease in a backpackers hostel in Scotland: a risk assessment for prophylaxis.” Euro surveillance : bulletin Europeen sur les maladies transmissibles = European communicable disease bulletin vol. 14,31 19291. 6 Aug. 2009, doi:10.2807/ese.14.31.19291-en
 
 
