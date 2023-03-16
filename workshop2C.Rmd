@@ -1,0 +1,760 @@
+---
+title: 'BM424 workshop: infectious disease outbreak control'
+author: "Morgan Feeney"
+date: "17/03/2023"
+output: 
+  bookdown::html_document2:
+    toc: true
+    toc_float:
+      toc_collapsed: false
+    number_sections: false 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(knitr)
+
+
+city_name <- "Malleith"
+hospital_name <- "Central Highland"
+dis_name3 <- "MRSA"
+outbreak_deaths <- 13 + 8 + 6
+```
+
+## Scenario C
+
+`r dis_name3` outbreak in `r city_name`
+
+The `r city_name` Pandemic Response committee has gathered the following information for the second meeting of your group. 
+
+You should evaluate the effect(s) of the actions that you took at your last meeting and evaluate the current state of affairs in `r city_name`. 
+
+You should submit 3-5 specific actions for further actions to control the pandemic, using the [workshop 4 pro forma](/proformas/BM424_workshop4_proforma.docx) (also available on MyPlace). You should consider whether you want to continue any of the public health measures you implemented at your previous meeting, or whether you want to stop them; and also whether there are any new, additional actions you would like to take. Submit the pro forma by noon on Friday March 24th, via the submission link on MyPlace. 
+
+
+## Pandemic Statistics 
+
+Table 1. Data from the `r city_name` `r dis_name3` outbreak.
+<table>
+<table border="1">
+  <tr>
+    <th></th>
+    <th>03/03/2023</th>
+    <th>17/03/2023</th>
+  </tr>
+  <tr>
+    <td>Deaths caused by the `r dis_name3` outbreak (weekly)</td>
+    <td>13</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>Verified `r dis_name3` cases (total)</td>
+    <td>146</td>
+    <td>245</td>
+  </tr>
+  <tr>
+    <td>`r dis_name3` hospitalisations</td>
+    <td>166</td>
+    <td>68</td>
+  </tr>
+    <tr>
+    <td>`r hospital_name` ICU bed occupancy</td>
+    <td>16</td>
+    <td>9</td>
+  </tr>
+  <tr>
+  <td>Number of `r dis_name3` related GP visits (total)</td>
+  <td>67</td>
+  <td>43</td>
+  </tr>
+</table>  
+<br><br>
+
+
+## News Coverage of the `r city_name` MRSA outbreak
+
+
+```{r news, echo=FALSE}
+
+papername1 <- c("News", "Daily Press", "Evening News", "Star", "Telegraph", "Post", "Looking-Glass", "Sentinel", "Times")
+authname1 <- c("Maurice", "Cyrus", "Aaron", "Jane", "Abigail", "Ben", "Eden", "Jessica", "Leone", "Louisa", "Louis", "Fred", "Steve", "Barbara", "Norman", "Susan", "Edwin", "Isaac", "Austin", "Hugh", "Roselyne", "Francis", "Frances", "David", "Elliot", "Alan", "Joan", "Lester", "Devendra", "Lettitia", "Clive", "Perry", "J.M.", "S.R.", "A.B.", "Frank", "Mick", "Graham", "Walter", "Tony", "Leana", "Chester", "Peter", "Ward", "Ken", "Alice", "Erin", "Kate", "Niels", "Emma", "Elena", "Mary-Louise", "George", "Omar", "Carol", "Deborah", "Joseph", "Ashleigh", "Emily", "Joyce", "Harry", "Marcus", "Bill", "Martin", "Luis", "Leo", "Byron", "Joseph", "John", "Julia", "Eric", "Thomas", "Pablo", "Lewis", "Willa", "Miguel", "Edith", "Tracy")
+surname1 <- c("Chevalier", "Charles", "Chesterton", "Clay", "Cohen", "Collins", "Conway", "Cunningham", "Davis", "Daniels", "Douglas", "Evans", "Elliot", "Fields", "Ford", "Fox", "Gallagher", "Gibson", "Grant", "Harris", "Henry", "Hill", "Holmes", "Hunt", "James", "Jones", "Jensen", "Jennings", "Johnson", "Kay", "Kennedy", "King", "Lamb", "Lane", "Lee", "Lewis", "Locke", "Lynch", "MacArthur", "Mann", "Marin", "Martin", "Matthews", "May", "McCarthy", "McClary", "McGill", "McKay", "Mill", "Miller", "Mitchell", "Moore", "Morris", "Nelson", "Nicoll", "Ogilvy", "Ochs", "O'Brien", "Page", "Patterson", "Perry", "Phillips", "Ray", "Reed", "Rogers", "Russell", "Schiller", "Schultz", "Shelley", "Smith", "Snow", "Spencer", "Stein", "Star", "Stewart", "Stone", "Swift")
+pubdate <- c("03/03/2023", "04/03/2023", "05/03/2023", "06/03/2023", "07/03/2023", "08/03/2023", "09/03/2023", "10/03/2023", "11/03/2023", "12/03/2023", "13/03/2023", "14/03/2023", "15/03/2023", "16/03/2023", "17/03/2023")
+adj3 <- c("Disgraceful", "Terrible", "Horrible", "Devastating", "Sad", "Bloody")
+emotion2 <- c("outraged", "upset", "extremely vexed", "so angry", "devastated")
+sent7 <- c()
+wish2 <- c("hope", "hope very much", "wish", "expect", "sincerely hope")
+state2 <- c("dreadful state of affairs", "horrible pandemic", "all of the poor people dying", "tragedy")
+time2 <- c("immediately", "very soon", "at once", "as soon as possible")
+name2 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
+verb2 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
+adj4 <- c("nearly", "almost", "virtually", "almost literally", "practically")
+sent8 <- c()
+sent9 <- c()
+sent10 <- c()
+sent11 <- c()
+
+
+#set up person details for obits
+x <- sample(1:2, 1)
+if(x == 1){
+pron1 <- "he"
+posspron1 <- "his"
+obit1name <- sample(c("Charles", "Robert", "Luke", "Phil", "George", "Elijah", "Noah", "William", "Ben", "James", "Henry", "Leo", "Luca", "Ray"), 1)
+}
+if(x == 2){
+pron1 <- "she"
+posspron1 <- "her"
+obit1name <- sample(c("Dorothy", "Ellen", "Olivia", "Emma", "Charlotte", "Amelia", "Ava", "Sophia", "Millie", "Freya", "Poppy", "Sienna", "Florence"), 1)
+}
+obit1age <- sample(2:5, 1)
+obit1like1 <- sample(c("jigsaw puzzles", "teddy bears", "dinosaurs", "airplanes", "books", "butterflies", "elephants", "hedgehogs", "horses", "fire engines", "penguins", "sail boats", "zebras"), 1)
+obit1like2 <- sample(c("giraffes", "koala bears", "dragons", "cars", "movies", "goldfish", "trains", "unicorns", "winter", "trucks", "finger painting", "flowers", "sea turtles"), 1)
+obit1siblings <- sample(c("Charlie, Alfie, and Jacob", "Tammy and Beth", "Theodore and Mason", "Rory and Susan", "William and Ethan", "Louise and Edward", "Caleb and Brody", "Carter, David, and Milo", "Billy and Parker", "Livvy and Jane"), 1)
+obit1surname <- sample(c("Smith", "Jones", "Williams", "Taylor", "Davies", "Brown", "Wilson", "Evans", "Roberts", "Walker", "Wright", "Thompson", "Hughes", "Edwards", "Green", "Lewis", "Wood", "Martin", "Jackson", "Clark"), 1)
+
+
+x <- sample(1:3, 1)
+if(x == 1){
+pron2 <- "he"
+posspron2 <- "his"
+obit2name <- sample(c("Edward", "Riley", "Hugo", "Ronnie", "Louis", "Grayson", "Caleb", "Benjamin", "Kai", "Jasper", "Albert", "Blake", "Dylan", "Liam"), 1)
+}
+if(x == 2){
+pron2 <- "she"
+posspron2 <- "her"
+obit2name <- sample(c("Matilda", "Lucy", "Jessica", "Alice", "Maya", "Lottie", "Erin", "Maisie", "Bonnie", "Penelope", "Violet", "Esme", "Aurora"), 1)
+}
+if(x == 3){
+pron2 <- "they"
+posspron2 <- "their"
+obit2name <- sample(c("Cypress", "Hollis", "Lex", "Landry", "Rory", "Salem", "Sol", "Kit", "Bellamy"), 1)
+}
+
+obit2age <- sample(50:90, 1)
+obit2prof1 <- sample(c("musician", "author", "comedian", "artist"), 1)
+obit2work1 <- sample(c("Green Grass", "A Whole Latte", "Golden Days", "One True Love", "Idle Thoughts", "Hopeless", "Purple Skies", "Framed", "Enemy of Fire", "Friends and Lovers", "My Best Friend", "A Fool's Errand", "Harmful", "Pigeons and Partridges"), 1)
+obit2siblings <- sample(c("Luke and Chester", "Emily and Jonathan", "Gloria and Stephen", "Hester and Winifred", "Tammy, Theodore, and Thomas", "Frank and Thelma", "Eva and Elaine", "Charlotte and Harper", "Daisy and Phoebe", "Jim, Ella, and Evie"), 1)
+obit2surname <- sample(c("Smith", "Jones", "Williams", "Taylor", "Davies", "Brown", "Wilson", "Evans", "Roberts", "Walker", "Wright", "Thompson", "Hughes", "Edwards", "Green", "Lewis", "Wood", "Martin", "Jackson", "Clark", "Campbell", "Burns", "Murphy", "Watt", "Marshall", "White", "Stevenson", "Young", "Watson", "Morrison", "King", "Bruce", "Hill", "Gibson", "Gordon"), 1)
+
+```
+
+
+<font size="+3"><b>`r city_name` `r sample(papername1, 1)`</b></font><br>
+<font size="+2"><b>`r city_name` says farewell to pandemic's youngest victim</b></font><br>
+by `r sample(authname1, 1)` `r sample(surname1, 1)`
+`r sample(pubdate, 1)`
+
+The `r dis_name3` pandemic ravaging `r city_name` has claimed yet another victim. There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most tragic loss is `r obit1name` `r obit1surname` - at only `r obit1age`, the youngest victim that the pandemic has claimed.    
+
+`r obit1name` `r obit1surname` liked `r obit1like1` and `r obit1like2`. Friends and family say that `r pron1` was always `r sample(c("a delight", "an absolute joy", "a treasure", "the most precious child"), 1)`. 
+
+`r obit1name` is survived by `r posspron1` parents and grandparents, and by `r posspron1` siblings `r obit1siblings`. 
+
+The funeral service will be held `r sample(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"), 1)` at `r sample(c("St. Ninian's", "Trinity Baptist Church", "Westlake Memorial", "St. Elfrida's Catholic Church", "St. Mary's", "Trinity Church", "St. Andrew's", "St. Judes"), 1)`.
+
+***
+
+<font size="+3"><b>`r city_name` `r sample(papername1, 1)`</b></font><br>
+<font size="+2"><b>`r city_name` says farewell to local legend</b></font><br>
+by `r sample(authname1, 1)` `r sample(surname1, 1)`
+`r sample(pubdate, 1)`
+
+The `r dis_name3` pandemic ravaging `r city_name` has claimed yet another victim. `r obit2name` `r obit2surname`, local `r obit2prof1` and star, sadly passed away on `r sample(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"), 1)`. 
+
+`r obit2name` was perhaps best known for `r posspron2` `r sample(2000:2015, 1)` work `r obit2work1` , but fans say that the rest of `r posspron2` work was equally as `r sample(c("memorable", "genre-changing", "excellent", "influential"), 1)`. 
+
+`r obit2name` is survived by `r posspron2` `r sample(c("partner", "husband", "wife"), 1)`, and by `r posspron2` siblings `r obit2siblings`. 
+
+The funeral service will be held `r sample(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"), 1)` at `r sample(c("St. Ninian's", "Trinity Baptist Church", "Westlake Memorial", "St. Elfrida's Catholic Church", "St. Mary's", "Trinity Church", "St. Andrew's", "St. Judes"), 1)`.
+
+***
+
+<font size="+3"><b>`r city_name` `r sample(papername1, 1)`</b></font><br>
+<font size="+2"><b>`r city_name` pandemic council making great strides</b></font><br>
+by `r sample(authname1, 1)` `r sample(surname1, 1)`
+`r sample(pubdate, 1)`
+
+Citizens of `r city_name` should be `r sample(c("grateful", "thankful", "glad"), 1)` that the city's Pandemic Response Council, `r sample(c("swiftly", "quickly", "hurriedly"), 1)` convened when a new pandemic began to hit `r city_name`, has been so effective. While the initial death toll from the pandemic appeared to be quite `r sample(c("alarming", "devastating", "serious", "high", "heavy"), 1)`, the actions taken by the PRC seem to have been most effective. 
+
+Officials from `r sample(c("the NHS", "Public Health Scotland", "the World Health Organisation", "the Center for Disease Control", "the Red Cross"), 1)` have publicly praised the `r city_name` PRC, saying that `r sample(c("it is difficult to imagine a more effective public health response", "their actions have been extremely effective", "the PRC has done all of the right things", "this is a triumph that shows how effective public health responses can be", "countless lives have been saved due to the actions of the PRC"), 1)`
+
+There have been 6 deaths due to `r dis_name3` in `r city_name` this week. This is an enormous decrease, and hopefully `r city_name` will see the death toll continue to decrease in the coming weeks. 
+
+***
+
+<font size="+3"><b>`r city_name` `r sample(papername1, 1)`</b></font><br>
+<font size="+2"><b>Yet more overreach in the name of "science"</b></font><br>
+by `r sample(authname1, 1)` `r sample(surname1, 1)`
+`r sample(pubdate, 1)`
+
+Governments across the globe have seen how successful power-grabs in the name of public health can be, following on the wave of restrictions imposed because of so-called viral diseases like COVID-19 and "mpox". So-called scientists are fearmongering - aerosols, monkeys, "bird" flu - now they think that they can fool us into thinking that the air and water are unsafe. Citizens of `r city_name` should stand strong against this terrible tyranny! No more mask mandates, no more senseless restrictions!
+
+Our elders should not be left to die alone, left frightened and hopeless in a mandatory lockdown claimed to be "for their benefit." Our children should not be left to struggle through "pandemic" after "pandemic" - their language and literacy skills have been left behind due to these lockdowns, and their mental health is suffering. It is time that we take back control of our lives and end this tyranny of fear-mongering and so-called science. Citizens of `r city_name`, stand with me and resist this most recent attack on your freedoms and your lives. 
+
+*** 
+
+<font size="+3"><b>`r sample(c("BBC Scotland", "The Guardian", "The Independent"), 1)` </b></font><br>
+<font size="+2"><b>`r dis_name3` pandemic in `r city_name`</b></font><br>
+by `r sample(authname1, 1)` `r sample(surname1, 1)`
+`r sample(pubdate, 1)`
+
+Hard on the heels of the COVID-19 pandemic and a number of other health scares (monkeypox, or "mpox", avian flu, and worries about other infectious disease outbreaks), another pandemic has hit the Scottish town of `r city_name`. This time, it's MRSA, a bacterium that is resistant to the antibiotic methicillin
+
+There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most frightening aspect to this new pandemic is rumours that these MRSA strains may have become resistant to even more antibiotics - a truly chilling possibility.
+
+Scientists have been warning about the antibiotic resistance crisis for years, saying that careless use of antibiotics could mean that these precious medicines will no longer be available to us in the future. 
+
+Some of the MRSA strains found in `r city_name` are reportedly resistant to all clinically available antibiotics, and scientists warn that these drug-resistant pathogens might be able to spread to new locations. Will nearby towns be next, or could these MRSA strains go as global as the SARS-COV2 virus did?
+
+
+## Microbiological Investigation of the `r city_name` `r dis_name3` outbreak
+
+Swab samples were plated on Mannitol Salt Agar (MSA) +/- oxacillin
+
+Table 2. Microbiological testing of patients and homes in the `r city_name` `r dis_name3` outbreak.
+<table>
+<table border="1">
+  <tr>
+    <th>Patient/Location</th>
+    <th>Growth on Mannitol Salt Agar 
+    (number of colonies)</th>
+    <th>Growth on Mannitol Salt Agar + oxacillin 
+    (number of colonies)</th>
+  </tr>
+  <tr>
+    <td>Patient 1</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 2</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 3</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 4</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 5</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 6</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 7</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 8</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 9</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 10</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 11</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 12</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 13</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 14</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 15</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 16</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 17</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 18</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 19</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Patient 20</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:100, 1)`</td>
+  </tr>
+  <tr>
+    <td>Location 1</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Location 2</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 3</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 4</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 5</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 6</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 7</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 8</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 9</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 10</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 11</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 12</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 13</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 14</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 15</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 16</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 17</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 18</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 19</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+    <tr>
+    <td>Location 20</td>
+    <td>`r sample(0:40, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+</table>  
+<br><br>
+
+## Epidemiological questionnaire results
+
+Patients with suspected or confirmed MRSA were contacted with an epidemiological survey regarding their recent movements and close contacts. 60 survey forms were returned. 
+
+```{r travel, echo=FALSE}
+
+shop1 <- c("Tesco", "M&S Food Hall", "Iceland", "Aldi", "ASDA", "Lidl", "Morrisons", "Sainsbury's")
+shop2 <- c("Blacks", "Anthropologie", "Clarks", "Dorothy Perkins", "Edinburgh Woollen Mill", "Fat Face", "Forever 21", "Gap", "Greenwoods", "Guess", "H&M", "JoJo Maman Bebe", "Jones", "Joules", "John Lewis", "M&Co", "Matalan", "Monsoon", "Mountain Warehouse", "New Look", "Next", "Primark", "Reiss", "Schuh", "Superdry", "TK Maxx", "Topshop", "Wallis", "Jack Wills", "Zara", "Around the Corner", "Jewels", "Blacks", "Anthropologie", "Clarks", "Dorothy Perkins", "Edinburgh Woollen Mill", "Fat Face", "Forever 21", "The Gap", "Greenwoods", "Guess", "H&M", "JoJo Maman Bebe", "Jones", "Joules", "John Lewis", "M&Co", "Matalan", "Monsoon", "Mountain Warehouse", "New Look", "Next", "Primark", "Reiss", "Schuh", "Superdry", "TK Maxx", "Topshop", "Wallis", "Jack Wills", "Zara", "The Malleith Shop", "Fraser & Co.", "Malleith Used Books", "The Corner Shop", "Malleith Kitchenwares", "M&S")
+work1 <- c("the office", "Malleith Primary School", "work", "The Daily Malleith newspaper office", "work - ASDA", "work - from home mostly", "work - GP surgery on Queens Lane", "work - nursery", "work (plumber)", "work - the Malleith Day Nursery", "work - insurance agency", "the Malleith City Hall", "work: Waterstones", "the Malleith City Museum for work", "Malleith Brewery (work)", "the office", "work", "work - cleaning houses", "Blacks (work)", "work: Anthropologie", "work at Clarks", "work: Dorothy Perkins", "work: Edinburgh Woollen Mill", "Fat Face (work)", "Forever 21 (work)", "Gap - work", "Greenwoods", "work - Guess", "work: H&M", "JoJo Maman Bebe (work)", "Jones (work)", "Joules (work)", "John Lewis (work)", "work: M&Co", "work: Matalan", "work - Monsoon", "work: Mountain Warehouse", "work (New Look)", "at work - Next", "work at Primark", "work - Reiss", "work: Schuh", "at work at Superdry", "TK Maxx (work)", "Topshop (work)", "Wallis (work)", "at work at Jack Wills", "work: Zara", "The Malleith Shop (work)", "Fraser & Co. (work)", "Bella's (work)", "at work - Around the Corner", "work at Jewels", "work: the coffee shop", "work: the Malleith Cafe", "work: Bella Italia", "work: bookshop", "work (shop)", "work (records shop)", "work: used bookstore", "toy stop (work)", "work - sweet shop", "work - Malleith Insurance Agents", "work: clerical", "work - data entry", "work", "work (museum)", "Work: Malleith Academy", "work - Malleith Conservatory", "work - B & Q", "work - the library", "work (from home)", "work (self-employed)", "work: bus driver", "work - taxi driver", "work (lorry driver)", "work", "work (from home)", "work (self-employed)", "work: restaurant", "work: deliveries", "work (Malleith City Museum)", "work - at the library", "work (the Malleith Temp Agency)", "work (Tesco)", "work - at City Hall", "work (Malleith Office Complex)", "work - Malleith Nurseries", "work - data entry", "work (London)", "work (Belfast)", "work at Cafe Nero", "Costa (work)", "Pizza Express (work)", "work (Prezzo)", "Wagamama (work)", "Frankie and Benny's (work)", "Five Guys = work", "work = Gourmet Burger Kitchen", "at work at Yo!Sushi", "at work (@The Slug and Lettuce)", "work = The Queen's Head", "at work at The King's Arms", "work - waiter at The Bell", "at work: Pret", "at work at Nandos", "ASK Italian (work)", "at work (barista at Starbucks)", "at work - server at The Squid and Sextant")
+other1 <- c("The Malleith Botanical Garden", "The Malleith City Museum", "the Modern Art Museum", "the zoo", "the playground", "the cinema", "the movies", "the library", "the bowling alley", "Malleith Castle", "the beach", "the gardens", "Malleith Hall", "coastal walk", "river walk", "Malleith Cathedral", "the art gallery", "the theatre", "the market", "music concert" ,"gig", "the gym", "dinner party at a friend's", "coffee at a friend's", "tea with my nan", "dance class", "cooking class", "went to the pub", "played football", "brewery tour", "went for a long walk", "went to the pool", "went to the gym", "exercised", "improv night", "pub quiz", "pub quiz (The Queen's Head)", "went for a run", "went running along the river", "bird-watching on Saturday", "bird-watching", "went to school", "went to a night class", "story hour at the library (Saturday)", "volunteering", "art lessons", "drawing lessons", "improv night at the Loud Lobster", "cycling", "board game night with friends", "went to the park", "went to the playground", "fishing", "visited nan", "visited my sister", "visited my brother", "saw my sister's kids", "saw my brother's kids", "saw my niblings", "visited my mum", "visited my dad", "visited granddad", "care home - to see nan", "saw an old friend from uni for coffee", "coffee with an old school friend", "coffee with friends", "pub crawl with friends", "pub crawl with friends - can't remember where we went", "Paint and Pinot night at Debbie's", "cookery class", "went out dancing with friends", "went clubbing with friends", "went to a concert with some friends", "went to a gig with friends", "shopping with friends - can't remember where all we went", "long walk in the countryside", "walk along the canal path", "walk by the lake", "went for a walk in the park", "played tennis with Steve", "played tennis with friends", "Saturday pick-up football game", "played badminton", "played raquetball", "played pool with some friends", "went cycling with friends", "went for a swim", "went to church", "family dinner at nan's", "family dinner with granddad", "dinner with my in-laws", "walked on the beach", "went beachcombing", "went bowling", "played golf", "played golf with my mates", "played basketball", "went camping", "went camping - nature reserve", "weekend photography class", "board game night at Susan's", "horse riding", "played hockey", "paintball with friends", "piano lessons", "went out for cocktails", "went clubbing", "went shopping")
+restaurant1 <- c("The Malleith Cafe", "Bella Italia", "Cafe Nero", "Costa", "Pizza Express", "McDonalds", "Pizza Hut", "Prezzo", "Wagamama", "Frankie and Benny's", "Five Guys", "Gourmet Burger Kitchen", "Yo!Sushi", "The Slug and Lettuce", "The Queen's Head", "The King's Arms", "The Bell", "Pret", "KFC", "Greggs", "Nandos", "ASK Italian", "Subway", "Burger King", "The Bagel Bar", "Starbucks", "The Squid and Sextant", "The Queen's Heart", "The Grey Ewe", "Sizzle and Spice", "Curry in a Hurry", "The Pizza Place", "The Loud Lobster", "The Malleith Pavilion", "The Daily Catch", "Amuse-Bouche", "Edamame Dreams", "The Green House", "Fruit and Fancy", "Malleith Ice Cream", "The Breakfast Club", "The Friendly Tortoise", "The Cocoa Tree", "Fancy Flour", "Malleith Cakes", "Knead to Know", "Crumbs", "Cloud Nine Brewing Company", "Deep Dish Pizzas", "Pizzazz Pizzeria", "Javawocky", "The Lemon and Lime", "The Slice and Ice", "Beans and Barley", "The Tower Bistro", "Java and Jazz", "Elements", "Cinnamon Grove", "Fresh Coriander", "Harbourview", "Central Square", "The Soup Kitchen")
+travel1 <- c("London", "Inverness", "Glasgow", "Edinburgh", "Arran", "Skye", "Stirling", "Loch Lomond", "York", "Perth", "Dundee", "Aberdeen", "Oban", "Fort William", "Elgin", "Wick", "Portree", "Harris", "Lewis", "Ayr", "Paisley", "Aviemore", "Newcastle", "Leeds", "Sheffield", "Norwich", "Cambridge", "Brighton", "Oxford", "Luton", "Bournemouth", "Plymouth", "Swansea", "Snowdonia", "Liverpool", "Chester", "Blakepool", "the Lakes", "Cumbria", "Keswick", "Penrith", "Carlisle", "Falkirk", "Kirkcaldy", "St Andrews", "Nairn", "Belfast", "Lairg", "Mull", "Tobermory", "Islay", "Derry", "Lisburn", "Dublin", "Cork", "Galway", "Paris", "Madrid", "Belgium", "Amsterdam", "Marseille", "Barcelona", "Monaco", "Tenerife", "New York City", "Rome", "Athens", "Lisbon", "Berlin", "Warsaw", "Vilnius", "Riga", "Budapest", "Majorca", "Spain", "New York", "Greece", "Faroe Islands", "Iceland", "Greenland", "Wales", "Oslo")
+no <- c("I don't really remember", "sorry I don't remember", "not really sure", "survey form returned blank", "not too sure, sorry", "I haven't really been anywhere I don't think", "haven't been anywhere - sorry", "just stayed at home really")
+epinames <- c("Aamir", "Aaron", "Abdul", "Abraham", "Adnan", "Adrian", "Ahmad", "Abid", "Aidan", "Ainslie", "Ajay", "Adriano", "Aeneas", "Ceivagh", "Celeste", "Celina", "Ceri", "Ceridwen", "Cerran", "Chais", "Chandelle", "Chanice", "Chantelle", "Briege", "Brigita", "Brieanna", "Brodie", "Brogan", "Bronagh", "Bronwyn", "Bronte", "Brook", "Brooke", "Brooklynn", "Bryanie", "Calla", "Calla-Marie", "Cally", "Cameron", "Camilla", "Calle", "Camden", "Cameron", "Cammie", "Cicely", "Ciara", "Cienna", "Cici", "Claire", "Clara", "Clemence", "Clea", "Claudia", "Clementine", "Dominica", "Dominika", "Dorothy", "Dorina", "Dorothea", "Drew", "Dua", "Dulcie", "Dylan", "Eavan", "Eadie", "Dyma", "Ebony", "Elena", "Elia", "Eliana", "Elif", "Elin", "Elisabeth", "Eliza", "Freyia", "Elizabeth-Jane", "Gabriela", "Gwen", "Gwendolen", "Hafsa", "Hadiyah", "Hollie-May", "Holly-Rose", "Honor", "Hope", "Hosanna", "Hunter", "Jay", "Jaya", "Ida", "Ibhidh", "Ife-Oluwa", "Jayde", "Jayden", "Jaymie", "Jayla", "Jeeda", "Jemima", "Jemma", "Jenna", "Jessica", "Jesse", "Jess", "Jett", "Jewel", "Jill", "Jimena", "Joanne", "Jing", "Juliette", "June", "Juniper", "Justine", "Kacee", "Kacie", "Kadi", "Kaedence", "Kailyn", "Kadia", "Kairi", "Kaisey-Simonne", "Kairah-Lily", "Kaiya-Bella", "Kaja", "Kaleigh", "Kali", "Kambinachi", "Karissa", "Karen", "Karleigh", "Karla-Louise", "Kate", "Kate-Lynn", "Katherine", "Katharina", "Kathleen", "Kathryn", "Katie", "Penelope", "Penny", "Perri", "Persephone", "Peyton", "Petra", "Pheobe", "Poppy", "Piera", "Phoenix", "Praise", "Posy", "Sikander", "Simon", "Sean", "Siobhan", "Sinclair", "Sol", "Solomon", "Spencer", "Stacey", "Stanley", "Stefan", "Stephan", "Stewart", "Steve","Symon", "Syed", "Tai", "Talal", "Taylor", "Tarquin", "Teague", "Terry", "Terence", "Theo", "Theodore", "Thomas", "Tilman", "Thorfin")
+episurnames <-c("Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor", "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin", "Thompson", "Garcia", "Martinez", "Robinson", "Clark", "Rodriguez", "Lewis", "Lee", "Walker", "Hall", "Allen", "Young", "Hernandez",
+ "King", "Wright", "Lopez", "Hill", "Scott", "Green", "Adams", "Baker", "Gonzalez", "Nelson", "Carter", "Mitchell", "Perez", "Roberts", "Turner", "Phillips", "Campbell", "Parker", "Evans", "Edwards", "Collins", "Stewart", "Sanchez", "Morris", "Rogers", "Reed", "Cook",
+ "Bell", "Murphy", "Bailey", "Rivera", "Cooper", "Richardson", "Cox", "Howard", "Ward", "Torres", "Peterson", "Gray", "Ramirez", "James", "Watson", "Brooks", "Kelly", "Sanders", "Price", "Bennett", "Wood", "Barnes", "Ross", "Henderson", "Coleman")
+
+```
+
+Table 3. Epidemiological questionnaire results from patients with suspected or confirmed MRSA (`r city_name`, 17/03/2023)
+<table>
+<table border="1">
+  <tr>
+    <th>Patient no.</th>
+    <th>Movements 2 weeks prior to symptom onset</th>
+    <th>Close contacts 2 weeks prior to symptom onset</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td> 
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>`r sample(no, 1)`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>`r sample(work1, 1)`,`r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>    
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>`r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>`r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>`r sample(no, 1)`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>`r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>23</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>24</td>
+    <td>`r sample(no, 1)`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>27</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(work1, 1)`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>28</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(work1, 1)`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>29</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>30</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>31</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>32</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>33</td>
+    <td>`r sample(no, 1)`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>34</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>35</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>36</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>37</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>38</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>39</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>40</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>41</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>42</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>43</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>44</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>45</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>46</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>47</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>48</td>
+    <td>`r sample(no, 1)`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>49</td>
+    <td>`r sample(no, 1)`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>50</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>51</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>52</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>53</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>54</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>55</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>56</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>57</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>58</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>59</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`, `r sample(epinames, 1)` `r sample(episurnames, 1)`</td>
+  </tr>
+  <tr>
+    <td>60</td>
+    <td>`r sample(no, 1)`</td>
+    <td></td>
+  </tr>
+</table>  
+<br><br>
+
+

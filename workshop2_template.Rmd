@@ -1,0 +1,125 @@
+---
+title: 'BM424 workshop: infectious disease outbreak control'
+author: "Morgan Feeney"
+date: "17/03/2023"
+output: 
+  bookdown::html_document2:
+    toc: true
+    toc_float:
+      toc_collapsed: false
+    number_sections: false 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(knitr)
+
+
+city_name <- "CITYNAME" ##replace all instances of "CITYNAME" with new scenario name
+hospital_name <- "HOSPNAME" ##replace all instances of "HOSPNAME" with new scenario name
+```
+
+## Scenario X
+
+DIS-NAME in `r city_name`
+
+The `r city_name` Pandemic Response committee has gathered the following information for the second meeting of your group. 
+
+You should evaluate the effect(s) of the actions that you took at your last meeting and evaluate the current state of affairs in `r city_name`. 
+
+You should submit 3-5 specific actions for further actions to control the pandemic, using the [workshop 4 pro forma](/proformas/BM424_workshop4_proforma.docx) (also available on MyPlace). You should consider whether you want to continue any of the public health measures you implemented at your previous meeting, or whether you want to stop them; and also whether there are any new, additional actions you would like to take. Submit the pro forma by noon on Friday March 24th, via the submission link on MyPlace. 
+
+
+## Pandemic Statistics 
+
+Table 1. Data from the `r city_name` DIS-NAME outbreak.
+<table>
+<table border="1">
+  <tr>
+    <th></th>
+    <th>03/03/2023 data</th>
+    <th>17/03/2023 data</th>
+  </tr>
+  <tr>
+    <td>Deaths caused by the DIS-NAME outbreak</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Verified DIS-NAME cases</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>DIS-NAME hospitalisations</td>
+    <td></td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>`r hospital_name` ICU bed occupancy</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+  <td>Number of DIS-NAME related GP visits (total)</td>
+  <td></td>
+  <td></td>
+  </tr>
+</table>  
+<br><br>
+
+## Letters from the Public
+
+```{r emails, echo=FALSE}
+
+clos1 <- c("Yours sincerely,", "Best wishes,", "Kind regards,", "All the best,", "Sincerely,", "Yours truly,", "Respectfully,")
+email1 <- c("gldk", "aptr", "bhr", "tgh", "pbr", "js", "lucy", "amd", "oirl", "jim", "ygg", "oli", "end", "lulu", "rye", "att")
+adj1 <- c("Disgraceful", "Terrible", "Horrible", "Devastating", "Sad", "Bloody")
+emotion1 <- c("outraged", "upset", "extremely vexed", "so angry", "devastated")
+sent1 <- c()
+wish1 <- c("hope", "hope very much", "wish", "expect", "sincerely hope")
+state1 <- c("dreadful state of affairs", "horrible pandemic", "all of the poor people dying", "tragedy")
+time1 <- c("immediately", "very soon", "at once", "as soon as possible")
+name1 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
+verb1 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
+business1 <- c("small coffee shop", "coffee shop", "cafe", "restaurant", "bookshop", "boutique clothing store", "records shop", "used bookstore", "toy store", "sweet shop")
+business2 <- c("The CITYNAME Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
+adj2 <- c("nearly", "almost", "virtually", "almost literally", "practically")
+conseq1 <- c("lost my business due to those pandemic lockdowns", "had to close because of all the draconian lockdowns", "went out of business", "went bankrupt", "had to shut our doors during COVID")
+sent2 <- c()
+subj1 <- c()
+state2 <- c("awful pandemic", "terrible pandemic", "new crisis", "new pandemic", "new disease")
+conseq2 <- c()
+sent3 <- c()
+sent4 <- c()
+subj2 <- c("This Terrible Tragedy", "Another Terrible Loss")
+rel1 <- c("my mother-in-law", "my aunt", "my auntie", "my niece", "my nephew", "my husband's best friend", "my wife's best friend", "my sister-in-law", "my brother-in-law", "my uncle", "my granddad", "my gran", "my nana", "my nana's best friend")
+sent5 <- c()
+sent6 <- c()
+```
+
+
+## News Coverage of the `r city_name` DIS-NAME outbreak
+
+```{r news, echo=FALSE}
+
+adj3 <- c("Disgraceful", "Terrible", "Horrible", "Devastating", "Sad", "Bloody")
+emotion2 <- c("outraged", "upset", "extremely vexed", "so angry", "devastated")
+sent7 <- c()
+wish2 <- c("hope", "hope very much", "wish", "expect", "sincerely hope")
+state2 <- c("dreadful state of affairs", "horrible pandemic", "all of the poor people dying", "tragedy")
+time2 <- c("immediately", "very soon", "at once", "as soon as possible")
+name2 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
+verb2 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
+adj4 <- c("nearly", "almost", "virtually", "almost literally", "practically")
+sent8 <- c()
+sent9 <- c()
+sent10 <- c()
+sent11 <- c()
+```
+
+## Data gathered
+
+
+

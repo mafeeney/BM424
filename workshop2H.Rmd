@@ -1,0 +1,354 @@
+---
+title: 'BM424 workshop: infectious disease outbreak control'
+author: "Morgan Feeney"
+date: "17/03/2023"
+output: 
+  bookdown::html_document2:
+    toc: true
+    toc_float:
+      toc_collapsed: false
+    number_sections: false 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(knitr)
+
+
+city_name <- "Dalessie"
+hospital_name <- "Fairview"
+dis_name8 <- "<i>Streptococcus pyogenes</i>"
+outbreak_deaths <- 23 + 12 + 9
+
+##outcomes based on their actions: decrease in cases, hospitalizations, deaths. E-mail complaints/bad press over mask wearing, effects on children's education, etc. 
+
+##Results from increased testing 
+##antibiotic shortage
+```
+
+## Scenario H
+
+`r dis_name8` in `r city_name`
+
+The `r city_name` Pandemic Response committee has gathered the following information for the second meeting of your group. 
+
+You should evaluate the effect(s) of the actions that you took at your last meeting and evaluate the current state of affairs in `r city_name`. 
+
+You should submit 3-5 specific actions for further actions to control the pandemic, using the [workshop 4 pro forma](/proformas/BM424_workshop4_proforma.docx) (also available on MyPlace). You should consider whether you want to continue any of the public health measures you implemented at your previous meeting, or whether you want to stop them; and also whether there are any new, additional actions you would like to take. Submit the pro forma by noon on Friday March 24th, via the submission link on MyPlace. 
+
+
+## Pandemic Statistics 
+
+Table 1. Data from the `r city_name` `r dis_name8` outbreak.
+<table>
+<table border="1">
+  <tr>
+    <th></th>
+    <th>03/03/2023</th>
+    <th>17/03/2023</th>
+  </tr>
+  <tr>
+    <td>Deaths caused by the `r dis_name8` outbreak (weekly)</td>
+    <td>23</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>Verified `r dis_name8` cases (total)</td>
+    <td>350</td>
+    <td>550</td>
+  </tr>
+  <tr>
+    <td>`r dis_name8` hospitalisations (weekly)</td>
+    <td>154</td>
+    <td>47</td>
+  </tr>
+    <tr>
+    <td>`r hospital_name` ICU bed occupancy (current)</td>
+    <td>16</td>
+    <td>12</td>
+  </tr>
+  <tr>
+  <td>Number of `r dis_name8` related GP visits (weekly)</td>
+  <td>87</td>
+  <td>49</td>
+  </tr>
+</table>  
+<br><br>
+
+
+## News Coverage of the `r city_name` <i>Streptococcus pyogenes</i> outbreak
+
+```{r news, echo=FALSE}
+
+papername1 <- c("News", "Daily Press", "Evening News", "Star", "Telegraph", "Post", "Looking-Glass", "Sentinel", "Times")
+authname1 <- c("Maurice", "Cyrus", "Aaron", "Jane", "Abigail", "Ben", "Eden", "Jessica", "Leone", "Louisa", "Louis", "Fred", "Steve", "Barbara", "Norman", "Susan", "Edwin", "Isaac", "Austin", "Hugh", "Roselyne", "Francis", "Frances", "David", "Elliot", "Alan", "Joan", "Lester", "Devendra", "Lettitia", "Clive", "Perry", "J.M.", "S.R.", "A.B.", "Frank", "Mick", "Graham", "Walter", "Tony", "Leana", "Chester", "Peter", "Ward", "Ken", "Alice", "Erin", "Kate", "Niels", "Emma", "Elena", "Mary-Louise", "George", "Omar", "Carol", "Deborah", "Joseph", "Ashleigh", "Emily", "Joyce", "Harry", "Marcus", "Bill", "Martin", "Luis", "Leo", "Byron", "Joseph", "John", "Julia", "Eric", "Thomas", "Pablo", "Lewis", "Willa", "Miguel", "Edith", "Tracy")
+surname1 <- c("Chevalier", "Charles", "Chesterton", "Clay", "Cohen", "Collins", "Conway", "Cunningham", "Davis", "Daniels", "Douglas", "Evans", "Elliot", "Fields", "Ford", "Fox", "Gallagher", "Gibson", "Grant", "Harris", "Henry", "Hill", "Holmes", "Hunt", "James", "Jones", "Jensen", "Jennings", "Johnson", "Kay", "Kennedy", "King", "Lamb", "Lane", "Lee", "Lewis", "Locke", "Lynch", "MacArthur", "Mann", "Marin", "Martin", "Matthews", "May", "McCarthy", "McClary", "McGill", "McKay", "Mill", "Miller", "Mitchell", "Moore", "Morris", "Nelson", "Nicoll", "Ogilvy", "Ochs", "O'Brien", "Page", "Patterson", "Perry", "Phillips", "Ray", "Reed", "Rogers", "Russell", "Schiller", "Schultz", "Shelley", "Smith", "Snow", "Spencer", "Stein", "Star", "Stewart", "Stone", "Swift")
+pubdate <- c("03/03/2023", "04/03/2023", "05/03/2023", "06/03/2023", "07/03/2023", "08/03/2023", "09/03/2023", "10/03/2023", "11/03/2023", "12/03/2023", "13/03/2023", "14/03/2023", "15/03/2023", "16/03/2023", "17/03/2023")
+adj3 <- c("Disgraceful", "Terrible", "Horrible", "Devastating", "Sad", "Bloody")
+emotion2 <- c("outraged", "upset", "extremely vexed", "so angry", "devastated")
+sent7 <- c()
+wish2 <- c("hope", "hope very much", "wish", "expect", "sincerely hope")
+state2 <- c("dreadful state of affairs", "horrible pandemic", "all of the poor people dying", "tragedy")
+time2 <- c("immediately", "very soon", "at once", "as soon as possible")
+name2 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
+verb2 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
+adj4 <- c("nearly", "almost", "virtually", "almost literally", "practically")
+sent8 <- c()
+sent9 <- c()
+sent10 <- c()
+sent11 <- c()
+
+
+#set up person details for obits
+x <- sample(1:2, 1)
+if(x == 1){
+pron1 <- "he"
+posspron1 <- "his"
+obit1name <- sample(c("Charles", "Robert", "Luke", "Phil", "George", "Elijah", "Noah", "William", "Ben", "James", "Henry", "Leo", "Luca", "Ray"), 1)
+}
+if(x == 2){
+pron1 <- "she"
+posspron1 <- "her"
+obit1name <- sample(c("Dorothy", "Ellen", "Olivia", "Emma", "Charlotte", "Amelia", "Ava", "Sophia", "Millie", "Freya", "Poppy", "Sienna", "Florence"), 1)
+}
+obit1age <- sample(2:5, 1)
+obit1like1 <- sample(c("jigsaw puzzles", "teddy bears", "dinosaurs", "airplanes", "books", "butterflies", "elephants", "hedgehogs", "horses", "fire engines", "penguins", "sail boats", "zebras"), 1)
+obit1like2 <- sample(c("giraffes", "koala bears", "dragons", "cars", "movies", "goldfish", "trains", "unicorns", "winter", "trucks", "finger painting", "flowers", "sea turtles"), 1)
+obit1siblings <- sample(c("Charlie, Alfie, and Jacob", "Tammy and Beth", "Theodore and Mason", "Rory and Susan", "William and Ethan", "Louise and Edward", "Caleb and Brody", "Carter, David, and Milo", "Billy and Parker", "Livvy and Jane"), 1)
+obit1surname <- sample(c("Smith", "Jones", "Williams", "Taylor", "Davies", "Brown", "Wilson", "Evans", "Roberts", "Walker", "Wright", "Thompson", "Hughes", "Edwards", "Green", "Lewis", "Wood", "Martin", "Jackson", "Clark"), 1)
+
+
+x <- sample(1:3, 1)
+if(x == 1){
+pron2 <- "he"
+posspron2 <- "his"
+obit2name <- sample(c("Edward", "Riley", "Hugo", "Ronnie", "Louis", "Grayson", "Caleb", "Benjamin", "Kai", "Jasper", "Albert", "Blake", "Dylan", "Liam"), 1)
+}
+if(x == 2){
+pron2 <- "she"
+posspron2 <- "her"
+obit2name <- sample(c("Matilda", "Lucy", "Jessica", "Alice", "Maya", "Lottie", "Erin", "Maisie", "Bonnie", "Penelope", "Violet", "Esme", "Aurora"), 1)
+}
+if(x == 3){
+pron2 <- "they"
+posspron2 <- "their"
+obit2name <- sample(c("Cypress", "Hollis", "Lex", "Landry", "Rory", "Salem", "Sol", "Kit", "Bellamy"), 1)
+}
+
+obit2age <- sample(50:90, 1)
+obit2prof1 <- sample(c("musician", "author", "comedian", "artist"), 1)
+obit2work1 <- sample(c("Green Grass", "A Whole Latte", "Golden Days", "One True Love", "Idle Thoughts", "Hopeless", "Purple Skies", "Framed", "Enemy of Fire", "Friends and Lovers", "My Best Friend", "A Fool's Errand", "Harmful", "Pigeons and Partridges"), 1)
+obit2siblings <- sample(c("Luke and Chester", "Emily and Jonathan", "Gloria and Stephen", "Hester and Winifred", "Tammy, Theodore, and Thomas", "Frank and Thelma", "Eva and Elaine", "Charlotte and Harper", "Daisy and Phoebe", "Jim, Ella, and Evie"), 1)
+obit2surname <- sample(c("Smith", "Jones", "Williams", "Taylor", "Davies", "Brown", "Wilson", "Evans", "Roberts", "Walker", "Wright", "Thompson", "Hughes", "Edwards", "Green", "Lewis", "Wood", "Martin", "Jackson", "Clark", "Campbell", "Burns", "Murphy", "Watt", "Marshall", "White", "Stevenson", "Young", "Watson", "Morrison", "King", "Bruce", "Hill", "Gibson", "Gordon"), 1)
+
+```
+
+
+<font size="+3"><b>`r city_name` `r sample(papername1, 1)`</b></font><br>
+<font size="+2"><b>`r city_name` says farewell to pandemic's youngest victim</b></font><br>
+by `r sample(authname1, 1)` `r sample(surname1, 1)`
+`r sample(pubdate, 1)`
+
+The `r dis_name8` pandemic ravaging `r city_name` has claimed yet another victim. There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most tragic loss is `r obit1name` `r obit1surname` - at only `r obit1age`, the youngest victim that the pandemic has claimed.    
+
+`r obit1name` `r obit1surname` liked `r obit1like1` and `r obit1like2`. Friends and family say that `r pron1` was always `r sample(c("a delight", "an absolute joy", "a treasure", "the most precious child"), 1)`. 
+
+`r obit1name` is survived by `r posspron1` parents and grandparents, and by `r posspron1` siblings `r obit1siblings`. 
+
+The funeral service will be held `r sample(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"), 1)` at `r sample(c("St. Ninian's", "Trinity Baptist Church", "Westlake Memorial", "St. Elfrida's Catholic Church", "St. Mary's", "Trinity Church", "St. Andrew's", "St. Judes"), 1)`.
+
+***
+
+<font size="+3"><b>`r city_name` `r sample(papername1, 1)`</b></font><br>
+<font size="+2"><b>`r city_name` says farewell to local legend</b></font><br>
+by `r sample(authname1, 1)` `r sample(surname1, 1)`
+`r sample(pubdate, 1)`
+
+The `r dis_name8` pandemic ravaging `r city_name` has claimed yet another victim. `r obit2name` `r obit2surname`, local `r obit2prof1` and star, sadly passed away on `r sample(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"), 1)`. 
+
+`r obit2name` was perhaps best known for `r posspron2` `r sample(2000:2015, 1)` work `r obit2work1` , but fans say that the rest of `r posspron2` work was equally as `r sample(c("memorable", "genre-changing", "excellent", "influential"), 1)`. 
+
+`r obit2name` is survived by `r posspron2` `r sample(c("partner", "husband", "wife"), 1)`, and by `r posspron2` siblings `r obit2siblings`. 
+
+The funeral service will be held `r sample(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"), 1)` at `r sample(c("St. Ninian's", "Trinity Baptist Church", "Westlake Memorial", "St. Elfrida's Catholic Church", "St. Mary's", "Trinity Church", "St. Andrew's", "St. Judes"), 1)`.
+
+***
+
+<font size="+3"><b>`r city_name` `r sample(papername1, 1)`</b></font><br>
+<font size="+2"><b>`r city_name` pandemic council making great strides</b></font><br>
+by `r sample(authname1, 1)` `r sample(surname1, 1)`
+`r sample(pubdate, 1)`
+
+Citizens of `r city_name` should be `r sample(c("grateful", "thankful", "glad"), 1)` that the city's Pandemic Response Council, `r sample(c("swiftly", "quickly", "hurriedly"), 1)` convened when a new pandemic began to hit `r city_name`, has been so effective. While the initial death toll from the pandemic appeared to be quite `r sample(c("alarming", "devastating", "serious", "high", "heavy"), 1)`, the actions taken by the PRC seem to have been most effective. 
+
+Officials from `r sample(c("the NHS", "Public Health Scotland", "the World Health Organisation", "the Center for Disease Control", "the Red Cross"), 1)` have publicly praised the `r city_name` PRC, saying that `r sample(c("it is difficult to imagine a more effective public health response", "their actions have been extremely effective", "the PRC has done all of the right things", "this is a triumph that shows how effective public health responses can be", "countless lives have been saved due to the actions of the PRC"), 1)`
+
+There have been 8 deaths due to `r dis_name8` in `r city_name` this week. This is an enormous decrease, and hopefully `r city_name` will see the death toll continue to decrease in the coming weeks. 
+
+***
+
+<font size="+3"><b>`r city_name` `r sample(papername1, 1)`</b></font><br>
+<font size="+2"><b>Yet more overreach in the name of "science"</b></font><br>
+by `r sample(authname1, 1)` `r sample(surname1, 1)`
+`r sample(pubdate, 1)`
+
+Governments across the globe have seen how successful power-grabs in the name of public health can be, following on the wave of restrictions imposed because of so-called viral diseases like COVID-19 and "mpox". So-called scientists are fearmongering - aerosols, monkeys, "bird" flu - now they think that they can fool us into thinking that that we should "vaccinate" our children with whatever disease tthey dream up next. Citizens of `r city_name` should stand strong against this terrible tyranny! No more mask mandates, no more senseless restrictions! No more so-called "vaccines"!
+
+Our elders should not be left to die alone, left frightened and hopeless in a mandatory lockdown claimed to be "for their benefit." Our children should not be left to struggle through "pandemic" after "pandemic" - their language and literacy skills have been left behind due to these lockdowns, and their mental health is suffering. It is time that we take back control of our lives and end this tyranny of fear-mongering and so-called science. Citizens of `r city_name`, stand with me and resist this most recent attack on your freedoms and your lives. 
+
+*** 
+
+<font size="+3"><b>`r sample(c("BBC Scotland", "The Guardian", "The Independent"), 1)` </b></font><br>
+<font size="+2"><b>`r dis_name8` pandemic in `r city_name`</b></font><br>
+by `r sample(authname1, 1)` `r sample(surname1, 1)`
+`r sample(pubdate, 1)`
+
+Hard on the heels of the COVID-19 pandemic and a number of other health scares (monkeypox, or "mpox", avian flu, and worries about other infectious disease outbreaks), another pandemic has hit the Scottish town of `r city_name`. This time, it's `r dis_name8`, a bacterium that causes a sometimes fatal illness.
+
+There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most frightening aspect to this new pandemic is rumours that antibiotic-resistant <i>Streptococcus pyogenes</i> strains have begun to emerge. 
+
+Scientists have been warning about the antibiotic resistance crisis for years, saying that careless use of antibiotics could mean that these precious medicines will no longer be available to us in the future. 
+
+Some of the <i>Streptococcus</i> strains found in `r city_name` are reportedly resistant to all clinically available antibiotics, and scientists warn that these drug-resistant pathogens might be able to spread to new locations. Will nearby towns be next, or could these "superbugs" go as global as the SARS-COV2 virus did? How safe is our food and drink?
+
+
+## Increased testing for <i>S. pyogenes</i>
+
+Throat swabs were processed according to standard protocols and isolates characterised on appropriate chromogenic agar media. A representative sample of tests are shown.
+
+Table 2. Identification of <i>S. pyogenes</i> from patient samples taken during the  `r city_name` outbreak. 
+<table>
+<table border="1">
+  <tr>
+    <th>Test sample #</th>
+    <th><i>S. pyogenes</i> +ve culture</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>23</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>24</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>27</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>28</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>29</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>30</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>31</td>
+    <td>-</td>
+  </tr>
+</table>  
+<br><br>
+
+
