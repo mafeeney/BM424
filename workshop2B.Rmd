@@ -206,7 +206,7 @@ Scientists have been talking about this possibility for years, warning of the po
 
 Is the virus circulating in `r city_name` the one, or is the next influenza pandemic still around the corner?
 
-## Data gathered
+## RT-PCR testing for influenza virus
 
 Table 2. RT-PCR testing of animals in the `r city_name` `r dis_name2` outbreak.
 <table>

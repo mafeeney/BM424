@@ -71,7 +71,7 @@ Table 1. Data from the `r city_name` `r dis_name` outbreak.
 </table>  
 <br><br>
 
-## News Coverage of the `r city_name` <i>Listeria</i> outbreak
+## News Coverage of the `r city_name` <i>Mycobacterium</i> outbreak
 
 ```{r news, echo=FALSE}
 
