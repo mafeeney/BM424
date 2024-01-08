@@ -1,0 +1,135 @@
+---
+title: "extra-if-time"
+author: "Morgan Feeney"
+date: "14/03/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+ group A
+ 
+ 
+ ## Hospital/ICU update
+
+Antimicrobial resistance profiles of <i>Legionella pneumophila</i> strains isolated from patients currently hospitalised or in the ICU
+
+Table 4. MIC values of the tested antibiotics against clinical <i>L. pneumophila</i> isolates from `r city_name`
+<table>
+<table border="1">
+  <tr>
+    <th>Antibiotic</th>
+    <th>Patient 1</th>
+    <th>Patient 2</th>
+    <th>Patient 3</th>
+  </tr>
+  <tr>
+    <td>Ciprofloxacin</td>
+    <td>24</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>Moxifloxacin</td>
+    <td>2700</td>
+    <td>3400</td>
+  </tr>
+  <tr>
+    <td>Levofloxacin</td>
+    <td>59</td>
+    <td>22</td>
+  </tr>
+    <tr>
+    <td>Tigecycline</td>
+    <td>5</td>
+    <td>2</td>
+  </tr>
+  <tr>
+  <td>Doxycycline</td>
+  <td>40</td>
+  <td>14</td>
+  </tr>
+  <tr>
+  <td>Azithromycin</td>
+  <td>40</td>
+  <td>14</td>
+  </tr>
+    <tr>
+  <td>Erythromycin</td>
+  <td>40</td>
+  <td>14</td>
+  </tr>
+  <tr>
+  <td>Clarithromycin</td>
+  <td>40</td>
+  <td>14</td>
+  </tr>
+  <tr>
+  <td>Rifampicin</td>
+  <td>40</td>
+  <td>14</td>
+  </tr>
+</table>  
+<br><br>
+
+## Letters from the Public
+
+```{r emails, echo=FALSE}
+
+clos1 <- c("Yours sincerely,", "Best wishes,", "Kind regards,", "All the best,", "Sincerely,", "Yours truly,", "Respectfully,")
+email1 <- c("gldk", "aptr", "bhr", "tgh", "pbr", "js", "lucy", "amd", "oirl", "jim", "ygg", "oli", "end", "lulu", "rye", "att")
+adj1 <- c("Disgraceful", "Terrible", "Horrible", "Devastating", "Sad", "Bloody")
+emotion1 <- c("outraged", "upset", "extremely vexed", "so angry", "devastated")
+sent1 <- c()
+wish1 <- c("hope", "hope very much", "wish", "expect", "sincerely hope")
+state1 <- c("dreadful state of affairs", "horrible pandemic", "all of the poor people dying", "tragedy")
+time1 <- c("immediately", "very soon", "at once", "as soon as possible")
+name1 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
+verb1 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
+business1 <- c("small coffee shop", "coffee shop", "cafe", "restaurant", "bookshop", "boutique clothing store", "records shop", "used bookstore", "toy store", "sweet shop")
+business2 <- c("The CITYNAME Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
+adj2 <- c("nearly", "almost", "virtually", "almost literally", "practically")
+conseq1 <- c("lost my business due to those pandemic lockdowns", "had to close because of all the draconian lockdowns", "went out of business", "went bankrupt", "had to shut our doors during COVID")
+sent2 <- c()
+subj1 <- c()
+state2 <- c("awful pandemic", "terrible pandemic", "new crisis", "new pandemic", "new disease")
+conseq2 <- c()
+sent3 <- c()
+sent4 <- c()
+subj2 <- c("This Terrible Tragedy", "Another Terrible Loss")
+rel1 <- c("my mother-in-law", "my aunt", "my auntie", "my niece", "my nephew", "my husband's best friend", "my wife's best friend", "my sister-in-law", "my brother-in-law", "my uncle", "my granddad", "my gran", "my nana", "my nana's best friend")
+sent5 <- c()
+sent6 <- c()
+
+
+
+ "", "","", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "","", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+
+
+```

@@ -1,0 +1,360 @@
+---
+title: "Untitled"
+author: "Morgan Feeney"
+date: "24/03/2023"
+output:
+  word_document: default
+  html_document: default
+---
+Scenario A
+
+```{r A, fig.show="hold", out.width="50%", echo=FALSE, fig.cap=""}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(knitr)
+
+##scenarioA
+
+city_name <- "Inverkeld"
+hospital_name <- "Queen Rose"
+dis_name1 <- "<i>Legionella</i>"
+
+
+# number of deaths
+outbreak_deaths_A1 <- 24 
+outbreak_deaths_A2 <- 10
+outbreak_deaths_A3 <- 2
+outbreak_deaths_Atotal <- outbreak_deaths_A1 + outbreak_deaths_A2 + outbreak_deaths_A3
+
+#number of verified cases
+
+cases_A1 <- 2700
+cases_A2 <- 700
+cases_A3 <- 100
+cases_Atotal <- cases_A1 + cases_A2 + cases_A3
+
+# number of hospitalizations (weekly)
+hosp_A1 <- 59
+hosp_A2 <- 22
+hosp_A3 <- 12
+
+# number of GP visits
+GPvis_A1 <- 40
+GPvis_A2 <- 14
+GPvis_A3 <- 7
+
+# make data frames and plot data
+
+Deaths <- c(outbreak_deaths_A1, outbreak_deaths_A2, outbreak_deaths_A3)
+TotalCases <- c(cases_A1, cases_A2, cases_A3)
+WeeklyHosps <- c(hosp_A1, hosp_A2, hosp_A3)
+GPvisits <- c(GPvis_A1, GPvis_A2, GPvis_A3)
+ICUbeds <- c(1, 2, 3)
+Date <- c("03/03", "17/03", "31/03")
+
+dfA1 <- data.frame(Deaths, Date)
+ggplot(data = dfA1, aes(x=Date, y=Deaths)) + 
+  geom_point() +
+  geom_line(aes(group = 1)) +
+  labs(y = "Number of deaths per week, x = "Date") +
+  scale_y_continuous(limits=c(0, 50)) +
+  theme(panel.grid.minor = element_blank()) + 
+  scale_color_discrete(name="") + 
+  theme_classic()
+
+ggsave("A.png")
+
+#dfA2 <- data.frame(TotalCases, Date)
+#ggplot(data = dfA2, aes(x=Date, y=TotalCases)) + 
+#  geom_point() +
+#  geom_line(aes(group = 1)) +
+#  labs(y = "Number of verified cases", x = "Date") +
+#  scale_y_continuous(limits=c(0, 5000)) +
+#  theme(panel.grid.minor = element_blank()) + 
+#  scale_color_discrete(name="") + 
+#  theme_classic()
+
+#dfA3 <- data.frame(WeeklyHosps, Date)
+#ggplot(data = dfA3, aes(x=Date, y=WeeklyHosps)) + 
+#  geom_point() +
+#  geom_line(aes(group = 1)) +
+#  labs(y = "Number of hospitalizations (weekly)", x = "Date") +
+#  scale_y_continuous(limits=c(0, 100)) +
+#  theme(panel.grid.minor = element_blank()) + 
+#  scale_color_discrete(name="") + 
+#  theme_classic()
+
+#dfA4 <- data.frame(GPvisits, Date)
+#ggplot(data = dfA4, aes(x=Date, y=GPvisits)) + 
+#  geom_point() +
+#  geom_line(aes(group = 1)) +
+#  labs(y = "Number of hospitalizations (weekly)", x = "Date") +
+#  scale_y_continuous(limits=c(0, 100)) +
+#  theme(panel.grid.minor = element_blank()) + 
+#  scale_color_discrete(name="") + 
+#  theme_classic()
+
+```  
+
+Scenario B
+
+```{r B, fig.show="hold", out.width="50%", echo=FALSE, fig.cap=""}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(knitr)
+
+
+city_name <- "Baltyre"
+hospital_name <- "Queen's College"
+dis_name2 <- "influenza"
+
+# number of deaths
+outbreak_deaths_B1 <- 24 
+outbreak_deaths_B2 <- 13
+outbreak_deaths_B3 <- 16
+outbreak_deaths_Btotal <- outbreak_deaths_B1 + outbreak_deaths_B2 + outbreak_deaths_B3
+
+#number of verified cases
+
+
+
+# make data frames and plot data
+
+DeathsB <- c(outbreak_deaths_B1, outbreak_deaths_B2, outbreak_deaths_B3)
+Date <- c("03/03", "17/03", "31/03")
+
+dfB1 <- data.frame(DeathsB, Date)
+ggplot(data = dfB1, aes(x=Date, y=DeathsB)) + 
+  geom_point() +
+  geom_line(aes(group = 1)) +
+  labs(y = "Number of deaths per week, x = "Date") +
+  scale_y_continuous(limits=c(0, 50)) +
+  theme(panel.grid.minor = element_blank()) + 
+  scale_color_discrete(name="") + 
+  theme_classic()
+
+ggsave("B.png")
+
+```  
+
+
+Scenario C
+
+```{r C, fig.show="hold", out.width="50%", echo=FALSE, fig.cap=""}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(knitr)
+
+
+city_name <- "Malleith"
+hospital_name <- "Central Highland"
+dis_name3 <- "MRSA"
+
+# number of deaths
+outbreak_deaths_C1 <- 13 
+outbreak_deaths_C2 <- 6
+outbreak_deaths_C3 <- 2
+outbreak_deaths_Ctotal <- outbreak_deaths_C1 + outbreak_deaths_C2 + outbreak_deaths_C3
+
+
+# make data frames and plot data
+
+DeathsC <- c(outbreak_deaths_C1, outbreak_deaths_C2, outbreak_deaths_C3)
+Date <- c("03/03", "17/03", "31/03")
+
+dfC1 <- data.frame(DeathsC, Date)
+ggplot(data = dfC1, aes(x=Date, y=DeathsC)) + 
+  geom_point() +
+  geom_line(aes(group = 1)) +
+  labs(y = "Number of deaths per week, x = "Date") +
+  scale_y_continuous(limits=c(0, 50)) +
+  theme(panel.grid.minor = element_blank()) + 
+  scale_color_discrete(name="") + 
+  theme_classic()
+
+ggsave("C.png")
+
+```
+
+
+Scenario D
+
+
+```{r D, fig.show="hold", out.width="50%", echo=FALSE, fig.cap=""}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(knitr)
+
+
+city_name <- "Rosblane"
+hospital_name <- "North Shore"
+dis_name4 <- "<i>Campylobacter jejuni</i>"
+
+# number of deaths
+outbreak_deaths_D1 <- 21 
+outbreak_deaths_D2 <- 8
+outbreak_deaths_D3 <- 3
+outbreak_deaths_Dtotal <- outbreak_deaths_D1 + outbreak_deaths_D2 + outbreak_deaths_D3
+
+# make data frames and plot data
+
+DeathsD <- c(outbreak_deaths_D1, outbreak_deaths_D2, outbreak_deaths_D3)
+Date <- c("03/03", "17/03", "31/03")
+
+dfD1 <- data.frame(DeathsD, Date)
+ggplot(data = dfD1, aes(x=Date, y=DeathsD)) + 
+  geom_point() +
+  geom_line(aes(group = 1)) +
+  labs(y = "Number of deaths per week, x = "Date") +
+  scale_y_continuous(limits=c(0, 50)) +
+  theme(panel.grid.minor = element_blank()) + 
+  scale_color_discrete(name="") + 
+  theme_classic()
+
+ggsave("D.png")
+
+```
+
+
+Scenario E
+
+```{r E, fig.show="hold", out.width="50%", echo=FALSE, fig.cap=""}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(knitr)
+
+
+city_name <- "Rosmakirk"
+hospital_name <- "Horizon NHS"
+dis_name4 <- "<i>Listeria monocytogenes</i>"
+outbreak_deaths <- 35 + 14 + 8
+
+# number of deaths
+outbreak_deaths_E1 <- 35 
+outbreak_deaths_E2 <- 8
+outbreak_deaths_E3 <- 1
+outbreak_deaths_Etotal <- outbreak_deaths_E1 + outbreak_deaths_E2 + outbreak_deaths_E3
+
+# make data frames and plot data
+
+DeathsE <- c(outbreak_deaths_E1, outbreak_deaths_E2, outbreak_deaths_E3)
+Date <- c("03/03", "17/03", "31/03")
+
+dfE1 <- data.frame(DeathsE, Date)
+ggplot(data = dfE1, aes(x=Date, y=DeathsE)) + 
+  geom_point() +
+  geom_line(aes(group = 1)) +
+  labs(y = "Number of deaths per week, x = "Date") +
+  scale_y_continuous(limits=c(0, 50)) +
+  theme(panel.grid.minor = element_blank()) + 
+  scale_color_discrete(name="") + 
+  theme_classic()
+
+ggsave("E.png")
+
+```
+
+
+Scenario G
+
+```{r G, fig.show="hold", out.width="50%", echo=FALSE, fig.cap=""}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(knitr)
+
+
+city_name <- "Glenleith"
+hospital_name <- "Riverview"
+dis_name <- "<i>Mycobacterium tuberculosis</i>"
+outbreak_deaths <- 10 + 6
+
+# number of deaths
+outbreak_deaths_G1 <- 10 
+outbreak_deaths_G2 <- 6
+outbreak_deaths_G3 <- 6
+outbreak_deaths_Gtotal <- outbreak_deaths_G1 + outbreak_deaths_G2 + outbreak_deaths_G3
+
+cases_G1 <- 150
+cases_G2 <- 20
+cases_G3 <- 10
+
+# make data frames and plot data
+
+DeathsG <- c(outbreak_deaths_G1, outbreak_deaths_G2, outbreak_deaths_G3)
+Date <- c("03/03", "17/03", "31/03")
+
+dfG1 <- data.frame(DeathsG, Date)
+ggplot(data = dfG1, aes(x=Date, y=DeathsG)) + 
+  geom_point() +
+  geom_line(aes(group = 1)) +
+  labs(y = "Number of deaths per week", x = "Date") +
+  scale_y_continuous(limits=c(0, 50)) +
+  theme(panel.grid.minor = element_blank()) + 
+  scale_color_discrete(name="") + 
+  theme_classic() 
+
+ggsave("G.png")
+
+DeathsE <- c(outbreak_deaths_E1, outbreak_deaths_E2, outbreak_deaths_E3)
+Date <- c("03/03", "17/03", "31/03")
+
+dfE1 <- data.frame(DeathsE, Date)
+ggplot(data = dfE1, aes(x=Date, y=DeathsE)) + 
+  geom_point() +
+  geom_line(aes(group = 1)) +
+  labs(y = "Number of deaths per week, x = "Date") +
+  scale_y_continuous(limits=c(0, 50)) +
+  theme(panel.grid.minor = element_blank()) + 
+  scale_color_discrete(name="") + 
+  theme_classic()
+
+ggsave("E.png")
+
+
+
+```
+
+Scenario H
+
+```{r H, fig.show="hold", out.width="50%", echo=FALSE, fig.cap=""}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(knitr)
+
+
+city_name <- "Dalessie"
+hospital_name <- "Fairview"
+dis_name8 <- "<i>Streptococcus pyogenes</i>"
+outbreak_deaths <- 23 + 9 + 3
+
+# number of deaths
+outbreak_deaths_H1 <- 23
+outbreak_deaths_H2 <- 9
+outbreak_deaths_H3 <- 3
+outbreak_deaths_Htotal <- outbreak_deaths_H1 + outbreak_deaths_H2 + outbreak_deaths_H3
+
+# make data frames and plot data
+
+DeathsH <- c(outbreak_deaths_H1, outbreak_deaths_H2, outbreak_deaths_H3)
+Date <- c("03/03", "17/03", "31/03")
+
+dfH1 <- data.frame(DeathsH, Date)
+ggplot(data = dfH1, aes(x=Date, y=DeathsH)) + 
+  geom_point() +
+  geom_line(aes(group = 1)) +
+  labs(y = "Number of deaths per week, x = "Date") +
+  scale_y_continuous(limits=c(0, 50)) +
+  theme(panel.grid.minor = element_blank()) + 
+  scale_color_discrete(name="") + 
+  theme_classic()
+
+ggsave("H.png")
+
+```

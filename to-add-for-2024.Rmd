@@ -1,0 +1,13 @@
+---
+title: "to add for 2024"
+author: "Morgan Feeney"
+date: "2023-05-31"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Epidemic calculator - http://gabgoh.github.io/COVID/index.html
+
