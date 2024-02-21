@@ -19,7 +19,7 @@ Links to the 9 different pandemic scenarios and briefing packets:
 - [Pandemic Scenario E](/workshop3/workshopE_2024.html)
 - [Pandemic Scenario F](/workshop3/workshopF_2024.html)
 - [Pandemic Scenario G](/workshop3/workshopG_2024.html)
-- [Pandemic Scenario H](/workshop3/workshopH_2022.html)
+- [Pandemic Scenario H](/workshop3/workshopH_2024.html)
 - [Pandemic Scenario I](/workshop3/workshopI_2024.html)
 
 The pro forma to complete when you have finished discussing your pandemic scenario as a group and decided on the actions your city will take to try to control the pandemic. (Please complete this and submit via MyPlace.): [Workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx)
