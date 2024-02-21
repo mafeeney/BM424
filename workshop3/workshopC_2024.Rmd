@@ -40,10 +40,13 @@ Each member of your group will play one of the following roles as you attempt to
 6.	Microbiologist (working in one of the NHS Scotland clinical labs)
 7.	Public communications expert (past and current sci comm campaigns)
 8.  Doctor at a major surgery in `r city_name`
+9.  Epidemiologist from the local university, an expert on <i>S. aureus</i> transmission
 
 You must work together, using the information that has been provided for you in the attached information packets, and decide what action(s) should be taken to control the outbreak currently plaguing your city, `r city_name`. Your actions should be evidence-based – use the peer-reviewed literature to decide on measures that will stop the pandemic in your scenario.
 
 Your action points may include directives to gather more information (e.g., contact tracing of current cases, microbiological testing of food/water, etc.), or specific directives (e.g. public health measures, non-pharmaceutical interventions, etc.). Use the data/expertise of all group members. Be clear, concise, and specific.
+
+You may choose to include mathematical modeling as part of your decision making (for example, using an [epidemic calculator](http://gabgoh.github.io/COVID/index.html) or other models); if you do so, you should provide details of your modelling and predictions when you submit your group's pro forma.
 
 You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
 
@@ -579,3 +582,24 @@ You are one of the doctors at the largest surgery in `r city_name`. In the past 
 
 * Adalbert, Jenna R et al. “Clinical outcomes in patients co-infected with COVID-19 and Staphylococcus aureus: a scoping review.” BMC infectious diseases vol. 21,1 985. 21 Sep. 2021.
 
+## Information Packet C9
+
+You are an epidemiologist working at the University of `r city_name`, and have been studying <i>S. aureus</i> transmission dynamics for the past `r sample(2:10, size=1)` years. As such, you are very familiar with the relevant literature, including papers such as: 
+
+* Dung TTN, Phat VV, Vinh C, et al. Development and validation of multiplex real-time PCR for simultaneous detection of six bacterial pathogens causing lower respiratory tract infections and antimicrobial resistance genes. BMC Infect Dis. 2024;24(1):164. Published 2024 Feb 7. doi:10.1186/s12879-024-09028-2
+
+* Benvenga V, Cuénod A, Purushothaman S, et al. Historic methicillin-resistant Staphylococcus aureus: expanding current knowledge using molecular epidemiological characterization of a Swiss legacy collection. Genome Med. 2024;16(1):23. Published 2024 Feb 5. doi:10.1186/s13073-024-01292-w
+
+* Aung MS, Urushibara N, Kawaguchiya M, et al. Molecular Epidemiological Characterization of Methicillin-Resistant Staphylococcus aureus from Bloodstream Infections in Northern Japan: Increasing Trend of CC1 and Identification of ST8-SCCmec IVa USA300-Like Isolate Lacking Arginine Catabolic Mobile Element. Microb Drug Resist. 2024;30(2):63-72. doi:10.1089/mdr.2023.0203
+
+* Jiang J-H, Cameron DR, Nethercott C, Aires-de-Sousa M, Peleg AY. Virulence attributes of successful methicillin-resistant Staphylococcus aureus lineages. Clin Microbiol Rev. 2023;36(4):e0014822. doi:10.1128/cmr.00148-22
+
+* Zaghen F, Sora VM, Meroni G, et al. Epidemiology of Antimicrobial Resistance Genes in Staphylococcus aureus Isolates from a Public Database from a One Health Perspective-Sample Origin and Geographical Distribution of Isolates. Antibiotics (Basel). 2023;12(12):1654. Published 2023 Nov 24. doi:10.3390/antibiotics12121654
+
+* Wendel AF, Otchwemah R, Layer-Nicolaou F, et al. Investigating a possible link between antiseptic treatment and the increased occurrence of daptomycin-resistant Staphylococcus aureus. Clin Microbiol Infect. 2023;29(10):1334.e1-1334.e6. doi:10.1016/j.cmi.2023.06.007
+
+* Giulieri SG, Guérillot R, Holmes NE, et al. A statistical genomics framework to trace bacterial genomic predictors of clinical outcomes in Staphylococcus aureus bacteremia. Cell Rep. 2023;42(9):113069. doi:10.1016/j.celrep.2023.113069 
+
+* Sato T, Yamaguchi T, Aoki K, et al. Whole-genome sequencing analysis of molecular epidemiology and silent transmissions causing meticillin-resistant Staphylococcus aureus bloodstream infections in a university hospital. J Hosp Infect. 2023;139:141-149. doi:10.1016/j.jhin.2023.05.014
+
+* Zhang Z, Wang J, Wang H, et al. Molecular Surveillance of MRSA in Raw Milk Provides Insight into MRSA Cross Species Evolution. Microbiol Spectr. 2023;11(4):e0031123. doi:10.1128/spectrum.00311-23

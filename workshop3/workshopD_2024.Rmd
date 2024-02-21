@@ -46,6 +46,8 @@ You must work together, using the information that has been provided for you in 
 
 Your action points may include directives to gather more information (e.g., contact tracing of current cases, microbiological testing of food/water, etc.), or specific directives (e.g. public health measures, non-pharmaceutical interventions, etc.). Use the data/expertise of all group members. Be clear, concise, and specific.
 
+You may choose to include mathematical modeling as part of your decision making (for example, using an [epidemic calculator](http://gabgoh.github.io/COVID/index.html) or other models); if you do so, you should provide details of your modelling and predictions when you submit your group's pro forma.
+
 You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
 
 ***
@@ -596,3 +598,9 @@ You are an epidemiologist working at the University of `r city_name`, and have b
 * Dessouky, Yara El et al. “Genomic insights into zoonotic transmission and antimicrobial resistance in <i>Campylobacter jejuni</i> from farm to fork: a one health perspective.” Gut pathogens vol. 14,1 44. 5 Dec. 2022, doi:10.1186/s13099-022-00517-w
 
 * Hadiyan, Maryam et al. “Prevalence, antimicrobial resistance, virulence gene profile and molecular typing of <i>Campylobacter</i> species isolated from poultry meat samples.” Veterinary medicine and science vol. 8,6 (2022): 2482-2493. 
+
+* Ocejo M, Oporto B, Lavín JL, Hurtado A. Monitoring within-farm transmission dynamics of antimicrobial-resistant Campylobacter in dairy cattle using broth microdilution and long-read whole genome sequencing. Sci Rep. 2023;13(1):12529. Published 2023 Aug 2. doi:10.1038/s41598-023-39588-3
+
+* Rodrigues JA, Blankenship HM, Cha W, et al. Pangenomic analyses of antibiotic-resistant Campylobacter jejuni reveal unique lineage distributions and epidemiological associations. Microb Genom. 2023;9(8):mgen001073. doi:10.1099/mgen.0.001073
+
+* Katz A, Porte L, Weitzel T, et al. Whole-genome sequencing reveals changes in genomic diversity and distinctive repertoires of T3SS and T6SS effector candidates in Chilean clinical Campylobacter strains. Front Cell Infect Microbiol. 2023;13:1208825. Published 2023 Jul 13. doi:10.3389/fcimb.2023.1208825
