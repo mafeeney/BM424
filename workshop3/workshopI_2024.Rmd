@@ -24,10 +24,10 @@ hospital_name <- "Riverview"
 
 Disaster has struck - hard on the heels of the COVID-19 pandemic, another disease outbreak has hit your fair city, `r city_name`. Residents are outraged and worried. There have already been `r outbreak_deaths` deaths.
 
-The cause of the outbreak appears to be DIS-NAME. (Please refer to the [WHO DIS-NAME Fact Sheet](add link here) for more information about the pathogen.)
+The cause of the outbreak appears to be <i>Bacillus anthracis</i>. (Please refer to the [CDC Anthrax Fact Sheet](https://www.cdc.gov/anthrax/basics/index.html) for more information about the pathogen.)
 
-```{r DISEASE, out.width="50%", out.height="50%", echo=FALSE, fig.cap="as appropriate. Image credit: [CDC](link)"}
-knitr::include_graphics(rep("images/DIS-NAME.jpg"))
+```{r DISEASE, out.width="50%", out.height="50%", echo=FALSE, fig.cap="Scanning electron micrograph of Bacillus anthracis endospores. Image credit: [CDC](https://phil.cdc.gov/details.aspx?pid=10123)"}
+knitr::include_graphics(rep("images/Banthracis.jpg"))
 ```
 
 Each member of your group will play one of the following roles as you attempt to tackle the disease outbreak and save your city:
@@ -40,10 +40,14 @@ Each member of your group will play one of the following roles as you attempt to
 6.	Microbiologist (working in one of the NHS Scotland clinical labs)
 7.	Public communications expert (past and current sci comm campaigns)
 8.  Doctor at a major surgery in `r city_name`
+9.  Epidemiologist from the local university, an expert on <i>Bacillus anthracis</i> transmission
+
 
 You must work together, using the information that has been provided for you in the attached information packets, and decide what action(s) should be taken to control the outbreak currently plaguing your city, `r city_name`. Your actions should be evidence-based – use the peer-reviewed literature to decide on measures that will stop the pandemic in your scenario.
 
 Your action points may include directives to gather more information (e.g., contact tracing of current cases, microbiological testing of food/water, etc.), or specific directives (e.g. public health measures, non-pharmaceutical interventions, etc.). Use the data/expertise of all group members. Be clear, concise, and specific.
+
+You may choose to include mathematical modeling as part of your decision making (for example, using an [epidemic calculator](http://gabgoh.github.io/COVID/index.html) or other models); if you do so, you should provide details of your modelling and predictions when you submit your group's pro forma.
 
 You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
 
@@ -85,11 +89,11 @@ ggplot(data = birthdeath, aes(x=DemogYears, y=Num, group=Demog, colour=Demog)) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + 
   scale_color_discrete(name="")
 ```
-You were elected as a member of the popular "PARTY3" party and made a number of election promises regarding a "Green New Deal" for `r city_name`.
+You were elected as a member of the popular "Progressive Earth" party and made a number of election promises regarding a "Green New Deal" for `r city_name`.
 
 ```{r A2, fig.cap="Voting intention by Ardkeld residents (Source: YouGov polling)", echo=FALSE}
 
-Party <- c((rep("PARTY1", 10)), (rep("PARTY2", 10)), (rep("PARTY3", 10)), (rep("PARTY4", 10)), (rep("PARTY5", 10)))
+Party <- c((rep("Sovereign People", 10)), (rep("Green Evolution", 10)), (rep("Progressive Earth", 10)), (rep("Unconditional Unity", 10)), (rep("Universal Prosperity", 10)))
 Polls <- c(sample(1:3, size=10, replace=TRUE), sample(8:14, size=10, replace=TRUE), sample(15:20, size=10, replace=TRUE), sample(5:10, size=10, replace=TRUE), sample(1:2, size=10, replace=TRUE))
 PolYears <- c(rep(2012:2021, 5))
 politics <- data.frame(Party, Polls, PolYears)
@@ -107,7 +111,7 @@ There are currently `r Councillors` elected councillors, representing the 5 main
 ```{r A3, echo=FALSE}
 
 pol2021 <- (politics[politics$PolYears>2020, 2])
-Parties <- c("PARTY1", "PARTY2", "PARTY3", "PARTY4", "PARTY5")
+Parties <- c("Sovereign People", "Green Evolution", "Progressive Earth", "Unconditional Unity", "Universal Prosperity")
 
 Councillors <- data.frame(Parties, pol2021)
 
@@ -117,7 +121,7 @@ kable(x = Councillors,
 
 ```
 <br><br>
-The overall budget (expenditures) for the 2021-2022 financial year is £`r sample(400000000:600000000, size=1)`. A summary of expeditures by category for this financial year is shown below. 
+The overall budget (expenditures) for the 2021-2022 financial year is £`r sample(400000000:600000000, size=1)`. A summary of expenditures by category for this financial year is shown below. 
 
 ```{r A4, fig.cap="Public expenditures by category for the 2021-2022 financial year (Source: Ardkeld City Council)", echo=FALSE}
 
@@ -239,23 +243,26 @@ As Provost of `r city_name`, you are of course familiar with the work of the [St
 
 ## Information Packet I2
 
-You are a representative from Public Health Scotland, sent to `r city_name` to help with the DIS-NAME outbreak. 
+You are a representative from Public Health Scotland, sent to `r city_name` to help with the anthrax outbreak. 
 
 Your briefing packet includes the following documents: 
 
-[name](link) or paper citation - x4 total
+[Anthrax: how to spot and report the disease (ScotGov)](https://www.gov.scot/publications/anthrax/)
 
+[Exotic notifiable animal diseases contingency plans - Scottish Regional Resilience Partnerships' framework: August 2022](https://www.gov.scot/publications/scottish-regional-resilience-partnerships-framework-exotic-notifiable-animal-diseases-contingency-plans-august-2022/pages/21/)
 
+[Public Health Scotland: Gastrointestinal and Zoonoses Biennial report 2020 to 2021](https://publichealthscotland.scot/publications/gastrointestinal-and-zoonoses/gastrointestinal-and-zoonoses-biennial-report-2020-to-2021/)
+Cross AR, Baldwin VM, Roy S, Essex-Lopresti AE, Prior JL, Harmer NJ. Zoonoses under our noses. Microbes Infect. 2019;21(1):10-19. doi:10.1016/j.micinf.2018.06.001
 
-
+Inverarity DJ, Forrester VM, Cumming JG, et al. Injectional anthrax at a Scottish district general hospital. Epidemiol Infect. 2015;143(6):1311-1321. doi:10.1017/S0950268814001885
 
 ***
 
 ## Information Packet I3
 
-You are an epidemiologist working for Public Health Scotland, sent to `r city_name` to help with the measles outbreak.
+You are an epidemiologist working for Public Health Scotland, sent to `r city_name` to help with the anthrax outbreak.
 
-REPLACE THIS TEXT and TABLE - A team of scientists working together have in a PHS lab have isolated and cultured DIS-NAME virus (using a standard tissue culture model) from a number of patient samples taken during this outbreak; isolated DIS-NAME RNA from these cultures; reverse-transcribed this to DNA and sequenced this DNA using an Illumina MiSeq platform; assembled the short paired-end reads; and compared these assemblies to the extant DIS-NAME sequences available in the NCBI databases. The results of these experiments are summarised in the table below. 
+A team of scientists working together have in a PHS lab have isolated and cultured <i>B. anthracis</i> (using a standard tissue culture model) from a number of patient samples taken during this outbreak; isolated <i>B. anthracis</i> genomic DNA from these cultures; and sequenced this DNA using an Illumina MiSeq platform; assembled the short paired-end reads; and compared these assemblies to the extant <i>B. anthracis</i> sequences available in the NCBI databases. The results of these experiments are summarised in the table below. 
 
 <table>
 <table border="1">
@@ -265,50 +272,52 @@ REPLACE THIS TEXT and TABLE - A team of scientists working together have in a PH
   </tr>
   <tr>
     <td>1</td>
-    <td>acc.no.here</td>
+    <td>GCA_022220665.1</td>
   </tr>
   <tr>
     <td>2</td>
-    <td>acc.no.here</td>
+    <td>GCA_022220665.1</td>
   </tr>
   <tr>
     <td>3</td>
-    <td>acc.no.here</td>
+    <td>GCA_022220665.1</td>
   </tr>
   <tr>
     <td>4</td>
-    <td>acc.no.here</td>
+    <td>GCA_022220665.1</td>
   </tr>
   <tr>
     <td>5</td>
-    <td>acc.no.here</td>
+    <td>GCA_022220665.1</td>
   </tr>
   <tr>
     <td>6</td>
-    <td>acc.no.here</td>
+    <td>GCA_022220665.1</td>
   </tr>
     <tr>
     <td>7</td>
-    <td>acc.no.here</td>
+    <td>GCA_022220665.1</td>
   </tr>
   <tr>
     <td>8</td>
-    <td>acc.no.here</td>
+    <td>GCA_022220665.1</td>
   </tr>
   <tr>
     <td>9</td>
-    <td>acc.no.here</td>
+    <td>GCA_022220665.1</td>
   </tr>
     <tr>
     <td>10</td>
-    <td>acc.no.here</td>
+    <td>GCA_022220665.1</td>
   </tr>
 </table>  
 <br><br>
 Your briefing packet also includes the following documents: 
 
+[Anthrax - Annual Epidemiological Report 2021 (ECDC)](https://www.ecdc.europa.eu/sites/default/files/documents/anthrax-annual-epidemiological-report-for-2021.pdf)
 
-[text](link) x1, citation x1
+González AA, Rivera-Pérez JI, Toranzos GA. Forensic Approaches to Detect Possible Agents of Bioterror. Microbiol Spectr. 2017;5(2):10.1128/microbiolspec.EMF-0010-2016. doi:10.1128/microbiolspec.EMF-0010-2016
+
 
 ***
 
@@ -377,7 +386,7 @@ ggplot(admissions, aes(x="", y=value, fill=Category)) +
 ```
 
 
-A&E waiting times have been called "disastrously high" in recent months, both by the press and by tthe hospital ombudsman.
+A&E waiting times have been called "disastrously high" in recent months, both by the press and by the hospital ombudsman.
 
 ```{r A8, fig.cap="ICU waiting times for the Ardkeld Riverview hospital (Source: NHS Scotland)", echo=FALSE}
 
@@ -480,25 +489,34 @@ Some of the key `r city_name` facts and figures at a glance are summarized in th
 <br><br>
 
 
-Your briefing packet on DIS-NAME includes the following information.
+Your briefing packet on anthrax includes the following information.
 
-[text](link) x4
+[Guidelines for the public health management of tetanus, botulism or anthrax among people who use drugs (Public Health Scotland)](https://publichealthscotland.scot/publications/guidelines-for-the-public-health-management-of-tetanus-botulism-or-anthrax-among-people-who-use-drugs/guidelines-for-the-public-health-management-of-tetanus-botulism-or-anthrax-among-people-who-use-drugs/)
 
+[Official Veterinarian Anthrax Instructions (Animal and Plant Health Agency)](http://apha.defra.gov.uk/External_OV_Instructions/Anthrax/index.htm)
+
+[Construction micro-organisms: Anthrax from contaminated land and buildings (Health and Safety Executive)](https://www.hse.gov.uk/construction/healthrisks/hazardous-substances/harmful-micro-organisms/anthrax.htm)
+
+Kyriacou DN, Dobrez D, Parada JP, et al. Cost-effectiveness comparison of response strategies to a large-scale anthrax attack on the chicago metropolitan area: impact of timing and surge capacity. Biosecur Bioterror. 2012;10(3):264-279. doi:10.1089/bsp.2011.0105
 
 
 ***
 
 ## Information Packet I6
 
-EDIT/REPLACE AS NEEDED You are a microbiologist working in the virology department at the Greater `r city_name` Clinical Laboratory. Your laboratory is equipped to handle a range of culture samples (including anaerobic and microaerobic bacteria, as well as viruses), and you routinely process`r sample(1500:2000, size=1)` samples monthly. 
+You are a microbiologist working in the bacteriology department at the Greater `r city_name` Clinical Laboratory. Your laboratory is equipped to handle a range of culture samples (including anaerobic and microaerobic bacteria, as well as viruses), and you routinely process`r sample(1500:2000, size=1)` samples monthly. 
 
-You are familiar with the culture requirements for growth of DIS-NAME viruses in tissue culture, and the range of [ testing methods](link).
+You are familiar with the culture requirements for growth of <i>Bacillus anthracis</i>, and the range of [UK Standards for Microbiology Investigations (UK SMI): Identification of Bacillus species](https://assets.publishing.service.gov.uk/media/5ac4e7cc40f0b60a4e1b0e7a/ID_9i3.1.pdf).
 
-```{r DIS-NAME, echo=FALSE, fig.cap="AS NEEDED Image credit: [CDC](link)"}
-knitr::include_graphics(rep("images/DIS-NAME.jpg"))
+```{r DIS-NAME, echo=FALSE, fig.cap="Bacillus anthracis cultured on sheep's blood agar. Image credit: [CDC](https://phil.cdc.gov/Details.aspx?pid=17097)"}
+knitr::include_graphics(rep("images/Banthracis-BloodAgar.jpg"))
 ```
 
-3x citations or links
+Tyśkiewicz R, Fedorowicz M, Nakonieczna A, Zielińska P, Kwiatek M, Mizak L. Electrochemical, optical and mass-based immunosensors: A comprehensive review of Bacillus anthracis detection methods. Anal Biochem. 2023;675:115215. doi:10.1016/j.ab.2023.115215
+
+Wang D, Chen G, Lyu Y, et al. A CRISPR/Cas12a-based DNAzyme visualization system for rapid, non-electrically dependent detection of Bacillus anthracis. Emerg Microbes Infect. 2022;11(1):428-437. doi:10.1080/22221751.2021.2012091
+
+Witt N, Galante D, Andreotti S, et al. Identification of Universally Applicable and Species-Specific Marker Peptides for Bacillus anthracis. Life (Basel). 2022;12(10):1549. Published 2022 Oct 6. doi:10.3390/life12101549
 
 ***
 
@@ -507,7 +525,6 @@ knitr::include_graphics(rep("images/DIS-NAME.jpg"))
 You are a public communications expert, often employed by the `r city_name` city council to manage the PR response to different initiatives or crises. 
 
 As a public communications expert, you are familiar with the literature surrounding science communication in a pandemic, including papers such as: 
-
 Matta, G. Science communication as a preventative tool in the COVID19 pandemic. Humanit Soc Sci Commun 7, 159 (2020).
 
 Abdool Karim, Salim S. “Public understanding of science: Communicating in the midst of a pandemic.” Public understanding of science (Bristol, England) vol. 31,3 (2022): 282-287.
@@ -518,7 +535,11 @@ Tait, Margaret E et al. “Serving the public? A content analysis of COVID-19 pu
 
 You have assembled the following information/resources for this meeting:
 
-3x citations or links
+Steelfisher GK, Blendon RJ, Brulé AS, Ben-Porath EN, Ross LJ, Atkins BM. Public response to an anthrax attack: a multiethnic perspective. Biosecur Bioterror. 2012;10(4):401-411. doi:10.1089/bsp.2012.0041
+
+Clarke, L., Chess, C., Holmes, R. and O'Neill, K.M. (2006), Speaking with One Voice: Risk Communication Lessons from the US Anthrax Attacks†. Journal of Contingencies and Crisis Management, 14: 160-169. https://doi.org/10.1111/j.1468-5973.2006.00491.x
+
+Quinn SC, Thomas T, Kumar S. The anthrax vaccine and research: reactions from postal workers and public health professionals. Biosecur Bioterror. 2008;6(4):321-333. doi:10.1089/bsp.2007.0064
 
 ***
 
@@ -526,8 +547,36 @@ You have assembled the following information/resources for this meeting:
 
 You are one of the doctors at the largest surgery in `r city_name`. In the past fortnight, `r sample(50:100, size=1)` of your patients have recently presented to the surgery with symptoms consistent with DIS-NAME. You have therefore recently been familiarising yourself with the relevant literature:
 
-[text](link) x4
+* [NICE guidelines: Anthrax Treatment and post-exposure prophylaxis](https://bnf.nice.org.uk/treatment-summaries/anthrax/)
 
-citations x3
+* [BNF: Anthrax vaccine](https://bnf.nice.org.uk/drugs/anthrax-vaccine/#indications-and-dose)
+
+* [BMJ Best Practice - Anthrax](https://bestpractice.bmj.com/topics/en-gb/604)
+
+* [Treatment of Anthrax infection (CDC)](https://www.cdc.gov/anthrax/treatment/index.html)
+
+* Elbahr US, Tekin R, Papić M, Pandak N, Erdem H, Can FK, Alpat SN, Pekok AU, Pehlivanoglu F, Karamese M, Petru PC, Kulzhanova S, Tosun S, Doğan M, Moroti R, Ramosaco E, Alay H, Puca E, Arapovic J, Pshenichnaya N, Fasciana T, Giammanco A. Factors leading to dissemination of cutaneous anthrax: an international ID-IRI study. New Microbes New Infect. 2022 Sep 7;48:101028. doi: 10.1016/j.nmni.2022.101028.
+
+* Palmateer NE, Ramsay CN, Browning L, Goldberg DJ, Hutchinson SJ. Anthrax infection among heroin users in Scotland during 2009-2010: a case-control study by linkage to a national drug treatment database. Clin Infect Dis. 2012;55(5):706-710. doi:10.1093/cid/cis511
+
+* Liu Y, Zheng G, Li J, et al. A Case Report of Cutaneous Anthrax Diagnosed by Using a Metagenomic Next-Generation Sequencing (mNGS) Approach. Infect Drug Resist. 2023;16:3601-3606. Published 2023 Jun 7. doi:10.2147/IDR.S411717
+
+## Information Packet I9 
+
+You are an epidemiologist working at the University of `r city_name`, and have been studying <i>Bacillus anthracis</i> transmission dynamics for the past `r sample(2:10, size=1)` years. As such, you are very familiar with the relevant literature, including papers such as: 
+
+Minogue TD, Koehler JW, Stefan CP, Conrad TA. Next-Generation Sequencing for Biodefense: Biothreat Detection, Forensics, and the Clinic. Clin Chem. 2019;65(3):383-392. doi:10.1373/clinchem.2016.266536
+
+Keim P, Grunow R, Vipond R, et al. Whole Genome Analysis of Injectional Anthrax Identifies Two Disease Clusters Spanning More Than 13 Years. EBioMedicine. 2015;2(11):1613-1618. Published 2015 Oct 6. doi:10.1016/j.ebiom.2015.10.004
+
+Price EP, Seymour ML, Sarovich DS, et al. Molecular epidemiologic investigation of an anthrax outbreak among heroin users, Europe. Emerg Infect Dis. 2012;18(8):1307-1313. doi:10.3201/eid1808.111343
+
+Tourasse NJ, Jolley KA, Kolstø AB, Økstad OA. Core genome multilocus sequence typing scheme for Bacillus cereus group bacteria. Res Microbiol. 2023;174(6):104050. doi:10.1016/j.resmic.2023.104050
+
+Booth M, Donaldson L, Cui X, et al. Confirmed Bacillus anthracis infection among persons who inject drugs, Scotland, 2009-2010. Emerg Infect Dis. 2014;20(9):1452-1463. doi:10.3201/eid2009.131481
+
+Braun P, Beyer W, Hanczaruk M, et al. Reoccurring Bovine Anthrax in Germany on the Same Pasture after 12 Years. J Clin Microbiol. 2022;60(3):e0229121. doi:10.1128/jcm.02291-21
+
+Metrailer MC, Hoang TTH, Jiranantasak T, et al. Spatial and phylogenetic patterns reveal hidden infection sources of Bacillus anthracis in an anthrax outbreak in Son La province, Vietnam. Infect Genet Evol. 2023;114:105496. doi:10.1016/j.meegid.2023.105496
 
 

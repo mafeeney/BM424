@@ -40,10 +40,13 @@ Each member of your group will play one of the following roles as you attempt to
 6.	Microbiologist (working in one of the NHS Scotland clinical labs)
 7.	Public communications expert (past and current sci comm campaigns)
 8.  Doctor at a major surgery in `r city_name`
+9.  Epidemiologist from the local university, an expert on <i>N. meningitidis</i> transmission
 
 You must work together, using the information that has been provided for you in the attached information packets, and decide what action(s) should be taken to control the outbreak currently plaguing your city, `r city_name`. Your actions should be evidence-based – use the peer-reviewed literature to decide on measures that will stop the pandemic in your scenario.
 
 Your action points may include directives to gather more information (e.g., contact tracing of current cases, microbiological testing of food/water, etc.), or specific directives (e.g. public health measures, non-pharmaceutical interventions, etc.). Use the data/expertise of all group members. Be clear, concise, and specific.
+
+You may choose to include mathematical modeling as part of your decision making (for example, using an [epidemic calculator](http://gabgoh.github.io/COVID/index.html) or other models); if you do so, you should provide details of your modelling and predictions when you submit your group's pro forma.
 
 You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
 
@@ -582,4 +585,27 @@ You are one of the doctors at the largest surgery in `r city_name`. In the past 
 
 * Davis, L C et al. “Meningococcal disease in a backpackers hostel in Scotland: a risk assessment for prophylaxis.” Euro surveillance : bulletin Europeen sur les maladies transmissibles = European communicable disease bulletin vol. 14,31 19291. 6 Aug. 2009, doi:10.2807/ese.14.31.19291-en
 
+***
+
+## Information Packet F9
+
+You are an epidemiologist working at the University of `r city_name`, and have been studying <i>N. meningitidis</i> transmission dynamics for the past `r sample(2:10, size=1)` years. As such, you are very familiar with the relevant literature, including papers such as: 
+
+* Taha S, Hong E, Denizon M, et al. The rapid rebound of invasive meningococcal disease in France at the end of 2022. J Infect Public Health. 2023;16(12):1954-1960. doi:10.1016/j.jiph.2023.10.001
+
+* Clark SA, Campbell H, Ribeiro S, et al. Epidemiological and strain characteristics of invasive meningococcal disease prior to, during and after COVID-19 pandemic restrictions in England. J Infect. 2023;87(5):385-391. doi:10.1016/j.jinf.2023.09.002
+
+* Eriksson L, Johannesen TB, Stenmark B, et al. Genetic variants linked to the phenotypic outcome of invasive disease and carriage of Neisseria meningitidis. Microb Genom. 2023;9(10):001124. doi:10.1099/mgen.0.001124
+
+* Yang Z, Guarracino A, Biggs PJ, et al. Pangenome graphs in infectious disease: a comprehensive genetic variation analysis of Neisseria meningitidis leveraging Oxford Nanopore long reads. Front Genet. 2023;14:1225248. Published 2023 Aug 10. doi:10.3389/fgene.2023.1225248
+
+* Miellet WR, Pluister G, Sikking M, et al. Surveillance of Neisseria meningitidis carriage four years after menACWY vaccine implementation in the Netherlands reveals decline in vaccine-type and rise in genogroup e circulation. Vaccine. 2023;41(34):4927-4932. doi:10.1016/j.vaccine.2023.06.078
+
+* Madariaga-Troncoso D, Leyton-Carcaman B, Garcia M, Kawai M, Abanto Marin M. Comprehensive Genome Analysis of Neisseria meningitidis from South America Reveals a Distinctive Pathogenicity-Related Prophage Repertoire. Int J Mol Sci. 2022;23(24):15731. Published 2022 Dec 12. doi:10.3390/ijms232415731
+
+* Itsko M, Topaz N, Ousmane-Traoré S, et al. Enhancing Meningococcal Genomic Surveillance in the Meningitis Belt Using High-Resolution Culture-Free Whole-Genome Sequencing. J Infect Dis. 2022;226(4):729-737. doi:10.1093/infdis/jiac104
+
+* Earle SG, Lobanovska M, Lavender H, et al. Genome-wide association studies reveal the role of polymorphisms affecting factor H binding protein expression in host invasion by Neisseria meningitidis. PLoS Pathog. 2021;17(10):e1009992. Published 2021 Oct 18. doi:10.1371/journal.ppat.1009992
+
+* MacLennan JM, Rodrigues CMC, Bratcher HB, et al. Meningococcal carriage in periods of high and low invasive meningococcal disease incidence in the UK: comparison of UKMenCar1-4 cross-sectional survey results [published correction appears in Lancet Infect Dis. 2021 May;21(5):e122] [published correction appears in Lancet Infect Dis. 2021 Jul;21(7):e182]. Lancet Infect Dis. 2021;21(5):677-687. doi:10.1016/S1473-3099(20)30842-2
 

@@ -40,10 +40,14 @@ Each member of your group will play one of the following roles as you attempt to
 6.	Microbiologist (working in one of the NHS Scotland clinical labs)
 7.	Public communications expert (past and current sci comm campaigns)
 8.  Doctor at a major surgery in `r city_name`
+9.  Epidemiologist from the local university, an expert on <i>L. monocytogenes</i> transmission
 
 You must work together, using the information that has been provided for you in the attached information packets, and decide what action(s) should be taken to control the outbreak currently plaguing your city, `r city_name`. Your actions should be evidence-based – use the peer-reviewed literature to decide on measures that will stop the pandemic in your scenario.
 
 Your action points may include directives to gather more information (e.g., contact tracing of current cases, microbiological testing of food/water, etc.), or specific directives (e.g. public health measures, non-pharmaceutical interventions, etc.). Use the data/expertise of all group members. Be clear, concise, and specific.
+
+You may choose to include mathematical modeling as part of your decision making (for example, using an [epidemic calculator](http://gabgoh.github.io/COVID/index.html) or other models); if you do so, you should provide details of your modelling and predictions when you submit your group's pro forma.
+
 
 You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
 
@@ -575,3 +579,27 @@ You are one of the doctors at the largest surgery in `r city_name`. In the past 
 * Dunphy, Louise et al. “Maternal sepsis caused by <i>Listeria monocytogenes</i> with a fatal fetal outcome.” BMJ case reports vol. 15,10 e249989. 3 Oct. 2022, doi:10.1136/bcr-2022-249989
 
 * Bokhari, Syed Faqeer Hussain et al. “Listerial Meningitis and Brain Abscess With Coexisting COVID-19 Infection in a Young, Immunocompetent Male: A Case Report.” Cureus vol. 14,9 e29455. 22 Sep. 2022, doi:10.7759/cureus.29455
+
+***
+
+## Information Packet E9
+
+You are an epidemiologist working at the University of `r city_name`, and have been studying <i>L. monocytogenes</i> transmission dynamics for the past `r sample(2:10, size=1)` years. As such, you are very familiar with the relevant literature, including papers such as: 
+
+* Gu W, Cui Z, Stroika S, et al. Predicting Food Sources of Listeria monocytogenes Based on Genomic Profiling Using Random Forest Model. Foodborne Pathog Dis. 2023;20(12):579-586. doi:10.1089/fpd.2023.0046
+
+* Félix B, Capitaine K, Te S, et al. Identification by High-Throughput Real-Time PCR of 30 Major Circulating Listeria monocytogenes Clonal Complexes in Europe. Microbiol Spectr. 2023;11(3):e0395422. doi:10.1128/spectrum.03954-22
+
+* Brown P, Kucerova Z, Gorski L, et al. Horizontal Gene Transfer and Loss of Serotype-Specific Genes in Listeria monocytogenes Can Lead to Incorrect Serotype Designations with a Commonly-Employed Molecular Serotyping Scheme. Microbiol Spectr. 2023;11(1):e0274522. doi:10.1128/spectrum.02745-22
+
+* Voronina OL, Ryzhova NN, Aksenova EI, et al. Genetic Diversity of Listeria Detected in the Production Environment of Meat Processing. Mol Gen Microbiol Virol. 2023;38(1):21-28. doi:10.3103/S0891416823010111
+
+* Lakicevic B, Jankovic V, Pietzka A, Ruppitsch W. Wholegenome sequencing as the gold standard approach for control of Listeria monocytogenes in the food chain. J Food Prot. 2023;86(1):100003. doi:10.1016/j.jfp.2022.10.002
+
+* Fagerlund A, Idland L, Heir E, et al. Whole-Genome Sequencing Analysis of Listeria monocytogenes from Rural, Urban, and Farm Environments in Norway: Genetic Diversity, Persistence, and Relation to Clinical and Food Isolates. Appl Environ Microbiol. 2022;88(6):e0213621. doi:10.1128/aem.02136-21
+
+* Hurley D, Luque-Sastre L, Parker CT, et al. Whole-Genome Sequencing-Based Characterization of 100 Listeria monocytogenes Isolates Collected from Food Processing Environments over a Four-Year Period. mSphere. 2019;4(4):e00252-19. Published 2019 Aug 7. doi:10.1128/mSphere.00252-19
+
+* Orsi RH, Jagadeesan B, Baert L, Wiedmann M. Identification of Closely Related Listeria monocytogenes Isolates with No Apparent Evidence for a Common Source or Location: A Retrospective Whole Genome Sequencing Analysis. J Food Prot. 2021;84(7):1104-1113. doi:10.4315/JFP-20-417
+
+* Orsi RH, Liao J, Carlin CR, Wiedmann M. Taxonomy, ecology, and relevance to food safety of the genus Listeria with a particular consideration of new Listeria species described between 2010 and 2022. mBio. 2024;15(2):e0093823. doi:10.1128/mbio.00938-23
