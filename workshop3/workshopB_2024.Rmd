@@ -48,7 +48,11 @@ Your action points may include directives to gather more information (e.g., cont
 
 You may choose to include mathematical modeling as part of your decision making (for example, using an [epidemic calculator](http://gabgoh.github.io/COVID/index.html) or other models); if you do so, you should provide details of your modelling and predictions when you submit your group's pro forma.
 
+<<<<<<< HEAD
 You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](../proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
+=======
+You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
+>>>>>>> a59875f3ebf67ebf397f9e4cede9dd2ddcad69c4
 
 ***
 
