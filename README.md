@@ -9,9 +9,9 @@ These materials are for the 2023-2024 presentation of the course, and were prepa
 
 [Introductory Powerpoint/Instructions](/powerpoints/BM424_Clinical_Microbiology_workshop3.pptx)
 
-Please see the class MyPlace page for your group and assigned role. To prepare for workshop 3, you should read your information packet in advance (i.e., if you have been assigned to group A, role 1, you should read Information Packet A1).
+Please see the class MyPlace page for your group and assigned role. To prepare for workshop 3, you should look through your information packet in advance (i.e., if you have been assigned to group A, role 1, you should read Information Packet A1).
 
-Links to the 8 different pandemic scenarios and briefing packets: 
+Links to the 9 different pandemic scenarios and briefing packets: 
 - [Pandemic Scenario A](/workshop3/workshopA_2024.html)
 - [Pandemic Scenario B](/workshop3/workshopB_2024.html)
 - [Pandemic Scenario C](/workshop3/workshopC_2024.html)
@@ -29,7 +29,7 @@ The pro forma to complete when you have finished discussing your pandemic scenar
 
 [Introductory Powerpoint/Instructions](/powerpoints/BM424_Clinical_Microbiology_workshop4.pptx)
 
-Links to the 8 different pandemic scenarios and briefing packets: 
+Links to the 9 different pandemic scenarios and briefing packets: 
 
 The pro forma to complete when your group has finished discussing your pandemic scenario, evaluated the effects of your actions, and decided on your next actions (Please complete this and submit via MyPlace.): [Workshop 4 pro forma](/proformas/BM424_workshop4_proforma.docx)
 

@@ -48,7 +48,7 @@ Your action points may include directives to gather more information (e.g., cont
 
 You may choose to include mathematical modeling as part of your decision making (for example, using an [epidemic calculator](http://gabgoh.github.io/COVID/index.html) or other models); if you do so, you should provide details of your modelling and predictions when you submit your group's pro forma.
 
-You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
+You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](../proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
 
 ***
 
@@ -120,9 +120,9 @@ kable(x = Councillors,
 
 ```
 <br><br>
-The overall budget (expenditures) for the 2021-2022 financial year is £`r sample(400000000:600000000, size=1)`. A summary of expeditures by category for this financial year is shown below. 
+The overall budget (expenditures) for the 2022-2023 financial year was £`r sample(400000000:600000000, size=1)`. A summary of expenditures by category for this financial year is shown below. 
 
-```{r A4, fig.cap="Public expenditures by category for the 2021-2022 financial year (Source: Glenmarigg City Council)", echo=FALSE}
+```{r A4, fig.cap="Public expenditures by category for the 2022-2023 financial year (Source: Glenmarigg City Council)", echo=FALSE}
 
 expenses <- data.frame(
   Category=c("Education", "Industry and Agriculture", "Social Care", "Transport", "Public order and safety", "Healthcare", "Housing", "Other"),
@@ -346,9 +346,9 @@ You are the director of `r city_name`'s main hospital, the `r hospital_name`, wh
 knitr::include_graphics(rep("images/Queens-College.png"))
 ```
 
-The annual operating budget for financial year 2021-2022 was £1.5 million, and average expenditures are shown by category in the figure below. 
+The annual operating budget for financial year 2022-2023 was £1.5 million, and average expenditures are shown by category in the figure below. 
 
-```{r A5, fig.cap="Hospital expenditures by category for financial year 2021-2022 (Source: NHS Scotland)", echo=FALSE}
+```{r A5, fig.cap="Hospital expenditures by category for financial year 2022-2023 (Source: NHS Scotland)", echo=FALSE}
 
 expenses <- data.frame(
   Category=c("Staff costs", "Healthcare expenditures (drugs, supplies, etc.)", "Other supplies", "Other running costs (procurement, IT, HR, etc.)"),
@@ -525,7 +525,7 @@ You are a microbiologist working in the microbiology department at the Greater `
 
 You are familiar with the culture requirements for growth of <i>Neisseria</i> spp. in culture, and the range of [UK Standards for Microbiology Investigations (UK SMI) for Screening for <i>Neisseria</i>](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/343978/B_51i2.pdf).
 
-```{r Neisseria-plate, echo=FALSE, fig.cap="Neisseria meningiditis colonies on a Blood Agar plate. Image credit: [CDC](https://www.cdc.gov/meningitis/lab-manual/chpt07-id-characterization-nm.html)"}
+```{r Neisseria-plate, echo=FALSE, fig.cap="Neisseria meningitidis colonies on a Blood Agar plate. Image credit: [CDC](https://www.cdc.gov/meningitis/lab-manual/chpt07-id-characterization-nm.html)"}
 knitr::include_graphics(rep("images/Neisseria-BloodAgar.gif"))
 ```
 
@@ -595,17 +595,17 @@ You are an epidemiologist working at the University of `r city_name`, and have b
 
 * Clark SA, Campbell H, Ribeiro S, et al. Epidemiological and strain characteristics of invasive meningococcal disease prior to, during and after COVID-19 pandemic restrictions in England. J Infect. 2023;87(5):385-391. doi:10.1016/j.jinf.2023.09.002
 
-* Eriksson L, Johannesen TB, Stenmark B, et al. Genetic variants linked to the phenotypic outcome of invasive disease and carriage of Neisseria meningitidis. Microb Genom. 2023;9(10):001124. doi:10.1099/mgen.0.001124
+* Eriksson L, Johannesen TB, Stenmark B, et al. Genetic variants linked to the phenotypic outcome of invasive disease and carriage of <i>Neisseria meningitidis</i>. Microb Genom. 2023;9(10):001124. doi:10.1099/mgen.0.001124
 
-* Yang Z, Guarracino A, Biggs PJ, et al. Pangenome graphs in infectious disease: a comprehensive genetic variation analysis of Neisseria meningitidis leveraging Oxford Nanopore long reads. Front Genet. 2023;14:1225248. Published 2023 Aug 10. doi:10.3389/fgene.2023.1225248
+* Yang Z, Guarracino A, Biggs PJ, et al. Pangenome graphs in infectious disease: a comprehensive genetic variation analysis of <i>Neisseria meningitidis</i> leveraging Oxford Nanopore long reads. Front Genet. 2023;14:1225248. Published 2023 Aug 10. doi:10.3389/fgene.2023.1225248
 
-* Miellet WR, Pluister G, Sikking M, et al. Surveillance of Neisseria meningitidis carriage four years after menACWY vaccine implementation in the Netherlands reveals decline in vaccine-type and rise in genogroup e circulation. Vaccine. 2023;41(34):4927-4932. doi:10.1016/j.vaccine.2023.06.078
+* Miellet WR, Pluister G, Sikking M, et al. Surveillance of <i>Neisseria meningitidis</i> carriage four years after menACWY vaccine implementation in the Netherlands reveals decline in vaccine-type and rise in genogroup e circulation. Vaccine. 2023;41(34):4927-4932. doi:10.1016/j.vaccine.2023.06.078
 
-* Madariaga-Troncoso D, Leyton-Carcaman B, Garcia M, Kawai M, Abanto Marin M. Comprehensive Genome Analysis of Neisseria meningitidis from South America Reveals a Distinctive Pathogenicity-Related Prophage Repertoire. Int J Mol Sci. 2022;23(24):15731. Published 2022 Dec 12. doi:10.3390/ijms232415731
+* Madariaga-Troncoso D, Leyton-Carcaman B, Garcia M, Kawai M, Abanto Marin M. Comprehensive Genome Analysis of <i>Neisseria meningitidis</i> from South America Reveals a Distinctive Pathogenicity-Related Prophage Repertoire. Int J Mol Sci. 2022;23(24):15731. Published 2022 Dec 12. doi:10.3390/ijms232415731
 
 * Itsko M, Topaz N, Ousmane-Traoré S, et al. Enhancing Meningococcal Genomic Surveillance in the Meningitis Belt Using High-Resolution Culture-Free Whole-Genome Sequencing. J Infect Dis. 2022;226(4):729-737. doi:10.1093/infdis/jiac104
 
-* Earle SG, Lobanovska M, Lavender H, et al. Genome-wide association studies reveal the role of polymorphisms affecting factor H binding protein expression in host invasion by Neisseria meningitidis. PLoS Pathog. 2021;17(10):e1009992. Published 2021 Oct 18. doi:10.1371/journal.ppat.1009992
+* Earle SG, Lobanovska M, Lavender H, et al. Genome-wide association studies reveal the role of polymorphisms affecting factor H binding protein expression in host invasion by <i>Neisseria meningitidis</i>. PLoS Pathog. 2021;17(10):e1009992. Published 2021 Oct 18. doi:10.1371/journal.ppat.1009992
 
 * MacLennan JM, Rodrigues CMC, Bratcher HB, et al. Meningococcal carriage in periods of high and low invasive meningococcal disease incidence in the UK: comparison of UKMenCar1-4 cross-sectional survey results [published correction appears in Lancet Infect Dis. 2021 May;21(5):e122] [published correction appears in Lancet Infect Dis. 2021 Jul;21(7):e182]. Lancet Infect Dis. 2021;21(5):677-687. doi:10.1016/S1473-3099(20)30842-2
 

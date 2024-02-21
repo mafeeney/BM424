@@ -48,7 +48,7 @@ Your action points may include directives to gather more information (e.g., cont
 
 You may choose to include mathematical modeling as part of your decision making (for example, using an [epidemic calculator](http://gabgoh.github.io/COVID/index.html) or other models); if you do so, you should provide details of your modelling and predictions when you submit your group's pro forma.
 
-You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
+You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](../proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
 
 ***
 
@@ -120,9 +120,9 @@ kable(x = Councillors,
 
 ```
 <br><br>
-The overall budget (expenditures) for the 2021-2022 financial year is £`r sample(400000000:600000000, size=1)`. A summary of expeditures by category for this financial year is shown below. 
+The overall budget (expenditures) for the 2022-2023 financial year was £`r sample(400000000:600000000, size=1)`. A summary of expeditures by category for this financial year is shown below. 
 
-```{r A4, fig.cap="Public expenditures by category for the 2021-2022 financial year (Source: Dalessie City Council)", echo=FALSE}
+```{r A4, fig.cap="Public expenditures by category for the 2022-2023 financial year (Source: Dalessie City Council)", echo=FALSE}
 
 expenses <- data.frame(
   Category=c("Education", "Industry and Agriculture", "Social Care", "Transport", "Public order and safety", "Healthcare", "Housing", "Other"),
@@ -344,9 +344,9 @@ You are the director of `r city_name`'s main hospital, the `r hospital_name`, wh
 knitr::include_graphics(rep("images/Queens-College.png"))
 ```
 
-The annual operating budget for financial year 2021-2022 was £1.5 million, and average expenditures are shown by category in the figure below. 
+The annual operating budget for financial year 2022-2023 was £1.5 million, and average expenditures are shown by category in the figure below. 
 
-```{r A5, fig.cap="Hospital expenditures by category for financial year 2021-2022 (Source: NHS Scotland)", echo=FALSE}
+```{r A5, fig.cap="Hospital expenditures by category for financial year 2022-2023 (Source: NHS Scotland)", echo=FALSE}
 
 expenses <- data.frame(
   Category=c("Staff costs", "Healthcare expenditures (drugs, supplies, etc.)", "Other supplies", "Other running costs (procurement, IT, HR, etc.)"),
@@ -598,3 +598,9 @@ You are an epidemiologist working at the University of `r city_name`, and have b
 * Tagini, F et al. “Importance of whole genome sequencing for the assessment of outbreaks in diagnostic laboratories: analysis of a case series of invasive <i>Streptococcus pyogenes</i> infections.” European journal of clinical microbiology & infectious diseases : official publication of the European Society of Clinical Microbiology vol. 36,7 (2017): 1173-1180. doi:10.1007/s10096-017-2905-z
 
 * Turner, Claire E et al. “Community outbreaks of group A Streptococcus revealed by genome sequencing.” Scientific reports vol. 7,1 8554. 17 Aug. 2017, doi:10.1038/s41598-017-08914-x
+
+* Smeesters PR, de Crombrugghe G, Tsoi SK, et al. Global Streptococcus pyogenes strain diversity, disease associations, and implications for vaccine development: a systematic review. Lancet Microbe. 2024;5(2):e181-e193. doi:10.1016/S2666-5247(23)00318-X
+
+* Maldonado-Barrueco A, Bloise I, Cendejas-Bueno E, López-Rodrigo F, García-Rodríguez J, Lázaro-Perona F. Epidemiological changes in invasive Streptococcus pyogenes infection during the UK alert period: A molecular comparative analysis from a tertiary Spanish hospital in 2023. Enferm Infecc Microbiol Clin (Engl Ed). 2024;42(1):34-37. doi:10.1016/j.eimce.2023.09.003
+
+* Toorop MMA, Kraakman MEM, Hoogendijk IV, et al. A core-genome multilocus sequence typing scheme for the detection of genetically related Streptococcus pyogenes clusters. J Clin Microbiol. 2023;61(11):e0055823. doi:10.1128/jcm.00558-23

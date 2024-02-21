@@ -49,7 +49,7 @@ Your action points may include directives to gather more information (e.g., cont
 You may choose to include mathematical modeling as part of your decision making (for example, using an [epidemic calculator](http://gabgoh.github.io/COVID/index.html) or other models); if you do so, you should provide details of your modelling and predictions when you submit your group's pro forma.
 
 
-You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](/proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
+You should submit 3-5 specific actions to control the pandemic, using the [workshop 3 pro forma](../proformas/BM424_workshop3_proforma.docx) (also available on MyPlace). Submit this by noon, Friday March 1st, via the submission link on MyPlace. 
 
 ***
 
@@ -121,9 +121,9 @@ kable(x = Councillors,
 
 ```
 <br><br>
-The overall budget (expenditures) for the 2021-2022 financial year is £`r sample(400000000:600000000, size=1)`. A summary of expeditures by category for this financial year is shown below. 
+The overall budget (expenditures) for the 2022-2023 financial year was £`r sample(400000000:600000000, size=1)`. A summary of expenditures by category for this financial year is shown below. 
 
-```{r A4, fig.cap="Public expenditures by category for the 2021-2022 financial year (Source: Rosmakirk City Council)", echo=FALSE}
+```{r A4, fig.cap="Public expenditures by category for the 2022-2023 financial year (Source: Rosmakirk City Council)", echo=FALSE}
 
 expenses <- data.frame(
   Category=c("Education", "Industry and Agriculture", "Social Care", "Transport", "Public order and safety", "Healthcare", "Housing", "Other"),
@@ -345,9 +345,9 @@ You are the director of `r city_name`'s main hospital, the `r hospital_name`, wh
 knitr::include_graphics(rep("images/Horizon-NHS.png"))
 ```
 
-The annual operating budget for financial year 2021-2022 was £1.5 million, and average expenditures are shown by category in the figure below. 
+The annual operating budget for financial year 2022-2023 was £1.5 million, and average expenditures are shown by category in the figure below. 
 
-```{r A5, fig.cap="Hospital expenditures by category for financial year 2021-2022 (Source: NHS Scotland)", echo=FALSE}
+```{r A5, fig.cap="Hospital expenditures by category for financial year 2022-2023 (Source: NHS Scotland)", echo=FALSE}
 
 expenses <- data.frame(
   Category=c("Staff costs", "Healthcare expenditures (drugs, supplies, etc.)", "Other supplies", "Other running costs (procurement, IT, HR, etc.)"),
