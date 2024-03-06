@@ -16,13 +16,13 @@ library(ggplot2)
 library(knitr)
 
 
-city_name <- "Inverkeld" 
-hospital_name <- "Queen Rose"
-dis_name4 <- "Legionella"
-outbreak_deaths <- 58
+city_name <- "Glenleith"
+hospital_name <- "Riverview"
+dis_name4 <- "<i>Mycobacterium tuberculosis</i>"
+outbreak_deaths <- 13 + 1 + 1
 ```
 
-## Scenario A: <i>Legionella</i> in `r city_name`
+## Scenario G: Tuberculosis in `r city_name`
 
 The `r city_name` Pandemic Response committee has gathered the following information for the second meeting of your group. 
 
@@ -34,20 +34,17 @@ You should submit 3-5 specific actions for further actions to control the pandem
 
 Actions taken:
 
-1. Keep in contact with governmental organisations, health authorities and the local community about pandemic strategies to control and prevent the spread of the pathogen.
+1. Educate the public on TB, its dangers, and its transmission using multiple formats → posters in public areas, newspapers, online articles, text messages from local Government. Any posters/adverts should be easy to read and understand.
 
-2. Provide adequate training/education on the appropriate use of PPE as well as where to access it. Plus, stock up on PPE (hospital preparedness).
+2. Offer BCG vaccine to people at risk - babies, young children and immunocompromised individuals or people likely to come into contact with an infected individual. If the budget allows and enough vaccine, then offer vaccine to more groups of people. 
 
-3. Communicate with hospital staff, patients and the local community to provide information on the pandemic and updated hospital policies to ensure hospital preparedness.
+3. Track the source of the pandemic (the strain of pathogen, country of origin etc. to pinpoint what brought it to Glenleith)
 
-4. Devise plans to increase the hospital’s capacity to accommodate a surge of patients (e.g., set up additional treatment areas in the hospital and consider collaborating with healthcare professionals from other institutions).
-
-5. Implement surveillance technology to keep record of critical care capacity.
-
+4. Restrictions for the public, stay within ‘bubble’ (same household) → people at risk (children < 5 years, elderly, immunosuppressed, people with diabetes etc) should receive 2 tests for TB 12 weeks apart
 
 ## Pandemic Statistics 
 
-Table 1. Data from the `r city_name` <i>Legionella</i> outbreak.
+Table 1. Data from the `r city_name` Tuberculosis outbreak.
 <table>
 <table border="1">
   <tr>
@@ -56,35 +53,33 @@ Table 1. Data from the `r city_name` <i>Legionella</i> outbreak.
     <th>07/03/2024 data</th>
   </tr>
   <tr>
-    <td>Deaths caused by the <i>Legionella</i> outbreak (total)</td>
-    <td>23</td>
-    <td>58</td>
+    <td>Deaths caused by the Tuberculosis outbreak (total)</td>
+    <td>13</td>
+    <td>15</td>
   </tr>
   <tr>
-    <td>Verified <i>Legionella</i> cases (total)</td>
-    <td>1504</td>
-    <td>2800</td>
+    <td>Verified Tuberculosis cases (total)</td>
+    <td>150</td>
+    <td>155</td>
   </tr>
   <tr>
-    <td><i>Legionella</i> hospitalisations (weekly)</td>
-    <td>54</td>
-    <td>48</td>
+    <td>Tuberculosis hospitalisations (weekly)</td>
+    <td>171</td>
+    <td>105</td>
   </tr>
     <tr>
     <td>`r hospital_name` ICU bed occupancy (current)</td>
-    <td>13</td>
-    <td>5</td>
+    <td>15</td>
+    <td>12</td>
   </tr>
   <tr>
-  <td>Number of <i>Legionella</i> related GP visits (total)</td>
-  <td>103</td>
-  <td>179</td>
+  <td>Number of Tuberculosis related GP visits (total)</td>
+  <td>80</td>
+  <td>66</td>
   </tr>
 </table>  
 <br><br>
 
-
-#
 ## Letters from the Public
 
 ```{r emails, echo=FALSE}
@@ -124,9 +119,7 @@ sent6 <- c()
 
 Dear Pandemic Response Committee
 
-I am so worried about this pandemic, it seems like there is lots of PPE this time around (which is great, I am not so old that I don't remember all the scandals surrounding PPE back when the COVID19 pandemic first was!) But it seems like there should be something more we can do, are we doomed to go through a cycle of pandemic after pandemic, always sitting at home and worrying about whether we will die?
-
-Some of the folks last time said that I was overcautious, and that it was just a made-up pandemic that we were all afraid of, but I've got an old mum who's quite frail, I can't go taking risks when it comes to her health. 
+I am so outraged by all of the restrictions that you are imposing on our beautiful city, this is exactly the same as was done to us during COVID, it is a trespass on the freedom of all right-minded individuals. Your tests are probably just the devil's trickery, trying to manipulate good people into putting their DNA information in some government database somewhere. It is an absolute outrage and a crime what you are doing, I hope you are able to sleep at night because I certainly wouldn't be able to in your shoes. This pandemic is absolutely just manufactured fake news, I have asked everyone I know and not a single person is infected with this so-called "bacteria" that you claim exists.  
 
 `r sample(clos1, 1, replace=TRUE)`<br>
 `r sample(name1, 1)`
@@ -136,20 +129,20 @@ Some of the folks last time said that I was overcautious, and that it was just a
 <b>From:</b> `r sample(email1, 1)`-88@gmail.com <br>
 <b>To:</b> PandemicResponseCommitteet@`r city_name`.co.uk <br>
 <b>Cc:</b> city-council@`r city_name`.co.uk <br>
-<b>Subject:</b> Save Our Hospitals
+<b>Subject:</b> The BCG vaccines
 
 Dear Pandemic Response Committee,
 
 I am so frightened about new pandemic, the news you read about it is very scary. Thank you so much for all your hard work you are doing to protect us.
 
-I heard that you have made the hospital very safe, with all your PPE stocks and surveillance technology to make sure that the ICU is functioning the way that it should, and that you've increased capacity so that it can handle more patients than usual when we are all sick. It is really great that you are able to do this, I was so worried during the COVID19 pandemic when all the nightingale hospitals were built and the poor doctors and nurses and all were being so overworked. I hope that there will always be enough funds to increase the hospital staff the way that the government really ought to do. 
+I heard that there was a BCG vaccine that can help protect us, but I am not eligible for this, I was wondering what should I do? Can you please get extra vaccine supplies so that everyone can be eligible? It would be great if we were all protected by the vaccine.
 
 Thank you so much for all the hard work you do,<br>
 `r sample(name1, 1)` 
 
 ***
 
-## News Coverage of the `r city_name` Legionella outbreak
+## News Coverage of the `r city_name` Tuberculosis outbreak
 
 ```{r news, echo=FALSE}
 
@@ -272,16 +265,152 @@ Our elders should not be left to die alone, left frightened and hopeless in a ma
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-Hard on the heels of the COVID-19 pandemic and a number of other health scares (monkeypox, or "mpox", avian flu, and worries about other infectious disease outbreaks), another pandemic has hit the Scottish town of `r city_name`. This time, it's Legionella, a bacterium that can very sadly be fatal.
+Hard on the heels of the COVID-19 pandemic and a number of other health scares (monkeypox, or "mpox", avian flu, and worries about other infectious disease outbreaks), another pandemic has hit the Scottish town of `r city_name`. This time, it's Mycobacterium, a bacterium that is particularly fatal to the elderly and to pregnant women.
 
-There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most frightening aspect to this new pandemic is rumours that these Legionella strains may have become resistant to even more antibiotics - a truly chilling possibility.
+There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most frightening aspect to this new pandemic is rumours that these Mycobacterium strains may have become resistant to even more antibiotics - a truly chilling possibility.
 
 Scientists have been warning about the antibiotic resistance crisis for years, saying that careless use of antibiotics could mean that these precious medicines will no longer be available to us in the future. 
 
-Some of the Legionella strains found in `r city_name` are reportedly resistant to all clinically available antibiotics, and scientists warn that these drug-resistant pathogens might be able to spread to new locations. Will nearby towns be next, or could these Legionella strains go as global as the SARS-COV2 virus did?
+Some of the Mycobacterium strains found in `r city_name` are reportedly resistant to all clinically available antibiotics, and scientists warn that these drug-resistant pathogens might be able to spread to new locations. Will nearby towns be next, or could these Mycobacterium strains go as global as the SARS-COV2 virus did?
 
 ***
+
 ## Data gathered
 
+Test results are based on blood interferon gamma release assay (IGRA). A representative sample of test results are shown.
+
+Table 2. Identification of <i>M. tuberculosis</i> from patient samples taken during the  `r city_name` outbreak. 
+<table>
+<table border="1">
+  <tr>
+    <th>Test sample #</th>
+    <th><i>M. tuberculosis</i> +ve test</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>23</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>24</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>27</td>
+    <td>+</td>
+  </tr>
+  <tr>
+    <td>28</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>29</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>30</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>31</td>
+    <td>-</td>
+  </tr>
+</table>  
+<br><br>
 
 

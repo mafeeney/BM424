@@ -16,13 +16,14 @@ library(ggplot2)
 library(knitr)
 
 
-city_name <- "Inverkeld" 
-hospital_name <- "Queen Rose"
-dis_name4 <- "Legionella"
-outbreak_deaths <- 58
+city_name <- "Baltyre" ##replace all instances of "Baltyre" with new scenario name
+hospital_name <- "Queen's College" ##replace all instances of "Queen's College" with new scenario name
+dis_name2 <- "influenza"
 ```
 
-## Scenario A: <i>Legionella</i> in `r city_name`
+## Scenario B
+
+Influenza A in `r city_name`
 
 The `r city_name` Pandemic Response committee has gathered the following information for the second meeting of your group. 
 
@@ -34,20 +35,16 @@ You should submit 3-5 specific actions for further actions to control the pandem
 
 Actions taken:
 
-1. Keep in contact with governmental organisations, health authorities and the local community about pandemic strategies to control and prevent the spread of the pathogen.
+1. Extend flu vaccine rollout to farmers (as most common flu strain is H3N2 we are hoping for some cross reactivity with subsequent antibodies to H3N2 because of the same N2) and investigate poultry farms to determine a possible source of the H9N2 strain (which appears to be predominant)
 
-2. Provide adequate training/education on the appropriate use of PPE as well as where to access it. Plus, stock up on PPE (hospital preparedness).
+2. Make pharmacists more aware of symptoms and reduce pressure on primary care services and hospitals by activating the national pandemic flu service. Let pharmacies prescribe oseltamivir (antiviral) for  affect people in the age brackets of <5 >65, as these groups are most venerable. 
 
-3. Communicate with hospital staff, patients and the local community to provide information on the pandemic and updated hospital policies to ensure hospital preparedness.
-
-4. Devise plans to increase the hospital’s capacity to accommodate a surge of patients (e.g., set up additional treatment areas in the hospital and consider collaborating with healthcare professionals from other institutions).
-
-5. Implement surveillance technology to keep record of critical care capacity.
+3. Leaflets sent to offices and posted in NHS buildings/pharmacies and TV/internet adverts. These will encourage mask wearing (N95), getting flu vaccine (if eligible) and to encourage additional flu prevention measures e.g. working from home, if possible, reduce unnecessary travel for people who feel unwell, handwashing and covering coughs and sneezes.
 
 
 ## Pandemic Statistics 
 
-Table 1. Data from the `r city_name` <i>Legionella</i> outbreak.
+Table 1. Data from the `r city_name` Influenza A outbreak.
 <table>
 <table border="1">
   <tr>
@@ -56,35 +53,34 @@ Table 1. Data from the `r city_name` <i>Legionella</i> outbreak.
     <th>07/03/2024 data</th>
   </tr>
   <tr>
-    <td>Deaths caused by the <i>Legionella</i> outbreak (total)</td>
-    <td>23</td>
-    <td>58</td>
+    <td>Deaths caused by the Influenza A outbreak (total)</td>
+    <td>20</td>
+    <td>35</td>
   </tr>
   <tr>
-    <td>Verified <i>Legionella</i> cases (total)</td>
-    <td>1504</td>
-    <td>2800</td>
+    <td>Verified Influenza A cases (total)</td>
+    <td>330</td>
+    <td>409</td>
   </tr>
   <tr>
-    <td><i>Legionella</i> hospitalisations (weekly)</td>
-    <td>54</td>
-    <td>48</td>
+    <td>Influenza A hospitalisations (weekly)</td>
+    <td>170</td>
+    <td>103</td>
   </tr>
     <tr>
     <td>`r hospital_name` ICU bed occupancy (current)</td>
-    <td>13</td>
-    <td>5</td>
+    <td>15</td>
+    <td>10</td>
   </tr>
   <tr>
-  <td>Number of <i>Legionella</i> related GP visits (total)</td>
-  <td>103</td>
-  <td>179</td>
+  <td>Number of Influenza A related GP visits (total)</td>
+  <td>311</td>
+  <td>15</td>
   </tr>
 </table>  
 <br><br>
 
 
-#
 ## Letters from the Public
 
 ```{r emails, echo=FALSE}
@@ -100,7 +96,7 @@ time1 <- c("immediately", "very soon", "at once", "as soon as possible")
 name1 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
 verb1 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
 business1 <- c("small coffee shop", "coffee shop", "cafe", "restaurant", "bookshop", "boutique clothing store", "records shop", "used bookstore", "toy store", "sweet shop")
-business2 <- c("The Rosmakirk Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
+business2 <- c("The Baltyre Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
 adj2 <- c("nearly", "almost", "virtually", "almost literally", "practically")
 conseq1 <- c("lost my business due to those pandemic lockdowns", "had to close because of all the draconian lockdowns", "went out of business", "went bankrupt", "had to shut our doors during COVID")
 sent2 <- c()
@@ -117,16 +113,16 @@ sent6 <- c()
 
 ***
 
-<b>From:</b> `r sample(email1, 1)`_1946@gmail.com <br>
+<b>From:</b> `r sample(email1, 1)`_1955@gmail.com <br>
 <b>To:</b> PandemicResponseCommittee@`r city_name`.co.uk <br>
 <b>Cc:</b>
 <b>Subject:</b> This `r sample(adj1, 1)` Pandemic
 
 Dear Pandemic Response Committee
 
-I am so worried about this pandemic, it seems like there is lots of PPE this time around (which is great, I am not so old that I don't remember all the scandals surrounding PPE back when the COVID19 pandemic first was!) But it seems like there should be something more we can do, are we doomed to go through a cycle of pandemic after pandemic, always sitting at home and worrying about whether we will die?
+I am `r sample(emotion1, 1)` to hear about your actions tackling the pandemic in `r city_name`. If it isn't enough that the NHS is eroded by decades of underfunding and mismanagement, now you are having pharmacies prescribe medicine. Dire times call for dire measures I know, but surely it is more important that you do something to fix our poor NHS instead of splashing out all this money on useless statues and silly things.
 
-Some of the folks last time said that I was overcautious, and that it was just a made-up pandemic that we were all afraid of, but I've got an old mum who's quite frail, I can't go taking risks when it comes to her health. 
+I `r sample(wish1, 1)` that your office is going to do something about this dreadful mess. Pharmacists don't have the proper training to be prescribing drugs and it isn't fair to make them do extra work, either. You'd never think that we live in the 21st century, the state our NHS is in - it's a crying shame.
 
 `r sample(clos1, 1, replace=TRUE)`<br>
 `r sample(name1, 1)`
@@ -136,20 +132,19 @@ Some of the folks last time said that I was overcautious, and that it was just a
 <b>From:</b> `r sample(email1, 1)`-88@gmail.com <br>
 <b>To:</b> PandemicResponseCommitteet@`r city_name`.co.uk <br>
 <b>Cc:</b> city-council@`r city_name`.co.uk <br>
-<b>Subject:</b> Save Our Hospitals
+<b>Subject:</b> VACCINES ARE TOXIC
 
 Dear Pandemic Response Committee,
 
-I am so frightened about new pandemic, the news you read about it is very scary. Thank you so much for all your hard work you are doing to protect us.
+I can already see that you and your office are going to use this new pandemic as yet another excuse for government overreach into citizens' lives. Encouraging mask wearing and vaccination - your hands are already washed in blood. I hope you can sleep at night because I am sure I wouldn't be able to if I were you. How many more innocents need to die before we just STOP it with these TOXIC vaccines?!?!
 
-I heard that you have made the hospital very safe, with all your PPE stocks and surveillance technology to make sure that the ICU is functioning the way that it should, and that you've increased capacity so that it can handle more patients than usual when we are all sick. It is really great that you are able to do this, I was so worried during the COVID19 pandemic when all the nightingale hospitals were built and the poor doctors and nurses and all were being so overworked. I hope that there will always be enough funds to increase the hospital staff the way that the government really ought to do. 
-
-Thank you so much for all the hard work you do,<br>
+`r sample(clos1, 1, replace=TRUE)`<br>
 `r sample(name1, 1)` 
 
 ***
 
-## News Coverage of the `r city_name` Legionella outbreak
+
+## Newspaper coverage
 
 ```{r news, echo=FALSE}
 
@@ -166,6 +161,10 @@ time2 <- c("immediately", "very soon", "at once", "as soon as possible")
 name2 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
 verb2 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
 adj4 <- c("nearly", "almost", "virtually", "almost literally", "practically")
+sent8 <- c()
+sent9 <- c()
+sent10 <- c()
+sent11 <- c()
 
 
 #set up person details for obits
@@ -212,13 +211,12 @@ obit2surname <- sample(c("Smith", "Jones", "Williams", "Taylor", "Davies", "Brow
 
 ```
 
-
 <font size="+3"><b>`r city_name` `r sample(papername1, 1)`</b></font><br>
 <font size="+2"><b>`r city_name` says farewell to pandemic's youngest victim</b></font><br>
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-The `r dis_name4` pandemic ravaging `r city_name` has claimed yet another victim. There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most tragic loss is `r obit1name` `r obit1surname` - at only `r obit1age`, the youngest victim that the pandemic has claimed.    
+The `r dis_name2` pandemic ravaging `r city_name` has claimed yet another victim. There have been 35 deaths in the pandemic so far, but perhaps the most tragic loss is `r obit1name` `r obit1surname` - at only `r obit1age`, the youngest victim that the pandemic has claimed.    
 
 `r obit1name` `r obit1surname` liked `r obit1like1` and `r obit1like2`. Friends and family say that `r pron1` was always `r sample(c("a delight", "an absolute joy", "a treasure", "the most precious child"), 1)`. 
 
@@ -233,7 +231,7 @@ The funeral service will be held `r sample(c("Monday", "Tuesday", "Wednesday", "
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-The `r dis_name4` pandemic ravaging `r city_name` has claimed yet another victim. `r obit2name` `r obit2surname`, local `r obit2prof1` and star, sadly passed away on `r sample(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"), 1)`. 
+The `r dis_name2` pandemic ravaging `r city_name` has claimed yet another victim. `r obit2name` `r obit2surname`, local `r obit2prof1` and star, sadly passed away on `r sample(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"), 1)`. 
 
 `r obit2name` was perhaps best known for `r posspron2` `r sample(2000:2015, 1)` work `r obit2work1` , but fans say that the rest of `r posspron2` work was equally as `r sample(c("memorable", "genre-changing", "excellent", "influential"), 1)`. 
 
@@ -252,7 +250,7 @@ Citizens of `r city_name` should be `r sample(c("grateful", "thankful", "glad"),
 
 Officials from `r sample(c("the NHS", "Public Health Scotland", "the World Health Organisation", "the Center for Disease Control", "the Red Cross"), 1)` have publicly praised the `r city_name` PRC, saying that `r sample(c("it is difficult to imagine a more effective public health response", "their actions have been extremely effective", "the PRC has done all of the right things", "this is a triumph that shows how effective public health responses can be", "countless lives have been saved due to the actions of the PRC"), 1)`
 
-There have been 6 deaths due to `r dis_name4` in `r city_name` this week. This is an enormous decrease, and hopefully `r city_name` will see the death toll continue to decrease in the coming weeks. 
+There have been 5 deaths due to `r dis_name2` in `r city_name` this week. This is an enormous decrease, and hopefully `r city_name` will see the death toll continue to decrease in the coming weeks. 
 
 ***
 
@@ -261,27 +259,138 @@ There have been 6 deaths due to `r dis_name4` in `r city_name` this week. This i
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-Governments across the globe have seen how successful power-grabs in the name of public health can be, following on the wave of restrictions imposed because of so-called viral diseases like COVID-19 and "mpox". So-called scientists are fearmongering - aerosols, monkeys, "bird" flu - now they think that they can fool us into thinking that the air and water are unsafe. Citizens of `r city_name` should stand strong against this terrible tyranny! No more mask mandates, no more senseless restrictions!
+Governments across the globe have seen how successful power-grabs in the name of public health can be, following on the wave of restrictions imposed because of so-called viral diseases like COVID-19 and "mpox". So-called scientists are fearmongering - aerosols, monkeys, "bird" flu - now they think that they can fool us into thinking that the very air we breathe is unsafe. Citizens of `r city_name` should stand strong against this terrible tyranny! No more mask mandates, no more senseless restrictions!
 
 Our elders should not be left to die alone, left frightened and hopeless in a mandatory lockdown claimed to be "for their benefit." Our children should not be left to struggle through "pandemic" after "pandemic" - their language and literacy skills have been left behind due to these lockdowns, and their mental health is suffering. It is time that we take back control of our lives and end this tyranny of fear-mongering and so-called science. Citizens of `r city_name`, stand with me and resist this most recent attack on your freedoms and your lives. 
 
 *** 
 
 <font size="+3"><b>`r sample(c("BBC Scotland", "The Guardian", "The Independent"), 1)` </b></font><br>
-<font size="+2"><b>`r dis_name4` pandemic in `r city_name`</b></font><br>
+<font size="+2"><b>`r dis_name2` pandemic in `r city_name`</b></font><br>
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-Hard on the heels of the COVID-19 pandemic and a number of other health scares (monkeypox, or "mpox", avian flu, and worries about other infectious disease outbreaks), another pandemic has hit the Scottish town of `r city_name`. This time, it's Legionella, a bacterium that can very sadly be fatal.
+Hard on the heels of the COVID-19 pandemic and a number of other health scares (monkeypox, or "mpox", Strep A, and worries about other infectious disease outbreaks), another pandemic has hit the Scottish town of `r city_name`. This time, it's `r dis_name2` - the same virus that has caused global pandemics in the past.
 
-There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most frightening aspect to this new pandemic is rumours that these Legionella strains may have become resistant to even more antibiotics - a truly chilling possibility.
+There have been 35 deaths in the pandemic so far, but perhaps the most frightening aspect to this new pandemic is rumours that this variant of avian influenza has crossed the species barrier and can be transmitted from human to human.
 
-Scientists have been warning about the antibiotic resistance crisis for years, saying that careless use of antibiotics could mean that these precious medicines will no longer be available to us in the future. 
+Scientists have been talking about this possibility for years, warning of the potential for a massive pandemic similar to the 1918 "Spanish Flu".
 
-Some of the Legionella strains found in `r city_name` are reportedly resistant to all clinically available antibiotics, and scientists warn that these drug-resistant pathogens might be able to spread to new locations. Will nearby towns be next, or could these Legionella strains go as global as the SARS-COV2 virus did?
-
-***
-## Data gathered
+Is the virus circulating in `r city_name` the one, or is the next influenza pandemic still around the corner?
 
 
+## Data gathered by the committee since the previous meeting
+
+### RT-PCR testing for influenza virus
+
+Table 2. RT-PCR testing of poultry farms in the `r city_name` `r dis_name2` outbreak.
+<table>
+<table border="1">
+  <tr>
+    <th>Location</th>
+    <th>Number of animals tested</th>
+    <th>Number of positive RT-PCR tests</th>
+  </tr>
+  <tr>
+    <td>Sue's Duck Farm</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Craig's Chickens</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Ellenmere Farm</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Highgrove</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Clucks-alot Farms</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Lucky Clucky Farms</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>The Golden Goose</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Hightree Nature Reserve</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Lakesmere</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Heather and Gorse Farms</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Grace's Ganders</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Loosey Goosey Farms</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>The Chicken Run</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Greenacres</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Hill Farm</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Loyola's Turkey Farm</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>The Balltyre Quail Farm</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Goosopolis Farms</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Cordelia and Ken's Chickens</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+  <tr>
+    <td>Fair Hope Farm</td>
+    <td>`r sample(30:100, 1)`</td>
+    <td>`r sample(0:10, 1)`</td>
+  </tr>
+</table>  
+<br><br>
 

@@ -16,13 +16,13 @@ library(ggplot2)
 library(knitr)
 
 
-city_name <- "Inverkeld" 
-hospital_name <- "Queen Rose"
-dis_name4 <- "Legionella"
-outbreak_deaths <- 58
+city_name <- "Rosmakirk"
+hospital_name <- "Horizon NHS"
+dis_name4 <- "<i>Listeria monocytogenes</i>"
+outbreak_deaths <- 36 + 14 + 8
 ```
 
-## Scenario A: <i>Legionella</i> in `r city_name`
+## Scenario E: Listeria in `r city_name`
 
 The `r city_name` Pandemic Response committee has gathered the following information for the second meeting of your group. 
 
@@ -34,20 +34,28 @@ You should submit 3-5 specific actions for further actions to control the pandem
 
 Actions taken:
 
-1. Keep in contact with governmental organisations, health authorities and the local community about pandemic strategies to control and prevent the spread of the pathogen.
+1. Food inspection in all restaurants, hospital, cafes, care homes, and schools. 
 
-2. Provide adequate training/education on the appropriate use of PPE as well as where to access it. Plus, stock up on PPE (hospital preparedness).
+Ensuring that they follow GMP and GHP guidelines. Take samples in the hospitals or restaurants. 
 
-3. Communicate with hospital staff, patients and the local community to provide information on the pandemic and updated hospital policies to ensure hospital preparedness.
+2. Early diagnosis and contact tracing – using whole genome sequencing to identify the food source. 
 
-4. Devise plans to increase the hospital’s capacity to accommodate a surge of patients (e.g., set up additional treatment areas in the hospital and consider collaborating with healthcare professionals from other institutions).
+3. Enforcing extra protection in the maternity and ICU wards. 
+-	Nurses or people working with food should wash hands.
+-	Give special diet (fully cooked meals)
+-	Possibly close vending machines for ready-to-eat foods in hospitals.
 
-5. Implement surveillance technology to keep record of critical care capacity.
+
+4. Sanitise food preparation areas (ex. kitchens) and vending machines in the hospital with chlorine. 
+
+5. Avoid ready-to-eat cold food and educate public to heat their meals. 
+-	Inform the public about the disease.
+-	Urge for public to get in contact if they show symptoms. 
 
 
 ## Pandemic Statistics 
 
-Table 1. Data from the `r city_name` <i>Legionella</i> outbreak.
+Table 1. Data from the `r city_name` Listeria outbreak.
 <table>
 <table border="1">
   <tr>
@@ -56,35 +64,34 @@ Table 1. Data from the `r city_name` <i>Legionella</i> outbreak.
     <th>07/03/2024 data</th>
   </tr>
   <tr>
-    <td>Deaths caused by the <i>Legionella</i> outbreak (total)</td>
-    <td>23</td>
+    <td>Deaths caused by the Listeria outbreak (total)</td>
+    <td>36</td>
     <td>58</td>
   </tr>
   <tr>
-    <td>Verified <i>Legionella</i> cases (total)</td>
-    <td>1504</td>
-    <td>2800</td>
+    <td>Verified Listeria cases (total)</td>
+    <td>570</td>
+    <td>800</td>
   </tr>
   <tr>
-    <td><i>Legionella</i> hospitalisations (weekly)</td>
-    <td>54</td>
-    <td>48</td>
+    <td>Listeria hospitalisations (weekly)</td>
+    <td>170</td>
+    <td>115</td>
   </tr>
     <tr>
     <td>`r hospital_name` ICU bed occupancy (current)</td>
-    <td>13</td>
-    <td>5</td>
+    <td>15</td>
+    <td>8</td>
   </tr>
   <tr>
-  <td>Number of <i>Legionella</i> related GP visits (total)</td>
-  <td>103</td>
-  <td>179</td>
+  <td>Number of Listeria related GP visits (total)</td>
+  <td>93</td>
+  <td>34</td>
   </tr>
 </table>  
 <br><br>
 
 
-#
 ## Letters from the Public
 
 ```{r emails, echo=FALSE}
@@ -117,16 +124,14 @@ sent6 <- c()
 
 ***
 
-<b>From:</b> `r sample(email1, 1)`_1946@gmail.com <br>
+<b>From:</b> `r sample(email1, 1)`_1955@gmail.com <br>
 <b>To:</b> PandemicResponseCommittee@`r city_name`.co.uk <br>
 <b>Cc:</b>
 <b>Subject:</b> This `r sample(adj1, 1)` Pandemic
 
 Dear Pandemic Response Committee
 
-I am so worried about this pandemic, it seems like there is lots of PPE this time around (which is great, I am not so old that I don't remember all the scandals surrounding PPE back when the COVID19 pandemic first was!) But it seems like there should be something more we can do, are we doomed to go through a cycle of pandemic after pandemic, always sitting at home and worrying about whether we will die?
-
-Some of the folks last time said that I was overcautious, and that it was just a made-up pandemic that we were all afraid of, but I've got an old mum who's quite frail, I can't go taking risks when it comes to her health. 
+I am so outraged by the food inspections you have mandated in all of the lovely restaurants in `r city_name`, it is like living in some nightmare of a country where you think that you can't trust anyone to be safe. What right do you have to impose these fascist measures on our fair city? The restaurants here have always had a very high safety record and are very good, I very much resent your implication that they are the source of this dreadful pandemic. 
 
 `r sample(clos1, 1, replace=TRUE)`<br>
 `r sample(name1, 1)`
@@ -136,20 +141,18 @@ Some of the folks last time said that I was overcautious, and that it was just a
 <b>From:</b> `r sample(email1, 1)`-88@gmail.com <br>
 <b>To:</b> PandemicResponseCommitteet@`r city_name`.co.uk <br>
 <b>Cc:</b> city-council@`r city_name`.co.uk <br>
-<b>Subject:</b> Save Our Hospitals
+<b>Subject:</b> The state of the world
 
 Dear Pandemic Response Committee,
 
-I am so frightened about new pandemic, the news you read about it is very scary. Thank you so much for all your hard work you are doing to protect us.
-
-I heard that you have made the hospital very safe, with all your PPE stocks and surveillance technology to make sure that the ICU is functioning the way that it should, and that you've increased capacity so that it can handle more patients than usual when we are all sick. It is really great that you are able to do this, I was so worried during the COVID19 pandemic when all the nightingale hospitals were built and the poor doctors and nurses and all were being so overworked. I hope that there will always be enough funds to increase the hospital staff the way that the government really ought to do. 
+I am so frightened about the foods that are available for sale in the hospital, I was in for an appointment and I seen also all the reports about how we should not eat anything that might be contaminated with Listeria. It feels like everything is so unsafe in the world now, for a while it was all the air we breathe was making us unsafe with the COVID virus and now it is the food that we are eating making us ill. Can you please just make sure people are safe again? 
 
 Thank you so much for all the hard work you do,<br>
 `r sample(name1, 1)` 
 
 ***
 
-## News Coverage of the `r city_name` Legionella outbreak
+## News Coverage of the `r city_name` Listeria outbreak
 
 ```{r news, echo=FALSE}
 
@@ -166,6 +169,10 @@ time2 <- c("immediately", "very soon", "at once", "as soon as possible")
 name2 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
 verb2 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
 adj4 <- c("nearly", "almost", "virtually", "almost literally", "practically")
+sent8 <- c()
+sent9 <- c()
+sent10 <- c()
+sent11 <- c()
 
 
 #set up person details for obits
@@ -272,16 +279,67 @@ Our elders should not be left to die alone, left frightened and hopeless in a ma
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-Hard on the heels of the COVID-19 pandemic and a number of other health scares (monkeypox, or "mpox", avian flu, and worries about other infectious disease outbreaks), another pandemic has hit the Scottish town of `r city_name`. This time, it's Legionella, a bacterium that can very sadly be fatal.
+Hard on the heels of the COVID-19 pandemic and a number of other health scares (monkeypox, or "mpox", avian flu, and worries about other infectious disease outbreaks), another pandemic has hit the Scottish town of `r city_name`. This time, it's Listeria, a bacterium that is particularly fatal to the elderly and to pregnant women.
 
-There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most frightening aspect to this new pandemic is rumours that these Legionella strains may have become resistant to even more antibiotics - a truly chilling possibility.
+There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most frightening aspect to this new pandemic is rumours that these Listeria strains may have become resistant to even more antibiotics - a truly chilling possibility.
 
 Scientists have been warning about the antibiotic resistance crisis for years, saying that careless use of antibiotics could mean that these precious medicines will no longer be available to us in the future. 
 
-Some of the Legionella strains found in `r city_name` are reportedly resistant to all clinically available antibiotics, and scientists warn that these drug-resistant pathogens might be able to spread to new locations. Will nearby towns be next, or could these Legionella strains go as global as the SARS-COV2 virus did?
+Some of the Listeria strains found in `r city_name` are reportedly resistant to all clinically available antibiotics, and scientists warn that these drug-resistant pathogens might be able to spread to new locations. Will nearby towns be next, or could these Listeria strains go as global as the SARS-COV2 virus did?
 
 ***
+
 ## Data gathered
 
+## Whole Genome Sequencing-Based Investigation of the `r city_name` <i>Listeria</i> outbreak
 
+Table 1. Whole genome sequences were compared to NCBI accession numbers given.
+<table>
+<table border="1">
+  <tr>
+    <th>Patient (names redacted due to GDPR)</th>
+    <th>Close match to NCBI <i>Listeria</i> sequence?</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>no</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>no</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>no</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>no</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>no</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>yes</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>yes</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>yes</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>yes</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>no</td>
+  </tr>
+</table>  
+<br><br>
 

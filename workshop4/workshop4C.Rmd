@@ -16,13 +16,14 @@ library(ggplot2)
 library(knitr)
 
 
-city_name <- "Inverkeld" 
-hospital_name <- "Queen Rose"
-dis_name4 <- "Legionella"
-outbreak_deaths <- 58
+city_name <- "Malleith" ##replace all instances of "Malleith" with new scenario name
+hospital_name <- "Central Highland" ##replace all instances of "Central Highland" with new scenario name
+dis_name3 <- "MRSA"
+outbreak_deaths <- 10 + 8 + 6
+
 ```
 
-## Scenario A: <i>Legionella</i> in `r city_name`
+## Scenario C: MRSA in `r city_name`
 
 The `r city_name` Pandemic Response committee has gathered the following information for the second meeting of your group. 
 
@@ -34,20 +35,24 @@ You should submit 3-5 specific actions for further actions to control the pandem
 
 Actions taken:
 
-1. Keep in contact with governmental organisations, health authorities and the local community about pandemic strategies to control and prevent the spread of the pathogen.
+1. Advertise how MRSA is spread (which is through contact of an infected person or item) and how to reduce spread through hygiene and no sharing of towels and razors.
+Do this advertisement through radio, tv adverts and posters.
 
-2. Provide adequate training/education on the appropriate use of PPE as well as where to access it. Plus, stock up on PPE (hospital preparedness).
+2. Train hospital and clinic staff in the Central Highland hospital in how to reduce spread of MRSA via washing hands before and after seeing patients and covering wounds or cuts they may have. And train them on how to decontaminate MRSA infected patients via antiseptic wash for skin and nose. And train them to not share infected medical items like thermometers and sphygmomanometer (to measure blood pressure)
 
-3. Communicate with hospital staff, patients and the local community to provide information on the pandemic and updated hospital policies to ensure hospital preparedness.
+3. Isolate infected patients to reduce transmission to healthy patients
 
-4. Devise plans to increase the hospital’s capacity to accommodate a surge of patients (e.g., set up additional treatment areas in the hospital and consider collaborating with healthcare professionals from other institutions).
+4. Screen hospital staff for MRSA infection via swab from nose. Test swab on denim blue agar:
+positive= growth of denim blue colonies
+Negative= inhibition or growth of white colonies
+CONTACT IN TRACING
 
-5. Implement surveillance technology to keep record of critical care capacity.
-
+5. Order vancomycin to treat MRSA.
+Only use in severe MRSA patients to prevent resistance of MRSA towards vancomycin
 
 ## Pandemic Statistics 
 
-Table 1. Data from the `r city_name` <i>Legionella</i> outbreak.
+Table 1. Data from the `r city_name` MRSA outbreak.
 <table>
 <table border="1">
   <tr>
@@ -56,35 +61,34 @@ Table 1. Data from the `r city_name` <i>Legionella</i> outbreak.
     <th>07/03/2024 data</th>
   </tr>
   <tr>
-    <td>Deaths caused by the <i>Legionella</i> outbreak (total)</td>
-    <td>23</td>
-    <td>58</td>
+    <td>Deaths caused by the MRSA outbreak (total)</td>
+    <td>10</td>
+    <td>24</td>
   </tr>
   <tr>
-    <td>Verified <i>Legionella</i> cases (total)</td>
-    <td>1504</td>
-    <td>2800</td>
+    <td>Verified MRSA cases (total)</td>
+    <td>140</td>
+    <td>250</td>
   </tr>
   <tr>
-    <td><i>Legionella</i> hospitalisations (weekly)</td>
-    <td>54</td>
-    <td>48</td>
+    <td>MRSA hospitalisations (weekly)</td>
+    <td>145</td>
+    <td>98</td>
   </tr>
     <tr>
     <td>`r hospital_name` ICU bed occupancy (current)</td>
-    <td>13</td>
-    <td>5</td>
+    <td>15</td>
+    <td>4</td>
   </tr>
   <tr>
-  <td>Number of <i>Legionella</i> related GP visits (total)</td>
-  <td>103</td>
-  <td>179</td>
+  <td>Number of MRSA related GP visits (total)</td>
+  <td>73</td>
+  <td>45</td>
   </tr>
 </table>  
 <br><br>
 
 
-#
 ## Letters from the Public
 
 ```{r emails, echo=FALSE}
@@ -100,7 +104,7 @@ time1 <- c("immediately", "very soon", "at once", "as soon as possible")
 name1 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
 verb1 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
 business1 <- c("small coffee shop", "coffee shop", "cafe", "restaurant", "bookshop", "boutique clothing store", "records shop", "used bookstore", "toy store", "sweet shop")
-business2 <- c("The Rosmakirk Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
+business2 <- c("The Baltyre Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
 adj2 <- c("nearly", "almost", "virtually", "almost literally", "practically")
 conseq1 <- c("lost my business due to those pandemic lockdowns", "had to close because of all the draconian lockdowns", "went out of business", "went bankrupt", "had to shut our doors during COVID")
 sent2 <- c()
@@ -117,16 +121,16 @@ sent6 <- c()
 
 ***
 
-<b>From:</b> `r sample(email1, 1)`_1946@gmail.com <br>
+<b>From:</b> `r sample(email1, 1)`_1955@gmail.com <br>
 <b>To:</b> PandemicResponseCommittee@`r city_name`.co.uk <br>
 <b>Cc:</b>
 <b>Subject:</b> This `r sample(adj1, 1)` Pandemic
 
 Dear Pandemic Response Committee
 
-I am so worried about this pandemic, it seems like there is lots of PPE this time around (which is great, I am not so old that I don't remember all the scandals surrounding PPE back when the COVID19 pandemic first was!) But it seems like there should be something more we can do, are we doomed to go through a cycle of pandemic after pandemic, always sitting at home and worrying about whether we will die?
+I am so frightened by the current pandemic that is rampaging through my beloved city. I have never heard of this MRSA before but it is dreadfully scary. The radio advert I heard yesterday made it sound like a huge problem. What is the world coming to, I ask you, with the MRSA plague on top of the COVID19 one already and the monkeypox as well. It feels like a judgement on our times.
 
-Some of the folks last time said that I was overcautious, and that it was just a made-up pandemic that we were all afraid of, but I've got an old mum who's quite frail, I can't go taking risks when it comes to her health. 
+Thank you so much for your hard work keeping us safe, I heard that you were buying in some vancomycin to kill these evil superbugs. I think you should distribute this to everyone in Malleith so that we can be safe from thi sterror.
 
 `r sample(clos1, 1, replace=TRUE)`<br>
 `r sample(name1, 1)`
@@ -136,20 +140,24 @@ Some of the folks last time said that I was overcautious, and that it was just a
 <b>From:</b> `r sample(email1, 1)`-88@gmail.com <br>
 <b>To:</b> PandemicResponseCommitteet@`r city_name`.co.uk <br>
 <b>Cc:</b> city-council@`r city_name`.co.uk <br>
-<b>Subject:</b> Save Our Hospitals
+<b>Subject:</b> The state of our hospitals
 
 Dear Pandemic Response Committee,
 
-I am so frightened about new pandemic, the news you read about it is very scary. Thank you so much for all your hard work you are doing to protect us.
+I am so worried about my nan, who is going into the hospital for a hip replacement surgery this coming Sunday. She really needs it as the cartilage in her joints is completely gone and so it is very painful for her to walk. 
 
-I heard that you have made the hospital very safe, with all your PPE stocks and surveillance technology to make sure that the ICU is functioning the way that it should, and that you've increased capacity so that it can handle more patients than usual when we are all sick. It is really great that you are able to do this, I was so worried during the COVID19 pandemic when all the nightingale hospitals were built and the poor doctors and nurses and all were being so overworked. I hope that there will always be enough funds to increase the hospital staff the way that the government really ought to do. 
+I am really worried that she will have caught the MRSA from the hospital and will die. I heard from Nell who is a nurse there that they have new training measures in place to try to prevent the spread of the superbug, but I am just so worried that it will not be enough. Are there any further measures that you can take to help to keep us all safe?
+
+I know the NHS is struggling because it has been underfunded for so many years, but if you can find a little bit of extra money somewhere, I am sure it would make a real difference to my nan.
+
 
 Thank you so much for all the hard work you do,<br>
 `r sample(name1, 1)` 
 
 ***
 
-## News Coverage of the `r city_name` Legionella outbreak
+## News Coverage of the `r city_name` MRSA outbreak
+
 
 ```{r news, echo=FALSE}
 
@@ -166,6 +174,10 @@ time2 <- c("immediately", "very soon", "at once", "as soon as possible")
 name2 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
 verb2 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
 adj4 <- c("nearly", "almost", "virtually", "almost literally", "practically")
+sent8 <- c()
+sent9 <- c()
+sent10 <- c()
+sent11 <- c()
 
 
 #set up person details for obits
@@ -218,7 +230,7 @@ obit2surname <- sample(c("Smith", "Jones", "Williams", "Taylor", "Davies", "Brow
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-The `r dis_name4` pandemic ravaging `r city_name` has claimed yet another victim. There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most tragic loss is `r obit1name` `r obit1surname` - at only `r obit1age`, the youngest victim that the pandemic has claimed.    
+The `r dis_name3` pandemic ravaging `r city_name` has claimed yet another victim. There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most tragic loss is `r obit1name` `r obit1surname` - at only `r obit1age`, the youngest victim that the pandemic has claimed.    
 
 `r obit1name` `r obit1surname` liked `r obit1like1` and `r obit1like2`. Friends and family say that `r pron1` was always `r sample(c("a delight", "an absolute joy", "a treasure", "the most precious child"), 1)`. 
 
@@ -233,7 +245,7 @@ The funeral service will be held `r sample(c("Monday", "Tuesday", "Wednesday", "
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-The `r dis_name4` pandemic ravaging `r city_name` has claimed yet another victim. `r obit2name` `r obit2surname`, local `r obit2prof1` and star, sadly passed away on `r sample(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"), 1)`. 
+The `r dis_name3` pandemic ravaging `r city_name` has claimed yet another victim. `r obit2name` `r obit2surname`, local `r obit2prof1` and star, sadly passed away on `r sample(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"), 1)`. 
 
 `r obit2name` was perhaps best known for `r posspron2` `r sample(2000:2015, 1)` work `r obit2work1` , but fans say that the rest of `r posspron2` work was equally as `r sample(c("memorable", "genre-changing", "excellent", "influential"), 1)`. 
 
@@ -252,7 +264,7 @@ Citizens of `r city_name` should be `r sample(c("grateful", "thankful", "glad"),
 
 Officials from `r sample(c("the NHS", "Public Health Scotland", "the World Health Organisation", "the Center for Disease Control", "the Red Cross"), 1)` have publicly praised the `r city_name` PRC, saying that `r sample(c("it is difficult to imagine a more effective public health response", "their actions have been extremely effective", "the PRC has done all of the right things", "this is a triumph that shows how effective public health responses can be", "countless lives have been saved due to the actions of the PRC"), 1)`
 
-There have been 6 deaths due to `r dis_name4` in `r city_name` this week. This is an enormous decrease, and hopefully `r city_name` will see the death toll continue to decrease in the coming weeks. 
+There have been 6 deaths due to `r dis_name3` in `r city_name` this week. This is an enormous decrease, and hopefully `r city_name` will see the death toll continue to decrease in the coming weeks. 
 
 ***
 
@@ -268,20 +280,152 @@ Our elders should not be left to die alone, left frightened and hopeless in a ma
 *** 
 
 <font size="+3"><b>`r sample(c("BBC Scotland", "The Guardian", "The Independent"), 1)` </b></font><br>
-<font size="+2"><b>`r dis_name4` pandemic in `r city_name`</b></font><br>
+<font size="+2"><b>`r dis_name3` pandemic in `r city_name`</b></font><br>
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-Hard on the heels of the COVID-19 pandemic and a number of other health scares (monkeypox, or "mpox", avian flu, and worries about other infectious disease outbreaks), another pandemic has hit the Scottish town of `r city_name`. This time, it's Legionella, a bacterium that can very sadly be fatal.
+Hard on the heels of the COVID-19 pandemic and a number of other health scares (monkeypox, or "mpox", avian flu, and worries about other infectious disease outbreaks), another pandemic has hit the Scottish town of `r city_name`. This time, it's MRSA, a bacterium that is resistant to the antibiotic methicillin
 
-There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most frightening aspect to this new pandemic is rumours that these Legionella strains may have become resistant to even more antibiotics - a truly chilling possibility.
+There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most frightening aspect to this new pandemic is rumours that these MRSA strains may have become resistant to even more antibiotics - a truly chilling possibility.
 
 Scientists have been warning about the antibiotic resistance crisis for years, saying that careless use of antibiotics could mean that these precious medicines will no longer be available to us in the future. 
 
-Some of the Legionella strains found in `r city_name` are reportedly resistant to all clinically available antibiotics, and scientists warn that these drug-resistant pathogens might be able to spread to new locations. Will nearby towns be next, or could these Legionella strains go as global as the SARS-COV2 virus did?
+Some of the MRSA strains found in `r city_name` are reportedly resistant to all clinically available antibiotics, and scientists warn that these drug-resistant pathogens might be able to spread to new locations. Will nearby towns be next, or could these MRSA strains go as global as the SARS-COV2 virus did?
 
 ***
 ## Data gathered
 
+## Microbiological Investigation of the `r city_name` `r dis_name3` outbreak
 
+Swab samples were plated on Mannitol Salt Agar (MSA) +/- oxacillin
 
+Table 2. Microbiological testing of patients and homes in the `r city_name` `r dis_name3` outbreak.
+<table>
+<table border="1">
+  <tr>
+    <th>Hospital Staff # (Names Redacted)</th>
+    <th>Number of colonies on Denim Blue Agar
+    (colour)</th>
+  </tr>
+  <tr>
+    <td># 1</td>
+    <td>`r sample(30:100, 1)`, `r sample(c("white", "white", "white", "white", "blue"), 1)`</td>
+  </tr>
+  <tr>
+    <td># 2</td>
+    <td>`r sample(30:100, 1)`, `r sample(c("white", "white", "white", "white", "blue"), 1)`</td>
+  </tr>
+  <tr>
+    <td># 3</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 4</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 5</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 6</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 7</td>
+    <td>`r sample(30:100, 1)`, `r sample(c("white", "white", "white", "white", "blue"), 1)`</td>
+  </tr>
+  <tr>
+    <td># 8</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 9</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 10</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 11</td>
+    <td>`r sample(30:100, 1)`, `r sample(c("white", "white", "white", "white", "blue"), 1)`</td>
+  </tr>
+  <tr>
+    <td># 12</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 13</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 14</td>
+    <td>`r sample(30:100, 1)`, `r sample(c("white", "white", "white", "white", "blue"), 1)`</td>
+  </tr>
+  <tr>
+    <td># 15</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 16</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 17</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 18</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 19</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 20</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 21</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td># 22</td>
+    <td>0</td>
+  </tr>
+    <tr>
+    <td># 23</td>
+    <td>0</td>
+  </tr>
+    <tr>
+    <td># 24</td>
+    <td>0</td>
+  </tr>
+    <tr>
+    <td># 25</td>
+    <td>0</td>
+  </tr>
+    <tr>
+    <td># 26</td>
+    <td>`r sample(30:100, 1)`, `r sample(c("white", "white", "white", "white", "blue"), 1)`</td>
+  </tr>
+    <tr>
+    <td># 27</td>
+    <td>0</td>
+  </tr>
+    <tr>
+    <td># 28</td>
+    <td>0</td>
+  </tr>
+    <tr>
+    <td># 29</td>
+    <td>0</td>
+  </tr>
+    <tr>
+    <td># 30</td>
+    <td>0</td>
+  </tr>
+</table>  
+<br><br>

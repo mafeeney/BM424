@@ -16,13 +16,14 @@ library(ggplot2)
 library(knitr)
 
 
-city_name <- "Inverkeld" 
-hospital_name <- "Queen Rose"
-dis_name4 <- "Legionella"
-outbreak_deaths <- 58
+city_name <- "Dalessie"
+hospital_name <- "Fairview"
+dis_name8 <- "<i>Streptococcus pyogenes</i>"
+outbreak_deaths <- 26 + 12 + 9
+
 ```
 
-## Scenario A: <i>Legionella</i> in `r city_name`
+## Scenario H: Group A Streptococcus in `r city_name`
 
 The `r city_name` Pandemic Response committee has gathered the following information for the second meeting of your group. 
 
@@ -34,20 +35,20 @@ You should submit 3-5 specific actions for further actions to control the pandem
 
 Actions taken:
 
-1. Keep in contact with governmental organisations, health authorities and the local community about pandemic strategies to control and prevent the spread of the pathogen.
+1. Hold public health announcement, press announce on TV to inform public about symptoms of Streptococcus pyogenes, as well as control measures, such as appropriate hygiene, (hand washing and wearing gloves)
 
-2. Provide adequate training/education on the appropriate use of PPE as well as where to access it. Plus, stock up on PPE (hospital preparedness).
+2. Make PPE mandatory in public places/hospitals, use N95 respirators as it prevents the wearer from liquid contaminating the face.
 
-3. Communicate with hospital staff, patients and the local community to provide information on the pandemic and updated hospital policies to ensure hospital preparedness.
+3. Social distancing, to prevent any spread of respiratory droplets to uninfected individuals	When in a built up area it can increase transmission, so with social distances it will decrease transmission
 
-4. Devise plans to increase the hospital’s capacity to accommodate a surge of patients (e.g., set up additional treatment areas in the hospital and consider collaborating with healthcare professionals from other institutions).
+4. Push for fast track vaccines, there is no vaccine currently in the market used to treat this, invest into vaccine and get around the 1979 US food and drug administration who have prohibited group A strep or their derivatives
 
-5. Implement surveillance technology to keep record of critical care capacity.
+5. Distribute Rapid antigen test to the general public via postal services to avoid unnecessary contact.
 
 
 ## Pandemic Statistics 
 
-Table 1. Data from the `r city_name` <i>Legionella</i> outbreak.
+Table 1. Data from the `r city_name` <i>Streptococcus pyogenes</i> outbreak.
 <table>
 <table border="1">
   <tr>
@@ -56,35 +57,34 @@ Table 1. Data from the `r city_name` <i>Legionella</i> outbreak.
     <th>07/03/2024 data</th>
   </tr>
   <tr>
-    <td>Deaths caused by the <i>Legionella</i> outbreak (total)</td>
-    <td>23</td>
+    <td>Deaths caused by the <i>Streptococcus pyogenes</i> outbreak (total)</td>
+    <td>26</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>Verified <i>Streptococcus pyogenes</i> cases (total)</td>
+    <td>350</td>
+    <td>560</td>
+  </tr>
+  <tr>
+    <td><i>Streptococcus pyogenes</i> hospitalisations (weekly)</td>
+    <td>148</td>
     <td>58</td>
-  </tr>
-  <tr>
-    <td>Verified <i>Legionella</i> cases (total)</td>
-    <td>1504</td>
-    <td>2800</td>
-  </tr>
-  <tr>
-    <td><i>Legionella</i> hospitalisations (weekly)</td>
-    <td>54</td>
-    <td>48</td>
   </tr>
     <tr>
     <td>`r hospital_name` ICU bed occupancy (current)</td>
-    <td>13</td>
-    <td>5</td>
+    <td>15</td>
+    <td>12</td>
   </tr>
   <tr>
-  <td>Number of <i>Legionella</i> related GP visits (total)</td>
-  <td>103</td>
-  <td>179</td>
+  <td>Number of <i>Streptococcus pyogenes</i> related GP visits (total)</td>
+  <td>87</td>
+  <td>49</td>
   </tr>
 </table>  
 <br><br>
 
 
-#
 ## Letters from the Public
 
 ```{r emails, echo=FALSE}
@@ -100,7 +100,7 @@ time1 <- c("immediately", "very soon", "at once", "as soon as possible")
 name1 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
 verb1 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
 business1 <- c("small coffee shop", "coffee shop", "cafe", "restaurant", "bookshop", "boutique clothing store", "records shop", "used bookstore", "toy store", "sweet shop")
-business2 <- c("The Rosmakirk Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
+business2 <- c("The CITYNAME Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
 adj2 <- c("nearly", "almost", "virtually", "almost literally", "practically")
 conseq1 <- c("lost my business due to those pandemic lockdowns", "had to close because of all the draconian lockdowns", "went out of business", "went bankrupt", "had to shut our doors during COVID")
 sent2 <- c()
@@ -124,9 +124,7 @@ sent6 <- c()
 
 Dear Pandemic Response Committee
 
-I am so worried about this pandemic, it seems like there is lots of PPE this time around (which is great, I am not so old that I don't remember all the scandals surrounding PPE back when the COVID19 pandemic first was!) But it seems like there should be something more we can do, are we doomed to go through a cycle of pandemic after pandemic, always sitting at home and worrying about whether we will die?
-
-Some of the folks last time said that I was overcautious, and that it was just a made-up pandemic that we were all afraid of, but I've got an old mum who's quite frail, I can't go taking risks when it comes to her health. 
+I am so outraged by all of the restrictions that you are imposing on our beautiful city, this is exactly the same as was done to us during COVID, it is a trespass on the freedom of all right-minded individuals. Your antigen tests are probably just the devil's trickery, trying to manipulate good people into putting their DNA information in some government database somewhere. It is an absolute outrage and a crime what you are doing, I hope you are able to sleep at night because I certainly wouldn't be able to in your shoes. This pandemic is absolutely just manufactured fake news, I have asked everyone I know and not a single person is infected with this so-called "bacteria" that you claim exists.  
 
 `r sample(clos1, 1, replace=TRUE)`<br>
 `r sample(name1, 1)`
@@ -136,20 +134,21 @@ Some of the folks last time said that I was overcautious, and that it was just a
 <b>From:</b> `r sample(email1, 1)`-88@gmail.com <br>
 <b>To:</b> PandemicResponseCommitteet@`r city_name`.co.uk <br>
 <b>Cc:</b> city-council@`r city_name`.co.uk <br>
-<b>Subject:</b> Save Our Hospitals
+<b>Subject:</b> The Rapid antigen test
 
 Dear Pandemic Response Committee,
 
 I am so frightened about new pandemic, the news you read about it is very scary. Thank you so much for all your hard work you are doing to protect us.
 
-I heard that you have made the hospital very safe, with all your PPE stocks and surveillance technology to make sure that the ICU is functioning the way that it should, and that you've increased capacity so that it can handle more patients than usual when we are all sick. It is really great that you are able to do this, I was so worried during the COVID19 pandemic when all the nightingale hospitals were built and the poor doctors and nurses and all were being so overworked. I hope that there will always be enough funds to increase the hospital staff the way that the government really ought to do. 
+I heard that there was some rapid testing kits being distributed to the general public so we can help protect ourselves against the disease. My neighbour Claudia got some through her post-box. However, I have not yet gotten any, I think it may be because I have only recently moved to `r city_name`so I am worried that I am not on the list yet. Could you please send me the information I need, or a link that I can go to, to find more about how to get these kits, please?
+
 
 Thank you so much for all the hard work you do,<br>
 `r sample(name1, 1)` 
 
 ***
 
-## News Coverage of the `r city_name` Legionella outbreak
+## News Coverage of the `r city_name` <i>Streptococcus pyogenes</i> outbreak
 
 ```{r news, echo=FALSE}
 
@@ -166,6 +165,10 @@ time2 <- c("immediately", "very soon", "at once", "as soon as possible")
 name2 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
 verb2 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
 adj4 <- c("nearly", "almost", "virtually", "almost literally", "practically")
+sent8 <- c()
+sent9 <- c()
+sent10 <- c()
+sent11 <- c()
 
 
 #set up person details for obits
@@ -218,7 +221,7 @@ obit2surname <- sample(c("Smith", "Jones", "Williams", "Taylor", "Davies", "Brow
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-The `r dis_name4` pandemic ravaging `r city_name` has claimed yet another victim. There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most tragic loss is `r obit1name` `r obit1surname` - at only `r obit1age`, the youngest victim that the pandemic has claimed.    
+The `r dis_name8` pandemic ravaging `r city_name` has claimed yet another victim. There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most tragic loss is `r obit1name` `r obit1surname` - at only `r obit1age`, the youngest victim that the pandemic has claimed.    
 
 `r obit1name` `r obit1surname` liked `r obit1like1` and `r obit1like2`. Friends and family say that `r pron1` was always `r sample(c("a delight", "an absolute joy", "a treasure", "the most precious child"), 1)`. 
 
@@ -233,7 +236,7 @@ The funeral service will be held `r sample(c("Monday", "Tuesday", "Wednesday", "
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-The `r dis_name4` pandemic ravaging `r city_name` has claimed yet another victim. `r obit2name` `r obit2surname`, local `r obit2prof1` and star, sadly passed away on `r sample(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"), 1)`. 
+The `r dis_name8` pandemic ravaging `r city_name` has claimed yet another victim. `r obit2name` `r obit2surname`, local `r obit2prof1` and star, sadly passed away on `r sample(c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"), 1)`. 
 
 `r obit2name` was perhaps best known for `r posspron2` `r sample(2000:2015, 1)` work `r obit2work1` , but fans say that the rest of `r posspron2` work was equally as `r sample(c("memorable", "genre-changing", "excellent", "influential"), 1)`. 
 
@@ -252,7 +255,7 @@ Citizens of `r city_name` should be `r sample(c("grateful", "thankful", "glad"),
 
 Officials from `r sample(c("the NHS", "Public Health Scotland", "the World Health Organisation", "the Center for Disease Control", "the Red Cross"), 1)` have publicly praised the `r city_name` PRC, saying that `r sample(c("it is difficult to imagine a more effective public health response", "their actions have been extremely effective", "the PRC has done all of the right things", "this is a triumph that shows how effective public health responses can be", "countless lives have been saved due to the actions of the PRC"), 1)`
 
-There have been 6 deaths due to `r dis_name4` in `r city_name` this week. This is an enormous decrease, and hopefully `r city_name` will see the death toll continue to decrease in the coming weeks. 
+There have been 8 deaths due to `r dis_name8` in `r city_name` this week. This is an enormous decrease, and hopefully `r city_name` will see the death toll continue to decrease in the coming weeks. 
 
 ***
 
@@ -261,26 +264,27 @@ There have been 6 deaths due to `r dis_name4` in `r city_name` this week. This i
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-Governments across the globe have seen how successful power-grabs in the name of public health can be, following on the wave of restrictions imposed because of so-called viral diseases like COVID-19 and "mpox". So-called scientists are fearmongering - aerosols, monkeys, "bird" flu - now they think that they can fool us into thinking that the air and water are unsafe. Citizens of `r city_name` should stand strong against this terrible tyranny! No more mask mandates, no more senseless restrictions!
+Governments across the globe have seen how successful power-grabs in the name of public health can be, following on the wave of restrictions imposed because of so-called viral diseases like COVID-19 and "mpox". So-called scientists are fearmongering - aerosols, monkeys, "bird" flu - now they think that they can fool us into thinking that that we should "vaccinate" our children with whatever disease tthey dream up next. Citizens of `r city_name` should stand strong against this terrible tyranny! No more mask mandates, no more senseless restrictions! No more so-called "vaccines"!
 
 Our elders should not be left to die alone, left frightened and hopeless in a mandatory lockdown claimed to be "for their benefit." Our children should not be left to struggle through "pandemic" after "pandemic" - their language and literacy skills have been left behind due to these lockdowns, and their mental health is suffering. It is time that we take back control of our lives and end this tyranny of fear-mongering and so-called science. Citizens of `r city_name`, stand with me and resist this most recent attack on your freedoms and your lives. 
 
 *** 
 
 <font size="+3"><b>`r sample(c("BBC Scotland", "The Guardian", "The Independent"), 1)` </b></font><br>
-<font size="+2"><b>`r dis_name4` pandemic in `r city_name`</b></font><br>
+<font size="+2"><b>`r dis_name8` pandemic in `r city_name`</b></font><br>
 by `r sample(authname1, 1)` `r sample(surname1, 1)`
 `r sample(pubdate, 1)`
 
-Hard on the heels of the COVID-19 pandemic and a number of other health scares (monkeypox, or "mpox", avian flu, and worries about other infectious disease outbreaks), another pandemic has hit the Scottish town of `r city_name`. This time, it's Legionella, a bacterium that can very sadly be fatal.
+Hard on the heels of the COVID-19 pandemic and a number of other health scares (monkeypox, or "mpox", avian flu, and worries about other infectious disease outbreaks), another pandemic has hit the Scottish town of `r city_name`. This time, it's `r dis_name8`, a bacterium that causes a sometimes fatal illness.
 
-There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most frightening aspect to this new pandemic is rumours that these Legionella strains may have become resistant to even more antibiotics - a truly chilling possibility.
+There have been `r outbreak_deaths` deaths in the pandemic so far, but perhaps the most frightening aspect to this new pandemic is rumours that antibiotic-resistant <i>Streptococcus pyogenes</i> strains have begun to emerge. 
 
 Scientists have been warning about the antibiotic resistance crisis for years, saying that careless use of antibiotics could mean that these precious medicines will no longer be available to us in the future. 
 
-Some of the Legionella strains found in `r city_name` are reportedly resistant to all clinically available antibiotics, and scientists warn that these drug-resistant pathogens might be able to spread to new locations. Will nearby towns be next, or could these Legionella strains go as global as the SARS-COV2 virus did?
+The `r city_name` Pandemic Response Committee have pushed for a fast track for vaccines - which may be our only hope, in the light of looming antibiotic resistance. But what can we do if these vaccines aren't successful, or if they aren't distributed widely - as we saw for the COVID jabs last year?
 
-***
+Some of the <i>Streptococcus</i> strains found in `r city_name` are reportedly resistant to all clinically available antibiotics, and scientists warn that these drug-resistant pathogens might be able to spread to new locations. Will nearby towns be next, or could these "superbugs" go as global as the SARS-COV2 virus did? How safe is our food and drink?
+
 ## Data gathered
 
 
