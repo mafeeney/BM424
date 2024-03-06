@@ -16,13 +16,13 @@ library(ggplot2)
 library(knitr)
 
 
-city_name <- "CITYNAME" ##replace all instances of "CITYNAME" with new scenario name
-hospital_name <- "HOSPNAME" ##replace all instances of "HOSPNAME" with new scenario name
+city_name <- "Inverkeld" 
+hospital_name <- "Queen Rose" 
 ```
 
-## Scenario X
+## Scenario A
 
-DIS-NAME in `r city_name`
+<i>Legionella</i> in `r city_name`
 
 The `r city_name` Pandemic Response committee has gathered the following information for the second meeting of your group. 
 
@@ -33,11 +33,16 @@ You should submit 3-5 specific actions for further actions to control the pandem
 ## Minutes from the last Pandemic Response Committee Meeting
 
 Actions taken:
+1. Keep in contact with governmental organisations, health authorities and the local community about pandemic strategies to control and prevent the spread of the pathogen.
+2. Provide adequate training/education on the appropriate use of PPE as well as where to access it. Plus, stock up on PPE (hospital preparedness).
+3. Communicate with hospital staff, patients and the local community to provide information on the pandemic and updated hospital policies to ensure hospital preparedness.
+4. Devise plans to increase the hospital’s capacity to accommodate a surge of patients (e.g., set up additional treatment areas in the hospital and consider collaborating with healthcare professionals from other institutions).
+5. Implement surveillance technology to keep record of critical care capacity.
 
 
 ## Pandemic Statistics 
 
-Table 1. Data from the `r city_name` DIS-NAME outbreak.
+Table 1. Data from the `r city_name` <i>Legionella</i> outbreak.
 <table>
 <table border="1">
   <tr>
@@ -46,27 +51,27 @@ Table 1. Data from the `r city_name` DIS-NAME outbreak.
     <th>07/03/2024 data</th>
   </tr>
   <tr>
-    <td>Deaths caused by the DIS-NAME outbreak</td>
+    <td>Deaths caused by the <i>Legionella</i> outbreak</td>
+    <td>23</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Verified <i>Legionella</i> cases</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
-    <td>Verified DIS-NAME cases</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>DIS-NAME hospitalisations</td>
-    <td></td>
+    <td><i>Legionella</i> hospitalisations</td>
+    <td>54</td>
     <td></td>
   </tr>
     <tr>
     <td>`r hospital_name` ICU bed occupancy</td>
-    <td></td>
+    <td>13</td>
     <td></td>
   </tr>
   <tr>
-  <td>Number of DIS-NAME related GP visits (total)</td>
+  <td>Number of <i>Legionella</i> related GP visits (total)</td>
   <td></td>
   <td></td>
   </tr>
@@ -89,7 +94,7 @@ time1 <- c("immediately", "very soon", "at once", "as soon as possible")
 name1 <- c("Anna", "Luke", "Siobhan", "Su", "Ailidh", "Fiona", "Graham", "Madison", "Eleanor", "Rodrigo", "Kieran", "Wilson", "Anika", "Rosemary", "Alise", "Gordon", "Roman", "Karen")
 verb1 <- c("devastate", "obliterate", "ruin", "destroy", "crush")
 business1 <- c("small coffee shop", "coffee shop", "cafe", "restaurant", "bookshop", "boutique clothing store", "records shop", "used bookstore", "toy store", "sweet shop")
-business2 <- c("The CITYNAME Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
+business2 <- c("The Inverkeld Shop", "Fraser & Co.", "Bella's", "Around the Corner", "Jewels")
 adj2 <- c("nearly", "almost", "virtually", "almost literally", "practically")
 conseq1 <- c("lost my business due to those pandemic lockdowns", "had to close because of all the draconian lockdowns", "went out of business", "went bankrupt", "had to shut our doors during COVID")
 sent2 <- c()
@@ -105,7 +110,7 @@ sent6 <- c()
 ```
 
 
-## News Coverage of the `r city_name` DIS-NAME outbreak
+## News Coverage of the `r city_name` <i>Legionella</i> outbreak
 
 ```{r news, echo=FALSE}
 
