@@ -29,7 +29,14 @@ The pro forma to complete when you have finished discussing your pandemic scenar
 
 [Introductory Powerpoint/Instructions](/powerpoints/BM424_Clinical_Microbiology_workshop4.pptx)
 
-Links to the 9 different pandemic scenarios and briefing packets: 
+Links to the different pandemic scenarios and briefing packets: 
+- [Pandemic Scenario A](/workshop4/workshop4A.html)
+- [Pandemic Scenario B](/workshop4/workshop4B.html)
+- [Pandemic Scenario C](/workshop4/workshop4C.html)
+- [Pandemic Scenario E](/workshop4/workshop4E.html)
+- [Pandemic Scenario G](/workshop4/workshop4G.html)
+- [Pandemic Scenario H](/workshop4/workshop4H.html)
+- [Pandemic Scenario I](/workshop4/workshop4I.html) 
 
 The pro forma to complete when your group has finished discussing your pandemic scenario, evaluated the effects of your actions, and decided on your next actions (Please complete this and submit via MyPlace.): [Workshop 4 pro forma](/proformas/BM424_workshop4_proforma.docx)
 
