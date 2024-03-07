@@ -1,7 +1,7 @@
 ---
 title: 'BM424 workshop: infectious disease outbreak control'
 author: "Morgan Feeney"
-date: "17/03/2023"
+date: "07/03/2024"
 output: 
   bookdown::html_document2:
     toc: true
@@ -19,7 +19,7 @@ library(knitr)
 city_name <- "Ardkeld"
 hospital_name <- "Riverview"
 dis_name4 <- "<i>Bacillus anthracis</i>"
-outbreak_deaths <- 10 + 12 + 9
+outbreak_deaths <- 15
 
 ```
 
@@ -29,7 +29,7 @@ The `r city_name` Pandemic Response committee has gathered the following informa
 
 You should evaluate the effect(s) of the actions that you took at your last meeting and evaluate the current state of affairs in `r city_name`. 
 
-You should submit 3-5 specific actions for further actions to control the pandemic, using the [workshop 4 pro forma](../proformas/BM424_workshop4_proforma.docx) (also available on MyPlace). You should consider whether you want to continue any of the public health measures you implemented at your previous meeting, or whether you want to stop them; and also whether there are any new, additional actions you would like to take. Submit the pro forma by noon on Friday March 24th, via the submission link on MyPlace. 
+You should submit 3-5 specific actions for further actions to control the pandemic, using the [workshop 4 pro forma](../proformas/BM424_workshop4_proforma.docx) (also available on MyPlace). You should consider whether you want to continue any of the public health measures you implemented at your previous meeting, or whether you want to stop them; and also whether there are any new, additional actions you would like to take. Submit the pro forma by noon on Friday March 15th, via the submission link on MyPlace. 
 
 ## Minutes from the last Pandemic Response Committee Meeting
 
@@ -423,7 +423,7 @@ Table 3. Contact tracing results results from patients with current anthrax case
   </tr>
   <tr>
     <td>29</td>
-    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`, the butcher's, the cheese shop in town, Skye Candles</td>
   </tr>
   <tr>
     <td>30</td>
@@ -431,11 +431,11 @@ Table 3. Contact tracing results results from patients with current anthrax case
   </tr>
   <tr>
     <td>31</td>
-    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, the greengrocers</td>
   </tr>
   <tr>
     <td>32</td>
-    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`</td>
+    <td>`r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, the Ardkeld Home Butchers</td>
   </tr>
   <tr>
     <td>33</td>
@@ -447,11 +447,11 @@ Table 3. Contact tracing results results from patients with current anthrax case
   </tr>
   <tr>
     <td>35</td>
-    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`, done lots of shopping</td>
   </tr>
   <tr>
     <td>36</td>
-    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, the butchers, the florist</td>
   </tr>
   <tr>
     <td>37</td>
@@ -491,11 +491,11 @@ Table 3. Contact tracing results results from patients with current anthrax case
   </tr>
   <tr>
     <td>46</td>
-    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td> `r sample(work1, 1)`, the Ardkeld Home Butchers, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
   </tr>
   <tr>
     <td>47</td>
-    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`</td>
+    <td> `r sample(work1, 1)`, `r sample(shop1, sample(0:3, 1))`, `r sample(shop2, sample(0:3, 1))`, `r sample(restaurant1, sample(0:6, 1))`, `r sample(other1, sample(0:10, 1))`, `r sample(travel1, sample(0:2, 1))`, the Ardkeld Home Butchers</td>
   </tr>
   <tr>
     <td>48</td>

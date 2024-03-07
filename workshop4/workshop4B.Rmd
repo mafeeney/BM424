@@ -1,7 +1,7 @@
 ---
 title: 'BM424 workshop: infectious disease outbreak control'
 author: "Morgan Feeney"
-date: "17/03/2023"
+date: "07/03/2024"
 output: 
   bookdown::html_document2:
     toc: true
@@ -29,7 +29,7 @@ The `r city_name` Pandemic Response committee has gathered the following informa
 
 You should evaluate the effect(s) of the actions that you took at your last meeting and evaluate the current state of affairs in `r city_name`. 
 
-You should submit 3-5 specific actions for further actions to control the pandemic, using the [workshop 4 pro forma](../proformas/BM424_workshop4_proforma.docx) (also available on MyPlace). You should consider whether you want to continue any of the public health measures you implemented at your previous meeting, or whether you want to stop them; and also whether there are any new, additional actions you would like to take. Submit the pro forma by noon on Friday March 24th, via the submission link on MyPlace. 
+You should submit 3-5 specific actions for further actions to control the pandemic, using the [workshop 4 pro forma](../proformas/BM424_workshop4_proforma.docx) (also available on MyPlace). You should consider whether you want to continue any of the public health measures you implemented at your previous meeting, or whether you want to stop them; and also whether there are any new, additional actions you would like to take. Submit the pro forma by noon on Friday March 15th, via the submission link on MyPlace. 
 
 ## Minutes from the last Pandemic Response Committee Meeting
 
